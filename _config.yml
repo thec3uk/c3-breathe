@@ -1,29 +1,86 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing these this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
 # Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: Your awesome title
-email: your-email@domain.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://example.com" # the base hostname & protocol for your site
-twitter_username: jekyllrb
-github_username:  jekyll
+title: Breathe
+email: breathe@thec3.uk
+url: https://breathe.thec3.uk
+description: "Breathe Ministries at C3"
+
+# Color settings (hex-codes)
+color:
+  primary-dark: '#F9EACC'
+  # primary-dark: '#F4E2BE'
+  links: '#62892A'
+
+# Footer settings
+footer: Breathe
+site-icon: icon-c3
+map-center-lat: 52.200389
+map-center-lng: 0.157216
+ 
+
+site-map:
+    home:
+        title: home
+        image: /img/0050.jpg
+        sections:
+            - about
+            # - eventbrite
+            - contact
+            - map
+        menu:
+            - conferences
+            - blog
+            - other-events
+    about:
+        title: Welcome!
+    eventbrite:
+        title: Tickets
+    contact:
+        title: Contact
+    map:
+        title: Where?
+    blog:
+        title: Blog
+        path: blog
+        # redirect: true
+        menu:
+            - home
+            - conferences
+            - blog
+            - other-events
+    2017:
+        title: 2017
+        menu:
+            - home
+            - conferences
+            - blog
+            - other-events
+    past:
+        title: Past
+        menu:
+            - home
+            - conferences
+            - blog
+            - other-events
+    conferences:
+        title: Conference
+        submenu:
+            - 2017
+            - past
+        menu:
+            - home
+            - conferences
+            - blog
+            - other-events
+    other-events:
+        title: Other Events
+        menu:
+            - home
+            - conferences
+            - blog
+            - other-events
+
 
 # Build settings
 markdown: kramdown
-theme: minima
+permalink: pretty
+theme: urban-static

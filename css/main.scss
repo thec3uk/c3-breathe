@@ -3,8 +3,43 @@
 ---
 @charset "utf-8";
 
+@font-face {
+  font-family: 'dietdidot';
+  src:  url('fonts/dietdidot_title/DietDidotTitle.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'didot';
+  src:  url('fonts/didot/Didot.ttc') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'heroe';
+  src:  url('fonts/heroe/Heroe.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'heroeinline';
+  src:  url('fonts/heroe_inline/HeroeInline.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
 // Our variables
-$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-sans-serif: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$font-family-serif:      "dietdidot", serif !default;
+$font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base:       "didot" serif !default;
+
+
 $base-font-size:   16px;
 $base-font-weight: 400;
 $small-font-size:  $base-font-size * 0.875;
@@ -12,9 +47,11 @@ $base-line-height: 1.5;
 
 $spacing-unit:     30px;
 
-$text-color:       #111;
+$text-color:       #343434;
 $background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
+$brand-color:      #c9d196;
+$brand-primary:    #c9d196;
+$secondary-color:  #2a7ae2;
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
@@ -26,14 +63,20 @@ $content-width:    800px;
 $on-palm:          600px;
 $on-laptop:        800px;
 
-// Minima also includes a mixin for defining media queries.
-// Use media queries like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
+$black:             #343434;
+$intro-font-color:  #fdfdfd;
 
-// Import partials from the `minima` theme.
-@import "minima";
+@import "urban-static";
+
+.sub-head {
+    font-family: 'heroe';
+}
+
+p {
+  font-family: "didot";
+}
+
+.intro-home {
+    @include intro-image($image:"{{ site.site-map.home.image }}", $font-colour: $intro-font-color);
+}
+
