@@ -49,8 +49,8 @@ $spacing-unit:     30px;
 
 $text-color:       #343434;
 $background-color: #fdfdfd;
-$brand-color:      #c9d196;
-$brand-primary:    #c9d196;
+$brand-color:      #d8e0a6;
+$brand-primary:    #d8e0a6;
 $secondary-color:  #2a7ae2;
 
 $grey-color:       #828282;
@@ -65,18 +65,31 @@ $on-laptop:        800px;
 
 $black:             #343434;
 $intro-font-color:  #fdfdfd;
+$navbar-font-color: #fdfdfd;
 
 @import "urban-static";
 
-.sub-head {
+.sub-head, .alt-title {
     font-family: 'heroe';
+    text-transform: capitalize;
 }
 
 p {
   font-family: "didot";
 }
 
-.intro-home {
-    @include intro-image($image:"{{ site.site-map.home.image }}", $font-colour: $intro-font-color);
-}
+{% for item in site.site-map %}
+  {% if item[1].image and item[1].inverse %}
+    .intro-{{ item[0] }} {
+        @include intro-image($image:"{{ item[1].image }}", $font-colour: $intro-font-color);
+    }
+  {% elsif item[1].image %}
+    .intro-{{ item[0] }} {
+        @include intro-image($image:"{{ item[1].image }}");
+    }
+  {% endif %}
+{% endfor %}
 
+.nav-2017 a {
+  color: $black;
+}

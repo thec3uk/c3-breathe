@@ -21,6 +21,7 @@ site-map:
     home:
         title: home
         image: /img/0050.jpg
+        inverse: true
         sections:
             - about
             # - eventbrite
@@ -49,6 +50,8 @@ site-map:
             - other-events
     2017:
         title: 2017
+        image: /img/0110.jpg
+        inverse: true
         menu:
             - home
             - conferences

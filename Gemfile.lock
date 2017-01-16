@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/nanorepublica/urban-static.git
-  revision: b40f7aafd09f038ebaaa40dbd066181960994212
+  revision: 4ced86c90be182f8f0f13beca382cdb02b3296d3
   branch: master
   specs:
     urban-static (0.1.0)

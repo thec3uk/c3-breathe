@@ -2,7 +2,7 @@
 
 Todo:
 
-dot menu like mac pro
+dot menu like mac pro - http://www.apple.com/uk/mac-pro/
 
 * pdf brochure
 * 2016 conference media
