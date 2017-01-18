@@ -51,7 +51,7 @@ $text-color:       #343434;
 $background-color: #fdfdfd;
 $brand-color:      #d8e0a6;
 $brand-primary:    #d8e0a6;
-$secondary-color:  #2a7ae2;
+$brand-secondary:  #fdfdfd;
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
@@ -92,4 +92,9 @@ p {
 
 .nav-2017 a {
   color: $black;
+}
+
+
+.quote-lg {
+    line-height: 3;
 }

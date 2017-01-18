@@ -24,6 +24,7 @@ site-map:
         inverse: true
         sections:
             - about
+            - quote
             # - eventbrite
             - contact
             - map
@@ -41,13 +42,12 @@ site-map:
         title: Where?
     blog:
         title: Blog
-        path: blog
-        # redirect: true
-        menu:
-            - home
-            - conferences
-            - blog
-            - other-events
+        redirect: https://breatheconference.tumblr.com/
+        # menu:
+        #     - home
+        #     - conferences
+        #     - blog
+        #     - other-events
     2017:
         title: 2017
         image: /img/0110.jpg
@@ -59,6 +59,8 @@ site-map:
             - other-events
     past:
         title: Past
+        image: /img/2016-27.jpg
+        inverse: true
         menu:
             - home
             - conferences
@@ -76,6 +78,8 @@ site-map:
             - other-events
     other-events:
         title: Other Events
+        image: /img/0079.jpg
+        inverse: true
         menu:
             - home
             - conferences
