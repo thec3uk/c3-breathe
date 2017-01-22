@@ -49,9 +49,9 @@ $spacing-unit:     30px;
 
 $text-color:       #343434;
 $background-color: #fdfdfd;
-$brand-color:      #d8e0a6;
-$brand-primary:    #d8e0a6;
-$brand-secondary:  #fdfdfd;
+$brand-color:      #fafde5;
+$brand-primary:    #fafde5;
+$brand-secondary:  #b8bf0b;
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
@@ -90,11 +90,19 @@ p {
   {% endif %}
 {% endfor %}
 
+.quote-home-section {
+    @include intro-image("/img/0100.jpg", $font-colour: $intro-font-color);
+}
+
 .nav-2017 a {
   color: $black;
 }
 
+#2017 p {
+    margin-bottom: 15px;
+}
 
 .quote-lg {
     line-height: 3;
+    text-transform: none;
 }

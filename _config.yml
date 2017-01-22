@@ -24,7 +24,7 @@ site-map:
         inverse: true
         sections:
             - about
-            - quote
+            - quote-home
             # - eventbrite
             - contact
             - map
@@ -34,6 +34,9 @@ site-map:
             - other-events
     about:
         title: Welcome!
+    quote-home:
+        title: quote
+        image: /img/0100.jpg
     eventbrite:
         title: Tickets
     contact:
