@@ -36,3 +36,13 @@ We look forward to welcoming you!
   * 26 January
   * 9 & 23 February
   * 9 & 23 March 
+  
+  
+<!-- HACK! -->
+<style>
+@media (min-width: 993px) {
+#map {
+  margin-top: 50px;
+}
+}
+</style>

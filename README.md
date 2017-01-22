@@ -2,18 +2,12 @@
 http://thec3.uk/Articles/438546/Cambridge_Community_Church/New_Design/Home/Reach_Your_Potential/Breathe_Ministries.aspx
 Todo:
 
-* map marker
 * blog - style to match
     - get access to tumblr
 * 2016 conference media
    - get images/video
    - lity for images - http://sorgalla.com/lity/
-
-* pictures sections & quotes
-* other events page
-    - map
 * analytics
-* favicon
 
 
 http://compressjpeg.com/

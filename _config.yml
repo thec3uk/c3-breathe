@@ -22,6 +22,7 @@ site-map:
         title: home
         image: /img/0050.jpg
         inverse: true
+        js: true
         sections:
             - about
             - quote-home
@@ -33,7 +34,7 @@ site-map:
             - blog
             - other-events
     about:
-        title: Welcome!
+        title: Invite
     quote-home:
         title: quote
         image: /img/0100.jpg
@@ -53,6 +54,7 @@ site-map:
         #     - other-events
     2017:
         title: 2017
+        js: true
         image: /img/0110.jpg
         inverse: true
         menu:
@@ -60,6 +62,8 @@ site-map:
             - conferences
             - blog
             - other-events
+        sections:
+            - map
     past:
         title: Past
         image: /img/2016-27.jpg
@@ -81,6 +85,7 @@ site-map:
             - other-events
     other-events:
         title: Other Events
+        js: true
         image: /img/0079.jpg
         inverse: true
         menu:
@@ -88,6 +93,8 @@ site-map:
             - conferences
             - blog
             - other-events
+        sections:
+            - map
 
 
 # Build settings
