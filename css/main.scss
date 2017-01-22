@@ -37,7 +37,7 @@
 $font-family-sans-serif: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
 $font-family-serif:      "dietdidot", serif !default;
 $font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
-$font-family-base:       "didot" serif !default;
+$font-family-base:       "didot", serif !default;
 
 
 $base-font-size:   16px;
@@ -74,9 +74,6 @@ $navbar-font-color: #fdfdfd;
     text-transform: capitalize;
 }
 
-p {
-  font-family: "didot";
-}
 
 {% for item in site.site-map %}
   {% if item[1].image and item[1].inverse %}

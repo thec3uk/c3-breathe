@@ -11,7 +11,7 @@ header:
 
 <h2>Theme: This <span class="alt-title">Girl</span> Can</h2>
 
-Speaker: Lynda Huskisson, Trustee of Hope Into Action and author of 'Cheating Death, Living Life.
+Speaker: Lynda Huskisson, Trustee of Hope Into Action and author of 'Cheating Death, Living Life'.
 
 Lynda will be sharing her inspirational story of life on the streets to bringing hope to get others off them. 
 We will hear from our own Hope House girls and have an opportunity to support the charity. 
