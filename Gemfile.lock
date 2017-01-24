@@ -1,10 +1,3 @@
-GIT
-  remote: git://github.com/nanorepublica/urban-static.git
-  revision: 7400b73962cc24eac3b5a2b70b2080fca1dc7f69
-  branch: master
-  specs:
-    urban-static (0.1.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -43,13 +36,14 @@ GEM
     rouge (1.11.1)
     safe_yaml (1.0.4)
     sass (3.4.23)
+    urban-static (0.1.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   jekyll (= 3.3.1)
-  urban-static!
+  urban-static
 
 RUBY VERSION
    ruby 2.0.0p648
