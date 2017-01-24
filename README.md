@@ -7,7 +7,6 @@ Todo:
 * 2016 conference media
    - get images/video
    - lity for images - http://sorgalla.com/lity/
-* analytics
 
 
 http://compressjpeg.com/

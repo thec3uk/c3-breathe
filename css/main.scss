@@ -49,8 +49,8 @@ $spacing-unit:     30px;
 
 $text-color:       #343434;
 $background-color: #fdfdfd;
-$brand-color:      #fafde5;
-$brand-primary:    #fafde5;
+$brand-color:      #e8f9df;
+$brand-primary:    #e8f9df;
 $brand-secondary:  #b8bf0b;
 
 $grey-color:       #828282;
@@ -66,6 +66,8 @@ $on-laptop:        800px;
 $black:             #343434;
 $intro-font-color:  #fdfdfd;
 $navbar-font-color: #fdfdfd;
+
+$btn-secondary-inverse: true;
 
 @import "urban-static";
 
@@ -89,6 +91,7 @@ $navbar-font-color: #fdfdfd;
 
 .quote-home-section {
     @include intro-image("/img/0100.jpg", $font-colour: $intro-font-color);
+    height: 540px;
 }
 
 .nav-2017 a {
@@ -100,6 +103,12 @@ $navbar-font-color: #fdfdfd;
 }
 
 .quote-lg {
-    line-height: 3;
+    line-height: 2.5;
     text-transform: none;
+    margin-top: 5rem;
+}
+
+.detail-section a,
+.content-section a {
+    font-style: italic;
 }
