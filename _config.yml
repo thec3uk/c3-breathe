@@ -7,12 +7,6 @@ description: "Breathe Ministries at C3"
 share_image: /img/share.png
 keywords: c3 cambridge breathe women ministries campbell angie conference church christian christians blessed brave eventbrite community speakers worship
 
-# Color settings (hex-codes)
-color:
-  primary-dark: '#F9EACC'
-  # primary-dark: '#F4E2BE'
-  links: '#62892A'
-
 # Footer settings
 footer: Breathe
 site-icon: icon-c3
@@ -49,7 +43,7 @@ site-map:
         title: Where?
     blog:
         title: Blog
-        redirect: https://breatheconference.tumblr.com/
+        # redirect: https://breatheconference.tumblr.com/
         # menu:
         #     - home
         #     - conferences
