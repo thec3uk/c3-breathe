@@ -43,6 +43,7 @@ site-map:
         title: Where?
     blog:
         title: Blog
+        path: blog
         # redirect: https://breatheconference.tumblr.com/
         # menu:
         #     - home
