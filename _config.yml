@@ -99,3 +99,5 @@ site-map:
 markdown: kramdown
 permalink: pretty
 theme: urban-static
+include:
+    - _redirects
