@@ -33,8 +33,7 @@ We look forward to welcoming you!
 * Frequency: Fortnightly
 * Where: C3 CENTRE, Coldhams Lane, Cambridge
 * Dates for Spring 2017: 
-  * 26 January
-  * 9 & 23 February
+  * 23 February
   * 9 & 23 March 
   
   
