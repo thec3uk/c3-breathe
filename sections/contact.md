@@ -4,15 +4,16 @@ key: contact
 ---
 
 
-REGISTER AT  
-[BREATHE2017.EVENTBRITE.COM](https://breathe2017.eventbrite.com)
- 
+Book in for BRUNCH at  
+[BREATHEBRUNCH.EVENTBRITE.COM](https://breathebrunch.eventbrite.com)
+
+
 <a href="tel:01223 844415">
 <i class="fa fa-phone fa-fw"></i>
 01223 844415
 </a>
 <br/>
-<a href="mailto:hello@thec3.uk?subject=Breathe Conference">
+<a href="mailto:hello@thec3.uk?subject=Breathe">
 <i class="fa fa-envelope fa-fw"></i>
 HELLO@THEC3.UK
 </a>

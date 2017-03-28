@@ -46,7 +46,7 @@ function inithome() {
 
 }
 
-function init2017() {
+function init2018() {
     inithome();
 }
 

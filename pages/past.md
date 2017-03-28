@@ -3,8 +3,34 @@ layout: page
 key: past
 header:
   title: Past Conferences
-  subtitle: Coming Soon!
   down-arrow: true
   width: 10
   offset: 1
 ---
+
+# 2017: Blessed is SHE
+
+## Videos
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4">
+      <h3>Promo</h3>
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/204676820?color=c9ff23&title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <h3>The Priestly Blessing</h3>
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/209386288?color=c9ff23&title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <h3>Tanya’s Testimony</h3>
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/209387750?color=c9ff23&title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
