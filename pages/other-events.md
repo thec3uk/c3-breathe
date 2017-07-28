@@ -7,7 +7,7 @@ header:
   down-arrow: true
 ---
 
-<h1>Breathe <span class="alt-title">Brunch</span></h1>
+<!-- <h1>Breathe <span class="alt-title">Brunch</span></h1>
 
 <h2>Theme: This <span class="alt-title">Girl</span> Can</h2>
 
@@ -21,7 +21,7 @@ We will hear from our own Hope House girls and have an opportunity to support th
 * Cost: £12
 * [Book in here](https://breathebrunch.eventbrite.co.uk)
 
-&nbsp;  
+&nbsp;   -->
 
 <h1>Breathe <span class="alt-title">Banquet</span></h1>
 
@@ -46,13 +46,12 @@ We look forward to welcoming you!
 * Time: 10:30am – 12pm
 * Frequency: Fortnightly
 * Where: C3 CENTRE, Coldhams Lane, Cambridge
-* Dates for Summer 2017: 
-  * 27 April
-  * 11 & 25 May 
-  * 8 & 22 June
-  * 6 July
-  
-  
+* Dates for Autumn 2017: 
+  * 7th &amp; 21st September
+  * 5th &amp; 19th October
+  * 2nd, 16th &amp; 30th November
+  * 14th December
+
 <!-- HACK! -->
 <style>
 @media (min-width: 993px) {

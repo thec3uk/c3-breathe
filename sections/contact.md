@@ -4,8 +4,8 @@ key: contact
 ---
 
 
-Book in for BRUNCH at  
-[BREATHEBRUNCH.EVENTBRITE.COM](https://breathebrunch.eventbrite.com)
+Book in for the Banquet at  
+[BREATHEBANQUET.EVENTBRITE.COM](https://breathebanquet.eventbrite.com)
 
 
 <a href="tel:01223 844415">
