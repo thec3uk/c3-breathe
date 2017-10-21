@@ -4,8 +4,8 @@ key: contact
 ---
 
 
-Book in for the Banquet at  
-[BREATHEBANQUET.EVENTBRITE.COM](https://breathebanquet.eventbrite.com)
+Book in for the Conference at  
+[BREATHE2018.EVENTBRITE.COM](https://breathe2018.eventbrite.com)
 
 
 <a href="tel:01223 844415">
