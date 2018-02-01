@@ -2,6 +2,7 @@
 layout: page
 header:
   down-arrow: true
+  image: /assets/uploads/0079.jpg
   subtitle: '&nbsp;'
   title: Other Events
 key: other-events
