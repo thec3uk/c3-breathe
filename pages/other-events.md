@@ -2,7 +2,7 @@
 layout: page
 header:
   down-arrow: true
-  subtitle: '"&nbsp;"'
+  subtitle: '&nbsp;'
   title: Other Events
 key: other-events
 ---
