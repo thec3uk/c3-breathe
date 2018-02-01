@@ -1,6 +1,9 @@
 ---
 layout: page
-title: Other Events
+header:
+  down-arrow: true
+  subtitle: '"&nbsp;"'
+  title: Other Events
 key: other-events
 ---
 # Breathe <span class="alt-title">Women</span>
