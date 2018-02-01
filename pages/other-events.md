@@ -31,7 +31,7 @@ Watoto Child Care Ministries currently cares for more than 3,000 children within
 * Cost: £20
 * [Book in here](https://breathebanquet.eventbrite.co.uk)
 
-&nbsp;  
+&nbsp;  -->
 
 <h1>Breathe <span class="alt-title">Women</span></h1>
 
