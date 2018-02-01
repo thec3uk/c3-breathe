@@ -18,7 +18,7 @@ We will hear from our own Hope House girls and have an opportunity to support th
 * Cost: £12
 * [Book in here](https://breathebrunch.eventbrite.co.uk)
 
-&nbsp;   -->
+&nbsp; 
 
 <h1>Breathe <span class="alt-title">Banquet</span></h1>
 
