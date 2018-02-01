@@ -1,10 +1,7 @@
 ---
 layout: page
+title: Other Events
 key: other-events
-header:
-  title: Other Events
-  subtitle: "&nbsp;"
-  down-arrow: true
 ---
 
 <!-- <h1>Breathe <span class="alt-title">Brunch</span></h1>
