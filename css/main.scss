@@ -149,3 +149,16 @@ hr {
 hr:before {
     content: "\002666";
 }
+
+.divider {
+    min-height: 40px;
+    min-width: 40px;
+}
+
+@media (max-width: 768px) {
+  .divider {
+    margin-left: -13px;
+    min-height: 40px;
+    min-width: 40px;
+  }
+}
