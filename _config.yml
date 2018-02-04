@@ -17,7 +17,7 @@ map-center-lng: 0.157216
 site-map:
     home:
         title: home
-        image: /img/0050.jpg
+        image: /img/158.png
         inverse: true
         js: true
         sections:
@@ -34,7 +34,7 @@ site-map:
         title: Invite
     quote-home:
         title: quote
-        image: /img/0100.jpg
+        image: /img/83.png
     eventbrite:
         title: Tickets
     contact:
@@ -53,7 +53,7 @@ site-map:
     2018:
         title: 2018
         js: true
-        image: /img/0110.jpg
+        image: /img/240.png
         inverse: true
         menu:
             - home
@@ -84,8 +84,8 @@ site-map:
     other-events:
         title: Other Events
         js: true
-        image: /img/0079.jpg
-        inverse: true
+        image: /img/pineapples.png
+        inverse: false
         menu:
             - home
             - conferences

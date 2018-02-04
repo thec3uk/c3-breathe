@@ -31,6 +31,20 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'playlist-script';
+  src:  url('./fonts/Playlist Script.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ZefaniStencil';
+  src:  url('./fonts/ZefaniStencil(uppercase)-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 
 // Our variables
@@ -49,9 +63,9 @@ $spacing-unit:     30px;
 
 $text-color:       #343434;
 $background-color: #fdfdfd;
-$brand-color:      #e8f9df;
-$brand-primary:    #e8f9df;
-$brand-secondary:  #b8bf0b;
+$brand-color:      #f6f0ea;
+$brand-primary:    #f6f0ea;
+$brand-secondary:  #d4b49c;
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
@@ -72,7 +86,7 @@ $btn-secondary-inverse: true;
 @import "{{ site.theme }}";
 
 .sub-head, .alt-title {
-    font-family: 'heroe';
+    font-family: 'playlist-script';
     text-transform: capitalize;
 }
 
@@ -89,8 +103,13 @@ $btn-secondary-inverse: true;
   {% endif %}
 {% endfor %}
 
+.verse,
+.quote {
+  font-family: 'ZefaniStencil';
+}
+
 .quote-home-section {
-    @include intro-image("/img/0100.jpg", $font-colour: $intro-font-color);
+    @include intro-image("/img/258.jpg", $font-colour: $intro-font-color);
     height: 540px;
 }
 
@@ -103,12 +122,30 @@ $btn-secondary-inverse: true;
 }
 
 .quote-lg {
-    line-height: 2.5;
-    text-transform: none;
-    margin-top: 5rem;
+  line-height: 2.5;
+  text-transform: none;
+  margin-top: 5rem;
+  font-family: 'ZefaniStencil';
 }
 
 .detail-section a,
 .content-section a {
     font-style: italic;
+}
+
+.detail-section p {
+    margin-bottom: 20px;
+}
+
+.img-diamond {
+  clip-path: polygon(50% 0%, 0% 50%, 50% 100%, 100% 50%);
+  -webkit-clip-path: polygon(50% 0%, 0% 50%, 50% 100%, 100% 50%);
+}
+
+hr {
+    border: solid 2px $brand-secondary;
+}
+
+hr:before {
+    content: "\002666";
 }
