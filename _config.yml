@@ -50,8 +50,8 @@ site-map:
         #     - conferences
         #     - blog
         #     - other-events
-    2018:
-        title: 2018
+    2019:
+        title: 2019
         js: true
         image: /img/240.png
         inverse: true
@@ -74,7 +74,7 @@ site-map:
     conferences:
         title: Conference
         submenu:
-            - 2018
+            - 2019
             - past
         menu:
             - home
