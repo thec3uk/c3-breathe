@@ -19,7 +19,7 @@ Bring your ‘nearly new' items along with you on the evening, hand them to one 
 
 * When: 12 May 2018, 6pm
 * Where: C3 Centre, Coldhams Lane, Cambridge
-* Book in [here](https://aneveningwithmargaretstunt.eventbrite.co.uk)
+* Book in [here](https://www.eventbrite.co.uk/e/breathe-presentsan-evening-with-margaret-stunt-tickets-44029289791)
 
 <br/>
 
