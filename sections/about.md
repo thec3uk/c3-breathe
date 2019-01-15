@@ -13,4 +13,4 @@ Breathe exists to champion women from all walks of life.  We believe that every 
 
 There are so many opportunities to connect with women of all ages at C3 and beyond, making new friends, and being encouraged and inspired in our faith.
 
-Be sure to sign up for next [year's conference](/pages/2019) or check out the highlights from previous conference's [here](/pages/past) and check out [other events](/pages/other-events) happening throughout the year
+Be sure to sign up for this [year's conference](/pages/2019) or check out the highlights from previous conference's [here](/pages/past) and check out [other events](/pages/other-events) happening throughout the year
