@@ -5,7 +5,7 @@ key: contact
 
 
 Book in for the Conference at  
-[BREATHE2019.EVENTBRITE.COM](https://breathe2019.eventbrite.com)
+[https://breathe.thec3.uk/conference](https://breathe.thec3.uk/conference)
 
 
 <a href="tel:01223 844415">
