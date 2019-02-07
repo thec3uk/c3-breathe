@@ -50,6 +50,10 @@ function init2018() {
     inithome();
 }
 
+function init2019() {
+    inithome();
+}
+
 function initother_events() {
     inithome();
 }
