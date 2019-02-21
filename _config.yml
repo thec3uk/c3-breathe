@@ -73,6 +73,7 @@ site-map:
         submenu:
             - 2019
             - past
+            - faqs
         menu:
             - home
             - conferences
