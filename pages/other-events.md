@@ -7,11 +7,13 @@ header:
 key: other-events
 ---
 
-# Breathe <span class="alt-title">Banquet</span>
+# Breathe <span class="alt-title">Nights</span>
 
-SAVE THE DATE
+On Saturday 11 May we will be joined by Charlie Blyth from Hillsong London. Charlie is a pastor at Hillsong as well as a powerhouse speaker, she is also the European Director for The A21 Campaign, whose vision is to see human slavery abolished in the 21st century.
 
-Saturday 11th May
+We have mocktails and cupcakes planned so you don't want to miss out on a great night with the girls!
+
+Save the date - booking opens soon!
 
 
 <br/>

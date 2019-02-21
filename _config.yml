@@ -12,7 +12,7 @@ footer: Breathe
 site-icon: icon-c3
 map-center-lat: 52.200389
 map-center-lng: 0.157216
- 
+
 
 site-map:
     home:
@@ -28,7 +28,6 @@ site-map:
             - map
         menu:
             - conferences
-            - blog
             - other-events
     about:
         title: Invite
@@ -58,7 +57,6 @@ site-map:
         menu:
             - home
             - conferences
-            - blog
             - other-events
         sections:
             - map
@@ -69,7 +67,6 @@ site-map:
         menu:
             - home
             - conferences
-            - blog
             - other-events
     conferences:
         title: Conference
@@ -79,7 +76,6 @@ site-map:
         menu:
             - home
             - conferences
-            - blog
             - other-events
     other-events:
         title: Other Events
@@ -89,7 +85,6 @@ site-map:
         menu:
             - home
             - conferences
-            - blog
             - other-events
         sections:
             - map
@@ -101,7 +96,7 @@ permalink: pretty
 theme: urban-static
 include:
     - _redirects
-    
+
 gem:
     - jekyll-sitemap
     - jekyll-last-modified-at
