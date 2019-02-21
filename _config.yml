@@ -68,6 +68,14 @@ site-map:
             - home
             - conferences
             - other-events
+    faqs:
+        title: FAQs
+        image: /img/240.png
+        inverse: true
+        menu:
+            - home
+            - conferences
+            - other-events
     conferences:
         title: Conference
         submenu:
