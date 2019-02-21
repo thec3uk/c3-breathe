@@ -1,7 +1,7 @@
 ---
 header:
   down-arrow: true
-  title: Conference FAQs
+  title: FAQs
 layout: page
 title: 'FAQs'
 key: faqs
