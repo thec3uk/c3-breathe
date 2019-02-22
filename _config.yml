@@ -17,7 +17,7 @@ map-center-lng: 0.157216
 site-map:
     home:
         title: home
-        image: /img/158.png
+        image: /img/20180917-231A1001.jpg
         inverse: true
         js: true
         sections:
@@ -33,7 +33,7 @@ site-map:
         title: Invite
     quote-home:
         title: quote
-        image: /img/83.png
+        image: /img/20180917-231A0894.jpg
     eventbrite:
         title: Tickets
     contact:
@@ -52,7 +52,7 @@ site-map:
     2019:
         title: 2019
         js: true
-        image: /img/240.png
+        image: /img/20180917-231A1016.jpg
         inverse: true
         menu:
             - home
@@ -70,7 +70,7 @@ site-map:
             - other-events
     faqs:
         title: FAQs
-        image: /img/240.png
+        image: /img/20180917-231A1016.jpg
         inverse: true
         menu:
             - home
@@ -89,7 +89,7 @@ site-map:
     other-events:
         title: Other Events
         js: true
-        image: /img/pineapples.png
+        image: /img/20180917-231A0627.jpg
         inverse: false
         menu:
             - home
