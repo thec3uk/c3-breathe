@@ -90,7 +90,7 @@ site-map:
         title: Other Events
         js: true
         image: /img/20180917-231A0627.jpg
-        inverse: false
+        inverse: true
         menu:
             - home
             - conferences
