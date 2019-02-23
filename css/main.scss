@@ -162,3 +162,8 @@ hr:before {
     min-width: 40px;
   }
 }
+@media (max-width: 540px) {
+  .quote-home-section {
+    height: 900px;
+  }
+}
