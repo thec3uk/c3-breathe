@@ -3,7 +3,7 @@ layout: content
 key: about
 ---
 
-# Breathe Ministries
+# Breathe
 
 <p class="h4 quote-lg alt-title">
 "For we are God’s masterpiece. He has created us anew in Christ Jesus, so we can do the good things he planned for us long ago"
