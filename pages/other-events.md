@@ -13,7 +13,7 @@ On Saturday 11 May we will be joined by Charlie Blyth from Hillsong London. Char
 
 We have mocktails and cupcakes planned so you don't want to miss out on a great night with the girls!
 
-Save the date - [book in now](https://thec3.churchsuite.co.uk/events/ntcmqgpb) for only &pound;10.
+Save the date - [book in now](https://thec3.churchsuite.co.uk/events/ntcmqgpb) for only &pound;15.
 
 
 <br/>
@@ -36,7 +36,7 @@ Saturday 19 October 2019
 
 Come ready to enjoy a curry feast at this year's Breathe Banquet! With guest speakers, fun with friends and your opportunity to get your hands on our 2020 Breathe Conference brochure before anyone else, it's a night not to miss.
 
-Price: &pound;15
+Price: &pound;25
 
 [Book in now](https://thec3.churchsuite.co.uk/events/bfskrvfo)
 
