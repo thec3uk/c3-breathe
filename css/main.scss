@@ -45,6 +45,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'SilverSouth';
+  src:  url('./fonts/Silver South Script Alt.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 
 // Our variables
@@ -63,9 +70,9 @@ $spacing-unit:     30px;
 
 $text-color:       #343434;
 $background-color: #fdfdfd;
-$brand-color:      #f6f0ea;
-$brand-primary:    #f6f0ea;
-$brand-secondary:  #d4b49c;
+$brand-color:      #eeeefe;
+$brand-primary:    #eeeefe;
+$brand-secondary:  #8badbf;
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
@@ -86,7 +93,7 @@ $btn-secondary-inverse: true;
 @import "{{ site.theme }}";
 
 .sub-head, .alt-title {
-    font-family: 'playlist-script';
+    font-family: 'SilverSouth';
     text-transform: capitalize;
 }
 

@@ -60,14 +60,17 @@ site-map:
             - other-events
         sections:
             - map
-    past:
-        title: Past
-        image: /img/2016-27.jpg
+    2020:
+        title: 2020
+        js: true
+        image: /img/2020-bg.png
         inverse: true
         menu:
             - home
             - conferences
             - other-events
+        sections:
+            - map
     faqs:
         title: FAQs
         image: /img/20180917-231A1016.jpg
@@ -79,8 +82,8 @@ site-map:
     conferences:
         title: Conference
         submenu:
+            - 2020
             - 2019
-            - past
             - faqs
         menu:
             - home

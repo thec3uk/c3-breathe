@@ -13,7 +13,32 @@ On Saturday 11 May we will be joined by Charlie Blyth from Hillsong London. Char
 
 We have mocktails and cupcakes planned so you don't want to miss out on a great night with the girls!
 
-Save the date - booking opens soon!
+Save the date - [book in now](https://thec3.churchsuite.co.uk/events/ntcmqgpb) for only &pound;10.
+
+
+<br/>
+
+# <span class="alt-title">She leads</span> in the professional space
+
+Saturday 14 September 2019, 9:00 - 12:30
+
+Join us for a light breakfast as we set out to encourage, stretch and propel you to the next level of living and leading in professional space. We come together as women of different professional backgrounds to share with you something of our journey, how we overcame obstacles, seized opportunities and learned to lead out of who we are. We are: church leaders, international charity directors, executives of a multibillion company called Chick-fil-A, mums, daughters, sisters.
+
+[Book in here](https://thec3.churchsuite.co.uk/events/dbsatiwq) for &pound;20
+
+
+<br/>
+
+
+# Breathe <span class="alt-title">Banquet</span>
+
+Saturday 19 October 2019
+
+Come ready to enjoy a curry feast at this year's Breathe Banquet! With guest speakers, fun with friends and your opportunity to get your hands on our 2020 Breathe Conference brochure before anyone else, it's a night not to miss.
+
+Price: &pound;15
+
+[Book in now](https://thec3.churchsuite.co.uk/events/bfskrvfo)
 
 
 <br/>

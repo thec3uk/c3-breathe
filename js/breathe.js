@@ -1,6 +1,11 @@
+c3centre = {
+    lat: 52.200594,
+    lng: 0.156914,
+    desc: 'The C3 Centre <br> Coldhams Lane <br> Cambridge, CB1 3HR',
+    autoOpen: true
+}
 
-
-function inithome() {
+function inithome(location) {
     // Basic options for a simple Google Map
     // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
     if (window.screen.availWidth <= 1024) {
@@ -19,7 +24,7 @@ function inithome() {
             minZoom: zoom,
 
             // The latitude and longitude to center the map (always required)
-            center: new google.maps.LatLng(map_center_lat, map_center_lng),
+            center: new google.maps.LatLng(location.lat, location.lng),
 
             // Disables the default Google Maps UI components
             disableDefaultUI: true,
@@ -35,11 +40,10 @@ function inithome() {
         // Get the HTML DOM element that will contain your map
         // We are using a div with id="map" seen below in the <body>
         var mapElement = document.getElementById('map');
-        console.log(mapElement);
 
         // Create the Google Map using out element and options defined above
         var map = new google.maps.Map(mapElement, mapOptions);
-        addMarker(map, 52.200594, 0.156914, 'The C3 Centre <br> Coldhams Lane <br> Cambridge, CB1 3HR', true)
+        addMarker(map, location.lat, location.lng, location.desc, location.autoOpen)
     } catch (ReferenceError) {
         console.log('google not defined, no maps today!');
     }
@@ -47,13 +51,22 @@ function inithome() {
 }
 
 function init2018() {
-    inithome();
+    inithome(c3centre);
+}
+
+function init2020() {
+    inithome({
+        lat: 52.2034883,
+        lng: 0.1222677,
+        desc: 'Cambridge Corn Exchange <br> 2 Wheeler Street <br> Cambridge, CB2 3QB',
+        autoOpen: true
+    });
 }
 
 function init2019() {
-    inithome();
+    inithome(c3centre);
 }
 
 function initother_events() {
-    inithome();
+    inithome(c3centre);
 }
