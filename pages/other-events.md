@@ -6,6 +6,21 @@ header:
   title: Other Events
 key: other-events
 ---
+<br/>
+
+# Breathe <span class="alt-title">All Access Pass</span>
+
+<b>&pound;100 Ticket includes</b>
+
+* Breathe Night with Charlie Blythe
+* She leads in the Professional Space
+* Breathe Banquet
+* Breathe 2020 Conference
+
+[Book in now](/allaccesspass) for all our events this year
+
+
+<br/>
 
 # Breathe <span class="alt-title">Nights</span>
 

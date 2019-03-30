@@ -4,8 +4,6 @@ key: contact
 ---
 
 
-Book in for the Conference at  
-[https://breathe.thec3.uk/conference](https://breathe.thec3.uk/conference)
 
 
 <a href="tel:01223 844415">
@@ -33,5 +31,3 @@ HELLO@THEC3.UK
         </a>
     </div>
 </div>
-
-

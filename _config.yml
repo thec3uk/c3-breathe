@@ -17,7 +17,7 @@ map-center-lng: 0.157216
 site-map:
     home:
         title: home
-        image: /img/20180917-231A1001.jpg
+        image: /img/2020-bg.png
         inverse: true
         js: true
         sections:
@@ -27,13 +27,13 @@ site-map:
             - contact
             - map
         menu:
-            - conferences
+            # - conferences
             - other-events
     about:
         title: Invite
     quote-home:
         title: quote
-        image: /img/20180917-231A0894.jpg
+        image: /img/0184.jpg
     eventbrite:
         title: Tickets
     contact:
@@ -56,7 +56,7 @@ site-map:
         inverse: true
         menu:
             - home
-            - conferences
+            # - conferences
             - other-events
         sections:
             - map
@@ -67,7 +67,7 @@ site-map:
         inverse: true
         menu:
             - home
-            - conferences
+            # - conferences
             - other-events
         sections:
             - map
@@ -77,17 +77,16 @@ site-map:
         inverse: true
         menu:
             - home
-            - conferences
+            # - conferences
             - other-events
     conferences:
         title: Conference
         submenu:
             - 2020
-            - 2019
-            - faqs
+            # - faqs
         menu:
             - home
-            - conferences
+            # - conferences
             - other-events
     other-events:
         title: Other Events
@@ -96,7 +95,7 @@ site-map:
         inverse: true
         menu:
             - home
-            - conferences
+            # - conferences
             - other-events
         sections:
             - map
