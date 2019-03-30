@@ -3,14 +3,35 @@ layout: content
 key: about
 ---
 
-# Breathe
+# Breathe <span class="alt-title">Conference 2020</span>
 
-<p class="h4 quote-lg alt-title">
-"For we are God’s masterpiece. He has created us anew in Christ Jesus, so we can do the good things he planned for us long ago"
-</p> Ephesians 2:10 - NLT
+<div class="container-fluid text-center">
 
-Breathe exists to champion women from all walks of life.  We believe that every woman matters and has a unique contribution to make to this world. Inspired by our Christian faith, our core aim is to encourage, equip and empower women to be the very best they can be. We believe our united journey is even stronger since we are better together!
+  <div class="row">
+    <div class="col-xs-12">
+      <h2 class="text-center">New Venue!</h2>
 
-There are so many opportunities to connect with women of all ages at C3 and beyond, making new friends, and being encouraged and inspired in our faith.
+      <h3 class="text-center">15th &amp; 16th May 2020</h3>
+      <h3 class="text-center"><i>The Corn Exchange Cambridge</i></h3>
+    </div>
+  </div>
 
-Be sure to sign up for this [year's conference](/pages/2019) or check out the highlights from previous conference's [here](/pages/past) and check out [other events](/pages/other-events) happening throughout the year
+
+  <!-- 16:9 aspect ratio -->
+  <div class="embed-responsive embed-responsive-16by9" style="margin-top: 30px;">
+    <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/324525585"></iframe>
+  </div>
+
+  <div class="row" style="margin-top: 70px;">
+    <div class="col-xs-12 col-md-4 col-md-offset-2">
+      <div class="text-center">
+        <a type="button" href="/conference" class="btn btn-secondary btn-lg">Main Conference</a>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+      <div class="text-center">
+        <a type="button" href="/conference/girls" class="btn btn-secondary btn-lg">Breathe Girls</a>
+      </div>
+    </div>
+  </div>
+</div>

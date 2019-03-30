@@ -61,7 +61,7 @@ $font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier Ne
 $font-family-base:       "didot", serif !default;
 
 
-$base-font-size:   16px;
+$base-font-size:   12px;
 $base-font-weight: 400;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
@@ -70,8 +70,8 @@ $spacing-unit:     30px;
 
 $text-color:       #343434;
 $background-color: #fdfdfd;
-$brand-color:      #eeeefe;
-$brand-primary:    #eeeefe;
+$brand-color:      #d2f5fd;
+$brand-primary:    #d2f5fd;
 $brand-secondary:  #8badbf;
 
 $grey-color:       #828282;
@@ -116,8 +116,16 @@ $btn-secondary-inverse: true;
 }
 
 .quote-home-section {
-    @include intro-image("/img/20180917-231A0894.jpg", $font-colour: $intro-font-color);
     height: 540px;
+    overflow: hidden;
+
+    .container-fluid {
+      padding: 0;
+    }
+}
+
+video {
+  width: 100%;
 }
 
 .nav-2017 a {

@@ -49,15 +49,15 @@ If your child is in Reception - Year 6 at school or equivalent, then they can vi
 
 **Q: I have a child under 1, can I attend the conference?**  
 Yes you can! We will be live linking all our Main Stage Sessions to a lounge specifically for you. Please note, during breaks and at lunch the room will be used to serve refreshments.
-
+<!-- 
 **Q: Are we supporting a charity this year?**  
 We are supporting SHINE this year and would welcome Amazon vouchers to enable us to bless the women who attend our courses throughout the year. Compassion will also be attending conference, so you will have the opportunity to sponsor a child through their incredible work.
 
 **Q: Is there wifi?**  
-There is, the password is: wifi@thec3centre
+There is, the password is: wifi@thec3centre -->
 
-**Q: How do I sponsor someone for a Pineapple Award?**  
+<!-- **Q: How do I sponsor someone for a Pineapple Award?**  
 You can [click here](https://docs.google.com/forms/d/e/1FAIpQLSfjpyTPXo3sxFhnGlNzx8Je645bSooTHqqlDr8k28fzaBsJ2g/viewform) and you can find out more, as well as sponsoring your friend!
 
 **Q: How do I book my seminar?**  
-Once you've booked your ticket to conference, we'll send you the link to book into a seminar. We will keep an eye on who has booked in and who hasn't, so don't worry - you'll get the link via email. If you're confused, email us: [breathe@thec3.uk](breathe@thec3.uk).
+Once you've booked your ticket to conference, we'll send you the link to book into a seminar. We will keep an eye on who has booked in and who hasn't, so don't worry - you'll get the link via email. If you're confused, email us: [breathe@thec3.uk](breathe@thec3.uk). -->

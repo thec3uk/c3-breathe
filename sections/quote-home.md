@@ -1,16 +1,19 @@
 ---
-layout: content
+layout: post
 key: quote
+full-width: true
 ---
 
-<p class="h1 alt-title quote-lg">
 
-"She is clothed with <br>
-strength and dignity <br>
-and laughs with no <br>
-fear of the future"
-</p>
-
-<p class="verse">
-Proverbs 31 v5 NLT
-</p>
+<video
+  muted="muted"
+  loop="loop"
+  autoPlay="autoplay"
+  playinline="playinline"
+  poster="/img/0184.jpg">
+  <source
+    type="video/mp4"
+    src="/img/breathe-2019-highlights.mp4"/>
+  <track default kind="captions" />
+  <track kind="descriptions" />
+</video>

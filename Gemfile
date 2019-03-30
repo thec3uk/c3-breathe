@@ -13,7 +13,7 @@ gem "jekyll", "3.6.3"
 gem 'jekyll-sitemap'
 
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
-gem "urban-static", "0.1.7"
+gem "urban-static", "0.1.9"
 # gem "urban-static", github: "nanorepublica/urban-static", branch: "feature/multiple-ctas"
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
