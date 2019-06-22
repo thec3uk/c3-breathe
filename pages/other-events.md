@@ -6,7 +6,7 @@ header:
   title: Other Events
 key: other-events
 ---
-<br/>
+<!-- <br/>
 
 # Breathe <span class="alt-title">All Access Pass</span>
 
@@ -28,7 +28,7 @@ On Saturday 11 May we will be joined by Charlie Blyth from Hillsong London. Char
 
 We have mocktails and cupcakes planned so you don't want to miss out on a great night with the girls!
 
-Save the date - [book in now](https://thec3.churchsuite.co.uk/events/ntcmqgpb) for only &pound;15.
+Save the date - [book in now](https://thec3.churchsuite.co.uk/events/ntcmqgpb) for only &pound;15. -->
 
 
 <br/>
