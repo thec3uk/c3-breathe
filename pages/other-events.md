@@ -28,7 +28,7 @@ On Saturday 11 May we will be joined by Charlie Blyth from Hillsong London. Char
 
 We have mocktails and cupcakes planned so you don't want to miss out on a great night with the girls!
 
-Save the date - [book in now](https://thec3.churchsuite.co.uk/events/ntcmqgpb) for only &pound;15. -->
+Save the date - [book in now](https://thec3.churchsuite.co.uk/events/ntcmqgpb) for only &pound;15. 
 
 
 <br/>
@@ -41,7 +41,7 @@ Join us for a light breakfast as we set out to encourage, stretch and propel you
 
 [Book in here](https://thec3.churchsuite.co.uk/events/dbsatiwq) for &pound;20
 
-
+-->
 <br/>
 
 
