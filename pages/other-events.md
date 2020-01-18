@@ -58,6 +58,26 @@ Price: &pound;25
 <br/>
 -->
 
+<div class="text-center">
+
+<h1>SAVE THE DATE!</h1>
+<p>More information to follow soon...</p>
+
+
+<h2>2020 dates for your diary</h2>
+
+
+
+
+<h3>28 March - <span class="alt-title">Bury St Edmunds Breathe Night</span></h3>
+<h3>24 April - <span class="alt-title">Breathe Women in the workplace breakfast</span></h3>
+<h3>11 June - <span class="alt-title">Breathe Communication Masterclass</span></h3>
+<h3>26 September - <span class="alt-title">Breathe Brunch</span></h3>
+
+</div>
+<br/>
+
+
 # Breathe <span class="alt-title">Women</span>
 
 Breathe Women is at the heart of what we do at Breathe. An opportunity for women to come together, study God’s word and encourage each other, in the midst of what is often a hectic life. Creating a community to support and empower us to live our best life! Child care is provided.
@@ -68,6 +88,53 @@ We look forward to welcoming you!
 * Time: 10:30am - 12pm
 * Frequency: Fortnightly
 * Where: C3 CENTRE, Coldhams Lane, Cambridge
+
+<br/>
+
+<div class="row">
+    <div class="col-xs-12 col-md-4">
+      <h3>Spring Dates</h3>
+      <ul>
+        <li>30<sup>th</sup> Jan</li>
+        <li>13<sup>th</sup> Feb</li>
+        <li>27<sup>th</sup> Feb</li>
+        <li>12<sup>th</sup> March</li>
+        <li>26<sup>th</sup> March </li>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-md-4">
+      <h3>Summer Dates</h3>
+      <ul>
+        <li>23<sup>rd</sup> April </li>
+        <li>7<sup>th</sup> May</li>
+        <li>21<sup>st</sup> May</li>
+        <li>4<sup>th</sup> June </li>
+        <li>18<sup>th</sup> June</li>
+        <li>2<sup>nd</sup> July </li>
+        <li>16<sup>th</sup> July</li>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-md-4">
+      <h3>Autumn Dates</h3>
+      <ul>
+        <li>10<sup>th</sup> September </li>
+        <li>24<sup>th</sup> September</li>
+        <li>8<sup>th</sup> October</li>
+        <li>22<sup>nd</sup> October </li>
+        <li>5<sup>th</sup> November </li>
+        <li>19<sup>th</sup> November </li>
+        <li>3<sup>rd</sup> December </li>
+        <li>17<sup>th</sup> December </li>
+      </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
 
 
 <!-- HACK! -->

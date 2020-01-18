@@ -21,9 +21,11 @@ key: about
   <div class="embed-responsive embed-responsive-16by9" style="margin-top: 30px;">
     <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/324525585"></iframe>
   </div>
-
   <div class="row" style="margin-top: 70px;">
-    <div class="col-xs-12 col-md-4 col-md-offset-2">
+     <h2 class="text-center">Register now</h2>
+  </div>
+  <div class="row" >
+    <div class="col-xs-12 col-md-4">
       <div class="text-center">
         <a type="button" href="/conference" class="btn btn-secondary btn-lg">Main Conference</a>
       </div>
@@ -31,6 +33,11 @@ key: about
     <div class="col-xs-12 col-md-4">
       <div class="text-center">
         <a type="button" href="/conference/girls" class="btn btn-secondary btn-lg">Breathe Girls</a>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+      <div class="text-center">
+        <a type="button" href="/conference/kids" class="btn btn-secondary btn-lg">Breathe Kids</a>
       </div>
     </div>
   </div>
