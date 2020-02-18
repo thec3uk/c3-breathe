@@ -46,13 +46,13 @@ const Header = ({
   }, [scrollTop]);
   return (
     <header
-      className="min-h-screen flex flex-col"
+      className="min-h-screen flex flex-col text-black"
       style={{
         background: `url(${image.url})`,
       }}
     >
 
-      <nav className={`py-6 px-40 fixed top-0 animated flex justify-between min-w-full z-10 ${scrolling ? "bg-breathe-blue shadow-md": ""}`}>
+      <nav className={`py-6 px-40 fixed top-0 animated flex justify-between min-w-full z-100 ${scrolling ? "bg-breathe-blue-1 shadow": ""}`}>
         <div
           className="uppercase text-lg font-sans"
           style={{ color: headerFontColour }}

@@ -4,7 +4,7 @@ import { RichText } from "prismic-reactjs"
 
 const TeamSlice = ({ data }) => {
   return (
-    <section className="px-16">
+    <section className="px-16 text-black">
       <h2 className="text-6xl font-serifAlt">
         {RichText.asText(data.primary.team_section)}
       </h2>

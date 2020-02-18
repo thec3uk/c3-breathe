@@ -14,9 +14,9 @@ const Page = ({ data }) => {
 
 }
 
-export const query = graphql`query {
+export const query = graphql`query Page($uid: String!) {
   prismic {
-    page(lang: "en-gb", uid: "about") {
+    page(lang: "en-gb", uid: $uid) {
       _meta {
         id
         uid
@@ -28,8 +28,13 @@ export const query = graphql`query {
         ...blockTitleTextSlice
         ...teamSlice
         ...textSlice
+        ...titleCTAEmbedSlice
+        ...geometricSlice
+        ...articleList
+        ...blockTitleCTATextSlice
       }
       ...header
+      ...footer
       page_title
       template
     }

@@ -9,7 +9,7 @@ const BlockTitleTextSlice = ({ data }) => {
             <div className="px-40 py-8 left-0 absolute" style={{ backgroundColor: data.primary.block_colour.colour}}>
               <h2 className="font-serifAlt text-5xl" style={{ color: data.primary.background_colour.colour}}>{data.primary.title}</h2>
             </div>
-            <div className="mt-48">
+            <div className="mt-48 text-black">
               {RichText.render(data.primary.content)}
             </div>
         </section>

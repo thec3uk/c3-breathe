@@ -4,13 +4,13 @@ import { RichText } from "prismic-reactjs"
 
 
 const TextSlice = ({ data }) => {
-  console.log(data);
+    console.log(data);
     return (
-        <section className="px-16 py-20" style={{ backgroundColor: data.primary.background_colour.colour}}>
+        <section className={`px-16 py-20 text-black ${data.primary.full_width && '-mx-24'}`} style={{ backgroundColor: data.primary.background_colour.colour}}>
             <div className="text-center py-8 pb-16 font-serifAlt text-5xl">
                 {RichText.render(data.primary.textTitle)}
             </div>
-            <div>
+            <div className={`${data.primary.full_width && 'mx-24'}`}>
                 {RichText.render(data.primary.content)}
             </div>
         </section>
@@ -27,6 +27,7 @@ export const query = graphql`fragment textSlice on PRISMIC_PageBodyText {
     }
     textTitle:title
     content
+    full_width
   }
 }`
 
