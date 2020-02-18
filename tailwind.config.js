@@ -14,7 +14,22 @@ module.exports = {
 
       black: '#343434',
       white: '#fff',
-      'breathe-blue': '#9ED0E1',
+      grey: {
+        1: "#EFEFEF",
+        2: "#D1D1D1",
+        3: "#6C6C6C",
+        4: "#4E4E4E",
+      },
+      'breathe-blue': {
+        1: '#9ED0E1',
+        2: '#699AAA',
+        3: '#4A7C8B',
+      },
+      salmon: {
+        1: '#FF8882',
+        2: '#E3706B',
+        3: '#C0514F',
+      },
 
       gray: {
         100: '#f7fafc',
@@ -147,6 +162,9 @@ module.exports = {
       '48': '12rem',
       '56': '14rem',
       '64': '16rem',
+      '72': '18rem',
+      '80': '20rem',
+      '88': '22rem',
     },
     backgroundColor: theme => theme('colors'),
     backgroundPosition: {
@@ -184,10 +202,10 @@ module.exports = {
       '8': '8px',
     },
     boxShadow: {
-      default: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
-      md: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-      lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
-      xl: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+      default: '0 1px 3px 0 rgba(0, 0, 0, 0.6), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+      md: '0 4px 6px -1px rgba(0, 0, 0, 0.6), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+      lg: '0 10px 15px -3px rgba(0, 0, 0, 0.6), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+      xl: '0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
       '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
       inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
       outline: '0 0 0 3px rgba(66, 153, 225, 0.5)',
@@ -255,6 +273,9 @@ module.exports = {
       '4xl': '2.25rem',
       '5xl': '3rem',
       '6xl': '4rem',
+      '7xl': '5rem',
+      '8xl': '6rem',
+      '9xl': '7rem',
     },
     fontWeight: {
       hairline: '100',
@@ -411,6 +432,7 @@ module.exports = {
       '30': '30',
       '40': '40',
       '50': '50',
+      '100': '100',
     },
     transform: { // defaults to this value
       'none': 'none',
