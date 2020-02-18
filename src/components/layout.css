@@ -23,6 +23,36 @@
 
 @tailwind base;
 
+h1 {
+  @apply text-7xl;
+}
+h2 {
+  @apply text-6xl;
+}
+h2 .font-accent {
+  @apply text-7xl;
+}
+
+h3 {
+  @apply text-5xl;
+}
+
+h4 {
+  @apply text-3xl;
+}
+
+h5 {
+  @apply text-2xl;
+}
+
+h6 {
+  @apply text-xl;
+}
+
+p {
+  @apply mb-8;
+}
+
 @tailwind components;
 
 @tailwind utilities;

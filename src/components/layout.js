@@ -31,7 +31,8 @@ const Layout = ({ children, bgColour, page }) => {
         backgroundColor: bgColour
       }}>
         <main>{children}</main>
-        <Footer siteTitle={data.site.siteMetadata.title} />
+        <Footer siteTitle={data.site.siteMetadata.title} has_newsletter_slice={page.has_newsletter_slice} has_contact_slice={page.has_contact_slice}
+      contact_slice_size={page.contact_slice_size} />
       </div>
     </>
   )
