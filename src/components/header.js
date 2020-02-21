@@ -19,7 +19,7 @@ const Header = ({
   const data = useStaticQuery(graphql`
     query NavBar {
       prismic {
-        allNavBar: allPages(tags: "navbar") {
+        allNavBar: allPages(tags: "navbar", sortBy: page_title_ASC) {
           ... on PRISMIC_PageConnectionConnection {
             edges {
               node {
