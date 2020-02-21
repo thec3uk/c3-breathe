@@ -1,6 +1,7 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import { RichText } from "prismic-reactjs"
+import Link from '../link'
 
 
 const BlockTitleCTATextSlice = ({ data }) => {

@@ -11,11 +11,13 @@ const Link = graphql`fragment link on PRISMIC__Linkable {
       uid
       id
     }
+
   }
   ... on PRISMIC__FileLink {
     url
     name
     size
+    _linkType
   }
   ... on PRISMIC__ImageLink {
     url
@@ -23,9 +25,11 @@ const Link = graphql`fragment link on PRISMIC__Linkable {
     size
     height
     width
+    _linkType
   }
   ... on PRISMIC__ExternalLink {
     url
+    _linkType
   }
 }`
 

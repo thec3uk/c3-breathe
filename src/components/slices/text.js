@@ -4,7 +4,6 @@ import { RichText } from "prismic-reactjs"
 
 
 const TextSlice = ({ data }) => {
-    console.log(data);
     return (
         <section className={`px-16 py-20 text-black ${data.primary.full_width && '-mx-24'}`} style={{ backgroundColor: data.primary.background_colour.colour}}>
             <div className="text-center py-8 pb-16 font-serifAlt text-5xl">

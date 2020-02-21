@@ -1,6 +1,7 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import { RichText } from "prismic-reactjs"
+import Link from '../link'
 
 
 const TitleEmbedCTASlice = ({ data }) => {
@@ -32,7 +33,7 @@ export const query = graphql`fragment titleCTAEmbedSlice on PRISMIC_PageBodyTitl
     embed
     content
     cta_link {
-      _linkType
+      ...link
     }
     cta_title
     cta_button_colour {

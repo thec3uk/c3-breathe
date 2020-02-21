@@ -1,5 +1,6 @@
-import { graphql, useStaticQuery, Link } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import React, { useEffect, useState } from "react"
+import Link from './link'
 
 const navCssClasses = (defaultColour, activeColour, activePage) => {
   if (activePage) {
@@ -15,24 +16,24 @@ const Header = ({
   pageSubtitle,
   headerFontColour,
   currentUid,
+  headerCtaTitle,
+  headerCtaUrl,
 }) => {
   const data = useStaticQuery(graphql`
-    query NavBar {
-      prismic {
-        allNavBar: allPages(tags: "navbar", sortBy: page_title_ASC) {
-          ... on PRISMIC_PageConnectionConnection {
-            edges {
-              node {
-                page_title
-                _meta {
-                  uid
+      query NavBar {
+        prismic {
+          allNavBar: allPages(tags: "navbar", sortBy: page_title_ASC) {
+            ... on PRISMIC_PageConnectionConnection {
+              edges {
+                node {
+                  page_title
+                  ...link
                 }
               }
             }
           }
         }
       }
-    }
   `)
   const [scrolling, setScrolling] = useState(false);
   const scrollTop = 200;
@@ -68,7 +69,7 @@ const Header = ({
                 navCssClasses("white", "black", currentUid === node._meta.uid)
               }
             >
-              <Link to={`/${node._meta.uid}`}>{node.page_title}</Link>
+              <Link to={node}>{node.page_title}</Link>
             </li>
           ))}
         </ul>
@@ -79,6 +80,11 @@ const Header = ({
       >
         <h1 className="font-serifAlt text-6xl">{pageTitle}</h1>
         <h2 className="font-accent text-6xl">{pageSubtitle}</h2>
+        {headerCtaUrl && <div className="mt-8">
+          <Link to={headerCtaUrl} className="border uppercase py-3 px-6 hover:border-black hover:text-black">
+            {headerCtaTitle}
+          </Link>
+        </div>}
       </div>
     </header>
   )
@@ -89,6 +95,9 @@ export default Header
 export const query = graphql`
   fragment header on PRISMIC_Page {
     header_cta
+    header_cta_link {
+      ...link
+    }
     header_sub_title
     header_title
     header_image

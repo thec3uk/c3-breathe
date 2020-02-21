@@ -5,10 +5,10 @@ import Layout from '../components/layout'
 import Slices from '../components/slices'
 
 const Page = ({ data }) => {
-    const page = data.prismic.page;
+    const pageData = data.prismic.page;
     return (
-        <Layout bgColour={page.bg_colour.colour} page={page}>
-            <Slices slices={page.body} />
+        <Layout bgColour={pageData.bg_colour.colour} page={pageData}>
+            <Slices slices={pageData.body} />
         </Layout>
     )
 
@@ -35,6 +35,7 @@ export const query = graphql`query Page($uid: String!) {
       }
       ...header
       ...footer
+      ...link
       page_title
       template
     }

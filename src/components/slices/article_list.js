@@ -1,9 +1,9 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import { RichText } from "prismic-reactjs"
+import Link from '../link'
 
 const ListOfArticlesSlice = ({ data }) => {
-  console.log(data)
   return (
     <section
       className="px-40 py-20 flex flex-col -mx-24"
@@ -22,7 +22,7 @@ const ListOfArticlesSlice = ({ data }) => {
                 filter: `opacity(50%)`,
                 backdropFilter: `blur(4px)`
               }}>
-              <Link>
+              <Link to={articles_to_link}>
                 <h4 className="uppercase font-serif text-white" >{title}</h4>
               </Link>
               </div>

@@ -1,4 +1,5 @@
 import React, { Fragment } from "react"
+import { graphql } from 'gatsby'
 
 import ContactLargeSlice from './contact/large'
 import ContactSmallSlice from './contact/small'

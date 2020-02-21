@@ -1,5 +1,6 @@
 import React, { Fragment } from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
+import Link from '../link'
 
 const GeometricCTASlice = ({ data }) => {
   return (
@@ -42,27 +43,7 @@ export const query = graphql`
       cta_text
       cta_type
       cta_location {
-        _linkType
-        ... on PRISMIC__Document {
-          _meta {
-            uid
-          }
-        }
-        ... on PRISMIC__FileLink {
-          url
-          name
-          size
-        }
-        ... on PRISMIC__ImageLink {
-          url
-          name
-          size
-          height
-          width
-        }
-        ... on PRISMIC__ExternalLink {
-          url
-        }
+        ...link
       }
     }
     primary {
