@@ -5,6 +5,15 @@ module.exports = {
     author: `@breatheuk`,
   },
   plugins: [
+      {
+        resolve: 'gatsby-plugin-mailchimp',
+        options: {
+          endpoint:
+            process.env.NODE_ENV !== 'production'
+              ? 'https://thec3.us19.list-manage.com/subscribe/post?u=baac982817e7fb161022a1253&amp;id=7443c2e349'
+              : 'https://thec3.us19.list-manage.com/subscribe/post?u=baac982817e7fb161022a1253&amp;id=9b6ed04842',
+        },
+      },
       `gatsby-plugin-postcss`,
       {
       resolve: 'gatsby-source-prismic-graphql',
@@ -34,8 +43,8 @@ module.exports = {
         name: `The Breathe Collective`,
         short_name: `Breathe`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#9ED0E1`,
+        theme_color: `#9ED0E1`,
         display: `minimal-ui`,
         icon: `static/images/breathe-square.png`, // This path is relative to the root of the site.
       },
