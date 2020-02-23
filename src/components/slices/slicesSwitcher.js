@@ -9,7 +9,7 @@ import ListOfArticlesSlice from './article_list'
 import BlockTitleCTATextSlice from './text_with_cta'
 
 const Slices = ({ slices }) => {
-  return slices.map((contentSlice, idx) => {
+  return slices && slices.map((contentSlice, idx) => {
     const componentListObj = {
       text: TextSlice,
       block_title_with_text: BlockTitleTextSlice,

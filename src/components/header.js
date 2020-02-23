@@ -45,11 +45,12 @@ const Header = ({
 
     return () => window.removeEventListener("scroll", onScroll);
   }, [scrollTop]);
+  const headerImage = image === null ? `/images/2020-bg.png` : image.url
   return (
     <header
       className="min-h-screen flex flex-col text-black"
       style={{
-        background: `url(${image.url})`,
+        background: `url(${headerImage})`,
       }}
     >
 

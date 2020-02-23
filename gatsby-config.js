@@ -5,34 +5,55 @@ module.exports = {
     author: `@breatheuk`,
   },
   plugins: [
-      {
-        resolve: 'gatsby-plugin-mailchimp',
-        options: {
-          endpoint:
-            process.env.NODE_ENV !== 'production'
-              ? 'https://thec3.us19.list-manage.com/subscribe/post?u=baac982817e7fb161022a1253&amp;id=7443c2e349'
-              : 'https://thec3.us19.list-manage.com/subscribe/post?u=baac982817e7fb161022a1253&amp;id=9b6ed04842',
-        },
-      },
-      `gatsby-plugin-postcss`,
-      {
-      resolve: 'gatsby-source-prismic-graphql',
+    {
+      resolve: "gatsby-plugin-mailchimp",
       options: {
-        repositoryName: 'breathe', // (required)
-        accessToken: 'MC5YandpX3hNQUFDTUFpMjR2.bk_vv73vv73vv73vv73vv71iYQzvv73vv73vv73vv73vv73vv71iUzzvv73vv73vv70P77-9Pe-_vUfvv70577-977-977-9', // (optional)
-        path: '/preview', // (optional, default: /preview)
+        endpoint:
+          process.env.NODE_ENV !== "production"
+            ? "https://thec3.us19.list-manage.com/subscribe/post?u=baac982817e7fb161022a1253&amp;id=7443c2e349"
+            : "https://thec3.us19.list-manage.com/subscribe/post?u=baac982817e7fb161022a1253&amp;id=9b6ed04842",
+      },
+    },
+    `gatsby-plugin-postcss`,
+    {
+      resolve: "gatsby-source-prismic-graphql",
+      options: {
+        repositoryName: "breathe", // (required)
+        accessToken:
+          "MC5YandpX3hNQUFDTUFpMjR2.bk_vv73vv73vv73vv73vv71iYQzvv73vv73vv73vv73vv73vv71iUzzvv73vv73vv70P77-9Pe-_vUfvv70577-977-977-9", // (optional)
+        path: "/preview", // (optional, default: /preview)
         previews: true, // (optional, default: false)
-        pages: [{ // (optional)
-          type: 'Page',         // TypeName from prismic
-          match: '/:uid',  // Pages will be generated under this pattern (optional)
-          path: '/page',        // Placeholder page for unpublished documents
-          component: require.resolve('./src/templates/page.js'),
-        }],
+        pages: [
+          {
+            // (optional)
+            type: "Page", // TypeName from prismic
+            match: "/:uid", // Pages will be generated under this pattern (optional)
+            // filter: data => data.node._meta.uid !== 'homepage',
+            filter: data => !data.node._meta.uid.includes('homepage'),
+            path: "/page", // Placeholder page for unpublished documents
+            component: require.resolve("./src/templates/page.js"),
+          },
+          {
+            // (optional)
+            type: "Page", // TypeName from prismic
+            match: "/", // Pages will be generated under this pattern (optional)
+            filter: data => data.node._meta.uid.includes('homepage'),
+            path: "/page", // Placeholder page for unpublished documents
+            component: require.resolve("./src/templates/page.js"),
+          },
+          {
+            // (optional)
+            type: "Redirect", // TypeName from prismic
+            match: "/:uid", // Pages will be generated under this pattern (optional)
+            path: "/redirect", // Placeholder page for unpublished documents
+            component: require.resolve("./src/templates/redirect.js"),
+          }
+        ],
         // sharpKeys: [
         //   /image|photo|picture/, // (default)
         //   'profilepic',
         // ],
-      }
+      },
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,

@@ -9,7 +9,7 @@ export const linkResolver = doc => {
     }
     to = linkTypes[doc._linkType]
     if (to === undefined) {
-      console.error("Error: unable to parse the Link")
+      console.error("Error: unable to parse the Link", doc)
       return "/"
     }
     return to(doc)
