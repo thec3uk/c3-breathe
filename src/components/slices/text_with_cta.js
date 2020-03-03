@@ -18,7 +18,7 @@ const BlockTitleCTATextSlice = ({ data }) => {
               </div>
               <div className="col-start-2 row-start-2">
                 <div className="text-center py-2 px-10 shadow bg-black">
-                  <Link className="font-serif uppercase text-3xl text-white" to="thing">{data.primary.cta_title}</Link>
+                  <Link className="font-serif uppercase text-3xl text-white" to={data.primary.cta_link}>{data.primary.cta_title}</Link>
                 </div>
               </div>
             </div>

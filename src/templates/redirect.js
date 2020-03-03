@@ -2,7 +2,6 @@ import React from "react"
 import { graphql } from "gatsby"
 
 const Redirect = ({ data }) => {
-  console.log(data);
   return data.prismic.redirect !== null ? (
     <div>
       Redirecting you to {data.prismic.redirect.title}:{" "}

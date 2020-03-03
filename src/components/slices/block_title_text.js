@@ -5,11 +5,11 @@ import { RichText } from "prismic-reactjs"
 
 const BlockTitleTextSlice = ({ data }) => {
     return (
-        <section className="px-16 py-20" style={{ backgroundColor: data.primary.background_colour.colour}}>
-            <div className="px-40 py-8 left-0 absolute" style={{ backgroundColor: data.primary.block_colour.colour}}>
+        <section className="px-24 py-20" style={{ backgroundColor: data.primary.background_colour.colour}}>
+            <div className="px-48 py-8 left-0 absolute" style={{ backgroundColor: data.primary.block_colour.colour}}>
               <h2 className="font-serifAlt text-5xl" style={{ color: data.primary.background_colour.colour}}>{data.primary.title}</h2>
             </div>
-            <div className="mt-48 text-black">
+            <div className={`mt-48 text-black ${data.primary.is_body_text_serif && 'font-serif'}`} style={{ color: data.primary.body_text_colour.colour}}>
               {RichText.render(data.primary.content)}
             </div>
         </section>
@@ -29,6 +29,10 @@ export const query = graphql`fragment blockTitleTextSlice on PRISMIC_PageBodyBlo
     block_colour {
       ...colour
     }
+    body_text_colour {
+      ...colour
+    }
+    is_body_text_serif
   }
 }`
 

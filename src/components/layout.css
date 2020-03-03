@@ -53,6 +53,14 @@ p {
   @apply mb-8;
 }
 
+#map p {
+  @apply mb-0;
+}
+
+section li {
+    @apply list-inside list-disc;
+}
+
 @tailwind components;
 
 @tailwind utilities;

@@ -1,10 +1,11 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql } from "gatsby"
 
 import ContactSmallSlice from './small'
 
 const ContactLargeSlice = () => {
-    const data = useStaticQuery(graphql`
+
+    const query = graphql`
       query ContactInfo {
         prismic {
           allContact_informations {
@@ -17,9 +18,11 @@ const ContactLargeSlice = () => {
           }
         }
       }
-    `)
-    const contactData = data.prismic.allContact_informations.edges[0].node
-    return (
+    `
+    // const data = useStaticQuery(query)
+    return( <StaticQuery query={`${query}`} render={ data => {
+        const contactData = data.prismic.allContact_informations.edges[0].node
+        return (
         <section className="px-16 py-32 text-black -mx-24 bg-breathe-blue-2" >
             <h3 className="text-center py-8 font-serif text-white text-5xl uppercase">
                 Contact
@@ -31,7 +34,7 @@ const ContactLargeSlice = () => {
                 <ContactSmallSlice inverse={true} />
             </div>
         </section>
-    )
+    )}} />)
 }
 
 

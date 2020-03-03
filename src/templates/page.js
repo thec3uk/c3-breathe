@@ -35,6 +35,9 @@ export const query = graphql`query Page($uid: String!) {
         ...geometricSlice
         ...articleList
         ...blockTitleCTATextSlice
+        ...columnTextSlice
+        ...mapSlice
+        ...textBackgroundImage
       }
       ...header
       ...footer
