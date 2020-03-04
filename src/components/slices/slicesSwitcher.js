@@ -30,7 +30,7 @@ const Slices = ({ slices }) => {
       console.warn("Warning: default case, content is unhandled")
       return <div key={idx}></div>
     }
-    return (<div key={idx} className="py-24"><Component key={idx} data={contentSlice} /></div>)
+    return (<div key={idx} id={`${idx}`} className="py-24"><Component key={idx} data={contentSlice} /></div>)
   })
 }
 

@@ -61,10 +61,11 @@ module.exports = {
             component: require.resolve("./src/templates/redirect.js"),
           }
         ],
-        // sharpKeys: [
-        //   /image|photo|picture/, // (default)
-        //   'profilepic',
-        // ],
+        sharpKeys: [
+          /image|photo|picture/, // (default)
+          'portrait',
+          'logo',
+        ],
       },
     },
     `gatsby-plugin-react-helmet`,

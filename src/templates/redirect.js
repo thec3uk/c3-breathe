@@ -1,6 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
 
+import { Link } from '../utils/fragments'
+
 const Redirect = ({ data }) => {
   return data.prismic.redirect !== null ? (
     <div>
@@ -31,3 +33,5 @@ export const query = graphql`
 `
 
 export default Redirect
+
+Redirect.fragments = [Link]

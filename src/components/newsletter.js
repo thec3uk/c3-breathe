@@ -106,7 +106,7 @@ const NewsletterSlice = () => {
             <div className="bg-breathe-blue-1 mr-12 w-7/12 flex flex-row justify-end items-end">
               <img
                 src="/images/a223-24-blue.jpg"
-                alt=""
+                alt="Women in a field"
                 style={{
                   height: "680px",
                 }}

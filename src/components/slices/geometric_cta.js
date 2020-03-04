@@ -29,20 +29,21 @@ const GeometricCTASlice = ({ data }) => {
         </div>
         <div className="text-center col-start-3 row-start-2 z-40 mt-12 uppercase text-sm">
           {data.fields.map((item, idx) => {
+            const cta_hash = item.cta_hash ? `#${item.cta_hash}`: ''
             return (
               <Fragment key={idx}>
                 {idx !== 0 && `|`}
                 {item.cta_type === "link" ? (
                   <Link
                     className="mx-1 hover:text-white"
-                    to={`/${item.cta_location._meta.uid}`}
+                    to={`/${item.cta_location._meta.uid}${cta_hash}`}
                   >
                     {item.cta_text}
                   </Link>
                 ) : item.cta_type === "button" ? (
                   <Link
                     className="mx-1 hover:text-black hover:bg-white bg-black text-white px-10 py-3 shadow"
-                    to={`/${item.cta_location._meta.uid}`}
+                    to={`/${item.cta_location._meta.uid}${cta_hash}`}
                   >
                     {item.cta_text}
                   </Link>
@@ -64,6 +65,7 @@ export const query = graphql`
     fields {
       cta_text
       cta_type
+      cta_hash
       cta_location {
         ...link
       }

@@ -1,6 +1,9 @@
 import { graphql, StaticQuery } from "gatsby"
 import React, { useEffect, useState } from "react"
+import { withPreview } from 'gatsby-source-prismic-graphql';
 import Link from "./link"
+
+import { Link as LinkFragment } from '../utils/fragments'
 
 const navCssClasses = (defaultColour, activeColour, activePage) => {
   if (activePage) {
@@ -50,7 +53,7 @@ const Header = ({
   return (
     <StaticQuery
       query={`${staticQuery}`}
-      render={data => (
+      render={withPreview(data => (
         <header
           className="min-h-screen flex flex-col text-black bg-top bg-cover"
           style={{
@@ -104,7 +107,7 @@ const Header = ({
             )}
           </div>
         </header>
-      )}
+      ), query, [LinkFragment])}
     />
   )
 }

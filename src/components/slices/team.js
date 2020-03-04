@@ -1,8 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { RichText } from "prismic-reactjs"
+// import Img from 'gatsby-image';
+import get from 'lodash/get';
 
 const LargeBio = ({ person }) => {
+    // const sharpImage = get(person, 'portraitSharp.childImageSharp.fixed');
     return (
       <div  className="flex flex-row mt-12">
         {person.reversed && (
@@ -16,11 +19,11 @@ const LargeBio = ({ person }) => {
           </div>
         )}
         {person.show_image && (
-          <img
-            className="rounded-full max-w-xxs"
-            src={person.portrait.url}
-            alt=""
-          />
+          // sharpImage ? (
+          //   <Img fixed={sharpImage} className="rounded-full max-w-xxs" />
+          // ) : (
+            <img src={get(person, 'portrait.url')} className="rounded-full max-w-xxs" alt={person.first_and_lastname} />
+          // )
         )}
         {!person.reversed && (
           <div className="pl-12 flex justify-center flex-col">
@@ -73,6 +76,13 @@ export const query = graphql`
     fields {
       position
       portrait
+      portraitSharp {
+        childImageSharp {
+          fixed(width: 200, height: 200, quality: 90) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
       show_image
       first_and_lastname
       reversed
