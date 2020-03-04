@@ -256,7 +256,7 @@ function MapSlice({ data }) {
   }
 
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: "AIzaSyB-fjiF76Uh_s7gIZ7-KDfKWPQZWaMZNrk",
+    googleMapsApiKey: process.env.GATSBY_GOOGLE_MAPS_KEY || "AIzaSyB-fjiF76Uh_s7gIZ7-KDfKWPQZWaMZNrk",
   })
 
   if (loadError) {

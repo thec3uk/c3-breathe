@@ -1,3 +1,6 @@
+
+require("dotenv").config()
+
 module.exports = {
   siteMetadata: {
     title: `Breathe`,
@@ -31,8 +34,7 @@ module.exports = {
       resolve: "gatsby-source-prismic-graphql",
       options: {
         repositoryName: "breathe", // (required)
-        accessToken:
-          "MC5YandpX3hNQUFDTUFpMjR2.bk_vv73vv73vv73vv73vv71iYQzvv73vv73vv73vv73vv73vv71iUzzvv73vv73vv70P77-9Pe-_vUfvv70577-977-977-9", // (optional)
+        accessToken: process.env.PRISMIC_ACCESS_TOKEN,
         path: "/preview", // (optional, default: /preview)
         previews: true, // (optional, default: false)
         pages: [

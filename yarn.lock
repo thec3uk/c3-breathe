@@ -5659,7 +5659,7 @@ gatsby-source-graphql@^2.0.15, gatsby-source-graphql@^2.0.8:
     node-fetch "^1.7.3"
     uuid "^3.3.3"
 
-gatsby-source-prismic-graphql@^3.4.1:
+gatsby-source-prismic-graphql@^3.4.1-alpha.0:
   version "3.4.1-alpha.0"
   resolved "https://registry.yarnpkg.com/gatsby-source-prismic-graphql/-/gatsby-source-prismic-graphql-3.4.1-alpha.0.tgz#314a2893940359a21f9f7992d13ae15d168906a2"
   integrity sha512-D/BYw/C8HGcs6XK+pkck83gfwgVaqSh6OjbJv1X5qjz5w17dmCF9MoT68WOZMlyFLioADfdu7Ev5WeDEPQxEgw==

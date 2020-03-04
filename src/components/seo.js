@@ -26,7 +26,6 @@ function SEO({ description, lang, meta, title }) {
       query={`${query}`}
       render={({ site, sitePlugin  }) => {
         const metaDescription = description || site.siteMetadata.description
-        console.log(sitePlugin);
         return (
           <Helmet
             htmlAttributes={{
