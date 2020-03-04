@@ -27,8 +27,7 @@ const linkResolver = doc => {
 
 
 exports.createPages = ({ graphql, actions }) => {
-  const { createPage, createRedirect } = actions
-
+  const { createRedirect } = actions
   return new Promise((resolve, reject) => {
     graphql(`
       query Redirects {
