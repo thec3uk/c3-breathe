@@ -19,7 +19,23 @@ const Header = ({
   headerCtaTitle,
   headerCtaUrl,
 }) => {
-  // const data = useStaticQuery(query)
+  const staticQuery = graphql`
+    query NavBar {
+      prismic {
+        allNavBar: allPages(tags: "navbar", sortBy: page_title_ASC) {
+          ... on PRISMIC_PageConnectionConnection {
+            edges {
+              node {
+                page_title
+                ...link
+              }
+            }
+          }
+        }
+      }
+    }
+  `
+  // const data = useStaticQuery(staticQuery)
   const [scrolling, setScrolling] = useState(false)
   const scrollTop = 200
   useEffect(() => {
@@ -33,22 +49,7 @@ const Header = ({
   const headerImage = image === null ? `/images/2020-bg.png` : image.url
   return (
     <StaticQuery
-      query={graphql`
-        query NavBar {
-          prismic {
-            allNavBar: allPages(tags: "navbar", sortBy: page_title_ASC) {
-              ... on PRISMIC_PageConnectionConnection {
-                edges {
-                  node {
-                    page_title
-                    ...link
-                  }
-                }
-              }
-            }
-          }
-        }
-      `}
+      query={`${staticQuery}`}
       render={data => (
         <header
           className="min-h-screen flex flex-col text-black bg-top bg-cover"
