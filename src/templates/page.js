@@ -7,10 +7,10 @@ import Slices from '../components/slices'
 const Page = ({ data }) => {
     const pageData = data.prismic.page;
     if (pageData === null) {
-        return (<div>Bad data:  <pre>{JSON.stringify(data)}</pre></div>)
+        return null
     }
     return (
-        <Layout bgColour={pageData.bg_colour.colour} page={pageData}>
+        <Layout data-wio-id={pageData._meta.id} bgColour={pageData.bg_colour.colour} page={pageData}>
             <Slices slices={pageData.body} />
         </Layout>
     )
