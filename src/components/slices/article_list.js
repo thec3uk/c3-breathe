@@ -1,8 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { RichText } from "prismic-reactjs"
-import BackgroundImage from 'gatsby-background-image'
-import Link from '../link'
+import BackgroundImage from "gatsby-background-image"
+import Link from "../link"
 
 const ListOfArticlesSlice = ({ data }) => {
   return (
@@ -16,17 +16,23 @@ const ListOfArticlesSlice = ({ data }) => {
       <div className="flex flex-row justify-between">
         {data.fields.map(({ articles_to_link, title, imageSharp }, idx) => {
           return (
-            <Link to={articles_to_link} key={idx} className="border-2 border-black w-3/12 text-center border-black bg-cover h-88 bg-center flex flex-col justify-end shadow-lg">
-               <BackgroundImage
-                 Tag="div"
-                 fluid={imageSharp.childImageSharp.fluid}
-                 backgroundColor={data.primary.background_colour.colour}
-               >
-                <div className="py-4 bg-black" style={{
-                  filter: `opacity(50%)`,
-                  backdropFilter: `blur(4px)`
-                }}>
-                  <h4 className="uppercase font-serif text-white px-8" >{title}</h4>
+            <Link to={articles_to_link} key={idx} className="border-2 border-black w-3/12 flex flex-col justify-end shadow-lg">
+              <BackgroundImage
+                Tag="div"
+                className=" bg-cover h-88 bg-center flex flex-col justify-end"
+                fluid={imageSharp.childImageSharp.fluid}
+                backgroundColor={data.primary.background_colour.colour}
+              >
+                <div
+                  className="py-4 bg-black text-center"
+                  style={{
+                    filter: `opacity(50%)`,
+                    backdropFilter: `blur(4px)`,
+                  }}
+                >
+                  <h4 className="uppercase font-serif text-white px-8">
+                    {title}
+                  </h4>
                 </div>
               </BackgroundImage>
             </Link>

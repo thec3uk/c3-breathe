@@ -58,6 +58,7 @@ const Header = ({
       query={`${staticQuery}`}
       render={withPreview(data => (
          <BackgroundImage
+          preserveStackingContext={true}
           Tag="header"
           className="min-h-screen flex flex-col text-black bg-top bg-cover"
           fluid={image}
