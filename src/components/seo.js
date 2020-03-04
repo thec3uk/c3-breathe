@@ -4,25 +4,29 @@ import Helmet from "react-helmet"
 import { StaticQuery, graphql } from "gatsby"
 
 function SEO({ description, lang, meta, title }) {
-  const query = graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-          description
-          author
-        }
+  const query = graphql`query SEO {
+    site {
+      siteMetadata {
+        title
+        description
+        author
       }
     }
-  `
+    sitePlugin(pluginOptions: {previews: {eq: true}}) {
+      pluginOptions {
+        repositoryName
+      }
+    }
+  }
+`
   // const { site } = useStaticQuery(query)
 
   return (
     <StaticQuery
       query={`${query}`}
-      render={({ site }) => {
+      render={({ site, sitePlugin  }) => {
         const metaDescription = description || site.siteMetadata.description
-
+        console.log(sitePlugin);
         return (
           <Helmet
             htmlAttributes={{
@@ -64,7 +68,14 @@ function SEO({ description, lang, meta, title }) {
                 content: metaDescription,
               },
             ].concat(meta)}
-          />
+          >
+          <script>{`
+              window.prismic = {
+                endpoint: 'https://${sitePlugin.pluginOptions.repositoryName}.cdn.prismic.io/api/v2'
+              };
+          `}</script>
+          <script type="text/javascript" src="https://static.cdn.prismic.io/prismic.min.js?new=true"></script>
+          </Helmet>
         )
       }}
     />
