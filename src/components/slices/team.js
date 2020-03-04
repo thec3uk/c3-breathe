@@ -22,7 +22,7 @@ const LargeBio = ({ person }) => {
           // sharpImage ? (
           //   <Img fixed={sharpImage} className="rounded-full max-w-xxs" />
           // ) : (
-            <img src={get(person, 'portrait.url')} className="rounded-full max-w-xxs" alt={person.first_and_lastname} />
+            <img src={get(person, 'portrait.url')} className="rounded-full max-w-xxs self-start" alt={RichText.asText(person.first_and_lastname)} />
           // )
         )}
         {!person.reversed && (

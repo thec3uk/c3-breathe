@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { RichText } from "prismic-reactjs"
+import BackgroundImage from 'gatsby-background-image'
 import Link from '../link'
 
 const ListOfArticlesSlice = ({ data }) => {
@@ -13,17 +14,23 @@ const ListOfArticlesSlice = ({ data }) => {
         {RichText.asText(data.primary.title_of_section)}
       </h2>
       <div className="flex flex-row justify-between">
-        {data.fields.map(({ articles_to_link, title, image }, idx) => {
+        {data.fields.map(({ articles_to_link, title, imageSharp }, idx) => {
           return (
-            <Link to={articles_to_link} key={idx} className="border-2 border-black w-3/12 text-center border-black bg-cover h-88 bg-center flex flex-col justify-end shadow-lg" style={{
-              backgroundImage: `url(${image !== null ? image.url : '/images/20180917-231A0496.jpg'})`
-            }}>
-              <div className="py-4 bg-black" style={{
-                filter: `opacity(50%)`,
-                backdropFilter: `blur(4px)`
-              }}>
-                <h4 className="uppercase font-serif text-white px-8" >{title}</h4>
-              </div>
+            <Link to={articles_to_link} key={idx}>
+               <BackgroundImage
+                 Tag="div"
+                 className="border-2 border-black w-3/12 text-center border-black bg-cover h-88 bg-center flex flex-col justify-end shadow-lg"
+                 fluid={imageSharp.childImageSharp.fluid}
+                 backgroundColor={data.primary.background_colour.colour}
+
+               >
+                <div className="py-4 bg-black" style={{
+                  filter: `opacity(50%)`,
+                  backdropFilter: `blur(4px)`
+                }}>
+                  <h4 className="uppercase font-serif text-white px-8" >{title}</h4>
+                </div>
+              </BackgroundImage>
             </Link>
           )
         })}
@@ -41,6 +48,13 @@ export const query = graphql`
         ...link
       }
       image
+      imageSharp {
+        childImageSharp {
+          fluid(quality: 90, maxWidth: 1920) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
     primary {
       title_of_section

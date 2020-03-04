@@ -17,7 +17,6 @@ const Layout = ({ children, bgColour, page }) => {
     }
   `
   // const data = useStaticQuery(query)
-
   return (
     <StaticQuery
       query={`${query}`}
@@ -25,13 +24,14 @@ const Layout = ({ children, bgColour, page }) => {
         <>
           <Header
             siteTitle={data.site.siteMetadata.title}
-            image={page.header_image}
+            image={page.header_imageSharp.childImageSharp.fluid}
             pageTitle={page.header_title}
             pageSubtitle={page.header_sub_title}
             headerCtaTitle={page.header_cta}
             headerCtaUrl={page.header_cta_link}
             headerFontColour={page.header_font_colour.colour}
             currentUid={page._meta.uid}
+            bgColour={bgColour}
           />
           <div
             className="px-24"

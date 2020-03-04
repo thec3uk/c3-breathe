@@ -1,15 +1,15 @@
 import React, { Fragment } from "react"
 import { graphql } from "gatsby"
+import BackgroundImage from 'gatsby-background-image'
 import Link from "../link"
 
 const GeometricCTASlice = ({ data }) => {
   return (
-    <section
-      className="-mx-24 h-screen bg-cover flex flex-col justify-center"
-      style={{
-        backgroundImage: `url(${data.primary.background_image.url})`,
-      }}
-    >
+      <BackgroundImage
+       Tag="section"
+       className="-mx-24 h-screen bg-cover flex flex-col justify-center"
+       fluid={data.primary.background_imageSharp.childImageSharp.fluid}
+     >
       <div className="grid grid-cols-5 grid-rows-2 mt-24 text-black">
         <div
           className={`w-72 h-72 bg-breathe-blue-1 z-30 col-start-4 row-start-1 -ml-20 ${data
@@ -55,7 +55,7 @@ const GeometricCTASlice = ({ data }) => {
           })}
         </div>
       </div>
-    </section>
+    </BackgroundImage>
   )
 }
 
@@ -73,6 +73,13 @@ export const query = graphql`
     primary {
       title
       background_image
+      background_imageSharp {
+        childImageSharp {
+          fluid(quality: 90, maxWidth: 1920) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
       translucent_squares
     }
   }

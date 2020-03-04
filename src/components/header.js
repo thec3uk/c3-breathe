@@ -1,7 +1,9 @@
 import { graphql, StaticQuery } from "gatsby"
 import React, { useEffect, useState } from "react"
 import { withPreview } from 'gatsby-source-prismic-graphql';
+import BackgroundImage from 'gatsby-background-image'
 import Link from "./link"
+
 
 import { Link as LinkFragment } from '../utils/fragments'
 
@@ -21,6 +23,7 @@ const Header = ({
   currentUid,
   headerCtaTitle,
   headerCtaUrl,
+  bgColour,
 }) => {
   const staticQuery = graphql`
     query NavBar {
@@ -49,16 +52,16 @@ const Header = ({
 
     return () => window.removeEventListener("scroll", onScroll)
   }, [scrollTop])
-  const headerImage = image === null ? `/images/2020-bg.png` : image.url
+  // const headerImage = image === null ? `/images/2020-bg.png` : image.url
   return (
     <StaticQuery
       query={`${staticQuery}`}
       render={withPreview(data => (
-        <header
+         <BackgroundImage
+          Tag="header"
           className="min-h-screen flex flex-col text-black bg-top bg-cover"
-          style={{
-            backgroundImage: `url(${headerImage})`,
-          }}
+          fluid={image}
+          backgroundColor={bgColour}
         >
           <nav
             className={`py-6 px-40 fixed top-0 animated flex justify-between min-w-full z-100 ${
@@ -106,7 +109,7 @@ const Header = ({
               </div>
             )}
           </div>
-        </header>
+        </BackgroundImage>
       ), query, [LinkFragment])}
     />
   )
@@ -123,6 +126,13 @@ export const query = graphql`
     header_sub_title
     header_title
     header_image
+    header_imageSharp {
+      childImageSharp {
+        fluid(quality: 90, maxWidth: 1920) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
     header_font_colour {
       ...colour
     }
