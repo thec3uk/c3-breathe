@@ -16,13 +16,11 @@ const ListOfArticlesSlice = ({ data }) => {
       <div className="flex flex-row justify-between">
         {data.fields.map(({ articles_to_link, title, imageSharp }, idx) => {
           return (
-            <Link to={articles_to_link} key={idx}>
+            <Link to={articles_to_link} key={idx} className="border-2 border-black w-3/12 text-center border-black bg-cover h-88 bg-center flex flex-col justify-end shadow-lg">
                <BackgroundImage
                  Tag="div"
-                 className="border-2 border-black w-3/12 text-center border-black bg-cover h-88 bg-center flex flex-col justify-end shadow-lg"
                  fluid={imageSharp.childImageSharp.fluid}
                  backgroundColor={data.primary.background_colour.colour}
-
                >
                 <div className="py-4 bg-black" style={{
                   filter: `opacity(50%)`,
