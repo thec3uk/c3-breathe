@@ -19,7 +19,7 @@ key: about
 
   <!-- 16:9 aspect ratio -->
   <div class="embed-responsive embed-responsive-16by9" style="margin-top: 30px;">
-    <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/324525585"></iframe>
+    <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/325671963"></iframe>
   </div>
   <div class="row" style="margin-top: 70px;">
      <h2 class="text-center">Register now</h2>
