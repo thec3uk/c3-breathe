@@ -19,13 +19,13 @@ import { query as Header } from "../components/header"
 import { query as Footer } from "../components/footer"
 
 const Page = ({ data }) => {
-  const pageData = data.prismic.page
-  if (pageData === null) {
+  if (data.prismic === null) {
     return null
   }
+  const pageData = data.prismic.page
+
   return (
     <Layout
-      data-wio-id={pageData._meta.id}
       bgColour={pageData.bg_colour.colour}
       page={pageData}
     >
@@ -56,6 +56,7 @@ export const query = graphql`
           ...columnTextSlice
           ...mapSlice
           ...textBackgroundImage
+          ...InstaFeedSlice
         }
         ...header
         ...footer

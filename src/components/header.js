@@ -111,7 +111,7 @@ const Header = ({
             )}
           </div>
         </BackgroundImage>
-      ), query, [LinkFragment])}
+      ), staticQuery, [LinkFragment])}
     />
   )
 }

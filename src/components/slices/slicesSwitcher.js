@@ -10,6 +10,7 @@ import BlockTitleCTATextSlice from './text_with_cta'
 import ColumnTextSlice from './columned_text'
 import MapSlice from './map'
 import TextWithBackgroundImage from './text_with_background_img'
+import InstaFeedSlice from './insta_feed'
 
 const Slices = ({ slices }) => {
   return slices && slices.map((contentSlice, idx) => {
@@ -23,7 +24,8 @@ const Slices = ({ slices }) => {
       block_title_with_text_and_cta: BlockTitleCTATextSlice,
       multi_column_text: ColumnTextSlice,
       map: MapSlice,
-      text_with_background_image: TextWithBackgroundImage
+      text_with_background_image: TextWithBackgroundImage,
+      latest_instagram_photos :InstaFeedSlice
     }
     const Component = componentListObj[contentSlice.type]
     if (Component === undefined) {
