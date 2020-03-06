@@ -20,7 +20,7 @@ const InstaPhoto = ({ photo, idx }) => {
   const pad = ["8px", "0", "0px"]
   const border = ["border-0", "border-8", "border-4"]
   return (
-    <div className="p-0" onMouseEnter={e => setHover(true)} onMouseLeave={e => setHover(false)}>
+    <div className="p-0" onMouseEnter={e => setHover(true)} onMouseLeave={e => setHover(false)} role="list">
       <img
         src={thumb.src}
         className={`${border[seed % 3]} border-${colour[seed % 5]}`}
@@ -114,7 +114,7 @@ const InstaFeedSlice = ({ data }) => {
       query={`${staticQuery}`}
       render={withPreview(
         data => (
-          <section className="mx-32 -mx-24 pt-20 overflow-x-hidden">
+          <section className="mx-32 -mx-24 pt-20 -mb-24 overflow-x-hidden">
             <div className="flex flex-col">
               <div className="-mr-40 flex flex-row">
                 {data.first.nodes.map((photo, idx) => (
