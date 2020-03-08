@@ -6,7 +6,7 @@ import Header from "./header"
 import Footer from "./footer"
 import "./layout.css"
 
-const Layout = ({ children, bgColour, page }) => {
+const Layout = ({ children, page }) => {
   const query = graphql`
     query SiteTitleQuery {
       site {
@@ -31,12 +31,12 @@ const Layout = ({ children, bgColour, page }) => {
             headerCtaUrl={page.header_cta_link}
             headerFontColour={page.header_font_colour.colour}
             currentUid={page._meta.uid}
-            bgColour={bgColour}
+            bgColour={page.bg_colour.colour}
           />
           <div
             className="px-24"
             style={{
-              backgroundColor: bgColour,
+              backgroundColor: page.bg_colour.colour,
             }}
           >
             <main>{children}</main>

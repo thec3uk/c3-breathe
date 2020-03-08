@@ -19,14 +19,12 @@ import { query as Header } from "../components/header"
 import { query as Footer } from "../components/footer"
 
 const Page = ({ data }) => {
-  if (data.prismic === null) {
+  if (data.prismic === null || data.prismic.page === null) {
     return null
   }
   const pageData = data.prismic.page
-
   return (
     <Layout
-      bgColour={pageData.bg_colour.colour}
       page={pageData}
     >
       <Slices slices={pageData.body} />
