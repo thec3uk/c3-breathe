@@ -5,13 +5,6 @@ import Link from "../components/link"
 import "../components/layout.css"
 
 
-const navCssClasses = (defaultColour, activeColour, activePage) => {
-  const activePageClasses = `text-${activeColour} hover:text-${defaultColour} border border-transparent hover:border-${activeColour}`
-  const defaultPageClasses = `text-${defaultColour} hover:text-${activeColour} border border-transparent hover:border-${defaultColour}`
-  return activePage ? activePageClasses : defaultPageClasses
-}
-
-
 const NotFoundPage = () => {
   return (
     <div className="flex flex-col justify-center w-screen h-screen bg-breathe-blue-1">
