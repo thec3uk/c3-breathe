@@ -97,3 +97,13 @@ exports.createPages = ({ graphql, actions }) => {
     })
   })
 }
+
+// temporary work around for the build on netlify
+var fs = require('fs');
+var dir = "./.cache/caches/gatsby-source-prismic-graphql"
+
+exports.onPreBootstrap = () => {
+    if (!fs.existsSync(dir)){
+        fs.mkdirSync(dir);
+    }
+ }
