@@ -1,20 +1,8 @@
 # Breathe website
 
-## Data structures
-
-We want a focus on sections/slices, use the prismic library to format rich text.
-Optimise images
-
-Similar/same design
-Tailwind would be nicer than bootstrap.
 
 ## Pages
-Homepage/conference
-Other events page
 past conferences?
-
-
-Conference
 Events List
 Event Detail
     Blurb
@@ -25,5 +13,17 @@ Event Detail
 
 ## Potential features
 
-mailing list? - mailchimp/CRM
+CRM
 conference/event plugin
+
+
+## Todo
+* previews
+* edit button
+* Document the site!
+
+* SEO meta stuff, social etc
+* Events page - later once we get everything else together
+* improve the duplicate function & queries in gatsby-node
+* Nice error messages:
+    * GeometicCTA must have a image
