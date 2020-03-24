@@ -11,9 +11,9 @@ const ColumnTextSlice = ({ data }) => {
             {data.primary.title && <h2 className="text-center py-8 pb-16 font-serifAlt text-5xl text-black">
                 {data.primary.title}
             </h2>}
-            <div className={`grid gap-32 grid-cols-${columnCount}`}>
+            <div className={`grid gap-8 lg:gap-32 grid-cols-1 md:grid-cols-${columnCount}`}>
               {data.fields.map(({ column }, idx) => (
-                <div className={`col-start-${idx + 1}`} key={idx}>{column && RichText.render(column)}</div>
+                <div className={`col-start-1 md:col-start-${idx + 1}`} key={idx}>{column && RichText.render(column)}</div>
               ))}
             </div>
             {data.primary.cta_link && <div className="flex justify-center my-16">

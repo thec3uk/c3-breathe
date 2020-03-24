@@ -13,6 +13,7 @@
     "@react-google-maps/api": "^1.8.3",
     "gatsby": "^2.18.4",
     "gatsby-background-image": "^0.10.2",
+    "gatsby-cli": "^2.10.13",
     "gatsby-image": "^2.2.34",
     "gatsby-plugin-mailchimp": "^5.1.2",
     "gatsby-plugin-manifest": "^2.2.30",
@@ -30,7 +31,8 @@
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "react-transition-group": "^4.3.0"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",

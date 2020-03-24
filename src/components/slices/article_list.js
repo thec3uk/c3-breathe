@@ -7,19 +7,19 @@ import Link from "../link"
 const ListOfArticlesSlice = ({ data }) => {
   return (
     <section
-      className="px-40 py-20 flex flex-col -mx-24"
+      className="px-16 md:px-40 py-20 flex flex-col -mx-0 sm:-mx-8 md:-mx-24"
       style={{ backgroundColor: data.primary.background_colour.colour }}
     >
-      <h2 className="text-right font-serif uppercase text-6xl mb-12 text-black">
+      <h2 className="text-left md:text-right font-serif uppercase text-5xl lg;text-6xl mb-12 text-black">
         {RichText.asText(data.primary.title_of_section)}
       </h2>
-      <div className="flex flex-row justify-between">
+      <div className="flex lg:flex-row flex-col justify-between flex-wrap">
         {data.fields.map(({ articles_to_link, title, imageSharp }, idx) => {
           return (
-            <Link to={articles_to_link} key={idx} className="border-2 border-black w-3/12 flex flex-col justify-end shadow-lg">
+            <Link to={articles_to_link} key={idx} className="border-2 border-black w-full lg:w-3/12 flex flex-col justify-end shadow-lg mb-16">
               <BackgroundImage
                 Tag="div"
-                className=" bg-cover h-88 bg-center flex flex-col justify-end"
+                className="bg-cover h-88 bg-center flex flex-col justify-end"
                 fluid={imageSharp.childImageSharp.fluid}
                 backgroundColor={data.primary.background_colour.colour}
               >
@@ -30,7 +30,7 @@ const ListOfArticlesSlice = ({ data }) => {
                     backdropFilter: `blur(4px)`,
                   }}
                 >
-                  <h4 className="uppercase font-serif text-white px-8">
+                  <h4 className="uppercase font-serif text-white sm:px-0 md:px-8">
                     {title}
                   </h4>
                 </div>

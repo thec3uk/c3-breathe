@@ -264,11 +264,11 @@ function MapSlice({ data }) {
     return <div>Map cannot be loaded right now, sorry.</div>
   }
   return isLoaded && (
-    <section className="px-16 -my-24 text-black">
+    <section className="px-16 -my-16 md:-my-24 lg:-my-24 text-black">
       <GoogleMap
         id="map"
         onLoad={loadHandler}
-        mapContainerClassName="w-screen h-104 -mx-40"
+        mapContainerClassName="w-screen h-104 -mx-16 md:-mx-40 lg:-mx-40"
         zoom={zoom}
         center={center}
         options={mapOptions}

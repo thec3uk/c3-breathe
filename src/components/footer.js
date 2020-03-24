@@ -21,7 +21,7 @@ const Footer = ({
         <div></div>
       )}
       {has_newsletter_slice && <NewsletterSlice/>}
-      <footer className="py-8 px-16 font-serif text-black">
+      <footer className="py-8 px-8 md:-mx-24 lg:px-16 font-serif text-black">
         Copyright © {siteTitle} {new Date().getFullYear()}
       </footer>
     </Fragment>

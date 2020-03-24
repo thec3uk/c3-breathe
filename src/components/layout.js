@@ -34,7 +34,8 @@ const Layout = ({ children, page }) => {
             bgColour={page.bg_colour.colour}
           />
           <div
-            className="px-24"
+            data-wio-id={page._meta.id}
+            className="px-0 sm:px-12 md:px-24 lg:px-24"
             style={{
               backgroundColor: page.bg_colour.colour,
             }}

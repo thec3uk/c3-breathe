@@ -23,6 +23,36 @@
 
 @tailwind base;
 
+
+/* .mobilenav-enter {
+  @apply opacity-0;
+}
+.mobilenav-enter-active {
+  @apply transition-opacity opacity-100 duration-150 ease-out;
+}
+.mobilenav-exit {
+  @apply opacity-100;
+}
+.mobilenav-exit-active {
+  @apply transition-opacity opacity-0 duration-100 ease-in;
+} */
+
+.mobilenav, .mobilenav-enter {
+  opacity: 0;
+}
+.mobilenav-enter-active {
+  opacity: 1;
+
+  transition: opacity 300ms;
+}
+.mobilenav-exit {
+  opacity: 1;
+}
+.mobilenav-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
 h1 {
   @apply text-7xl;
 }

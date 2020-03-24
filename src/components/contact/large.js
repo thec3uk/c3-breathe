@@ -23,7 +23,7 @@ const ContactLargeSlice = () => {
     return( <StaticQuery query={`${query}`} render={ data => {
         const contactData = data.prismic.allContact_informations.edges[0].node
         return (
-        <section className="px-16 py-32 text-black -mx-24 bg-breathe-blue-2" >
+        <section className="px-16 py-16 lg:py-32 text-black mx-0 md:-mx-24 lg:-mx-24 bg-breathe-blue-2" >
             <h3 className="text-center py-8 font-serif text-white text-5xl uppercase">
                 Contact
             </h3>

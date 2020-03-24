@@ -64,10 +64,10 @@ const NewsletterSlice = () => {
         const newsPara =
           data.prismic.allContact_informations.edges[0].node.newsletter_brief
         return (
-          <section className="px-16 text-black -mx-24 bg-salmon-1 flex flex-row justify-end">
-            <div className="bg-white w-8/12 z-10 shadow-md -mx-16 mt-24 mb-48 h-auto px-48 py-12 absolute left-0">
+          <section className="px-0 py-12 md:py-0 md:px-16 text-black md:-mx-24 bg-salmon-1 flex flex-row justify-end">
+            <div className="bg-white w-full lg:w-8/12 z-10 shadow-md lg:-mx-16 mt-16 md:mt-48 lg:mt-24 lg:mb-48 h-auto px-8 lg:px-48 py-12 absolute left-0">
               <h3 className="uppercase font-serifAlt mb-6">Empower Yourself</h3>
-              <div className="mr-32">{RichText.render(newsPara)}</div>
+              <div className="lg:mr-32">{RichText.render(newsPara)}</div>
               <form className="mb-4" method="post">
                 {status === "success" ? (
                   <div>{message}</div>
@@ -79,7 +79,7 @@ const NewsletterSlice = () => {
                     >
                       Email Address
                     </label>
-                    <div className="flex flex-row">
+                    <div className="flex flex-col lg:flex-row">
                       <input
                         className="shadow-inner appearance-none border border-black w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         id="email"
@@ -88,7 +88,7 @@ const NewsletterSlice = () => {
                         onChange={e => setEmail(e.target.value)}
                       />
                       <button
-                        className="ml-4 border border-black shadow uppercase font-serif px-6 py-2"
+                        className="mt-4 lg:mt-0 lg:ml-4 border border-black shadow uppercase font-serif px-6 py-2"
                         onClick={e =>
                           _handleSubmit(e, email, setStatus, setMessage)
                         }
@@ -103,7 +103,7 @@ const NewsletterSlice = () => {
                 )}
               </form>
             </div>
-            <div className="bg-breathe-blue-1 mr-12 w-7/12 flex flex-row justify-end items-end">
+            <div className="bg-breathe-blue-1 lg:mr-12 lg:w-7/12 flex flex-row justify-end items-end">
               <img
                 src="/images/a223-24-blue.jpg"
                 alt="Women in a field"
