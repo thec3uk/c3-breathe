@@ -133,17 +133,17 @@ const InstaFeedSlice = ({ data }) => {
         return (
           <section className="sm:-mx-24 pt-20 -mb-16 sm:-mb-24 overflow-x-hidden">
             <div className="flex flex-row lg:flex-col">
-              <div className="-ml-8 sm:-ml-24 md:ml-auto lg:-mr-40 flex flex-col lg:flex-row flex-nowrap">
+              <div className="-ml-8 sm:-ml-24 md:ml-auto lg:-mr-40 xl:mr-0 flex flex-col lg:flex-row flex-nowrap">
                 {data.first.nodes.map((photo, idx) => (
                   <InstaPhoto key={idx} photo={photo} />
                 ))}
               </div>
-              <div className="lg:-ml-24 lg:-mr-24 flex flex-col lg:flex-row">
+              <div className="lg:-ml-24 lg:-mr-24 xl:mx-auto flex flex-col lg:flex-row">
                 {data.second.nodes.map((photo, idx) => (
                   <InstaPhoto key={idx} photo={photo} />
                 ))}
               </div>
-              <div className="-mr-16 sm:-mr-24 md:mr-auto lg:-ml-40 flex flex-col lg:flex-row">
+              <div className="-mr-16 sm:-mr-24 md:mr-auto lg:-ml-40 xl:ml-0 flex flex-col lg:flex-row">
                 {data.third.nodes.map((photo, idx) => (
                   <InstaPhoto key={idx} photo={photo} />
                 ))}
