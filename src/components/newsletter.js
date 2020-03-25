@@ -48,6 +48,7 @@ const NewsletterSlice = () => {
         allContact_informations {
           edges {
             node {
+              newsletter_title
               newsletter_brief
             }
           }
@@ -61,13 +62,13 @@ const NewsletterSlice = () => {
     <StaticQuery
       query={`${query}`}
       render={data => {
-        const newsPara =
-          data.prismic.allContact_informations.edges[0].node.newsletter_brief
+        const newsletter =
+          data.prismic.allContact_informations.edges[0].node
         return (
           <section className="px-0 py-12 md:py-0 md:px-16 text-black md:-mx-24 bg-salmon-1 flex flex-row justify-end">
             <div className="bg-white w-full lg:w-8/12 z-10 shadow-md lg:-mx-16 mt-16 md:mt-48 lg:mt-24 lg:mb-48 h-auto px-8 lg:px-48 py-12 absolute left-0">
-              <h3 className="uppercase font-serifAlt mb-6">Empower Yourself</h3>
-              <div className="lg:mr-32">{RichText.render(newsPara)}</div>
+              <h3 className="uppercase font-serifAlt mb-6">{newsletter.newsletter_title}</h3>
+              <div className="lg:mr-32">{RichText.render(newsletter.newsletter_brief)}</div>
               <form className="mb-4" method="post">
                 {status === "success" ? (
                   <div>{message}</div>
@@ -88,7 +89,7 @@ const NewsletterSlice = () => {
                         onChange={e => setEmail(e.target.value)}
                       />
                       <button
-                        className="mt-4 lg:mt-0 lg:ml-4 border border-black shadow uppercase font-serif px-6 py-2"
+                        className="mt-4 lg:mt-0 lg:ml-4 border border-black shadow uppercase font-serif px-6 py-2 hover:bg-salmon-3 hover:text-white"
                         onClick={e =>
                           _handleSubmit(e, email, setStatus, setMessage)
                         }
