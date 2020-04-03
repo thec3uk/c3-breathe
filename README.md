@@ -27,3 +27,4 @@ conference/event plugin
 * improve the duplicate function & queries in gatsby-node
 * Nice error messages:
     * GeometicCTA must have a image
+* Newsletter stuff - https://www.gatsbyjs.org/packages/gatsby-source-mailchimp/?=email
