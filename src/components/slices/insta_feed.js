@@ -75,9 +75,9 @@ const InstaPhoto = ({ photo }) => {
               <div className="inline-block pl-4 text-sm">{photo.likes}</div>
             </div>
             <p className="text-xs">
-              {photo.caption.length > 200
+              {photo.caption ? photo.caption.length > 200
                 ? `${photo.caption.slice(0, 180)}...`
-                : photo.caption}
+                : photo.caption : ''}
             </p>
           </div>
         </Link>
