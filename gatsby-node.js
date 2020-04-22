@@ -83,13 +83,13 @@ exports.createPages = ({ graphql, actions }) => {
               fromPath: "/" + node._meta.uid,
               isPermanent: true,
               toPath: url,
-              redirectInBrowser: true,
+              redirectInBrowser: false,
             })
             createRedirect({
               fromPath: "/" + node._meta.uid.toUpperCase(),
               isPermanent: true,
               toPath: url,
-              redirectInBrowser: true,
+              redirectInBrowser: false,
             })
           })
         resolve()

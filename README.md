@@ -18,6 +18,8 @@ conference/event plugin
 
 
 ## Todo
+* Break point at 1600px - xxl
+* page title
 * previews
 * edit button
 * Document the site!
