@@ -45,6 +45,13 @@ module.exports = {
         path: "/preview", // (optional, default: /preview)
         previews: true, // (optional, default: false)
         pages: [
+            {
+              type: "Online_event", // TypeName from prismic
+              match: "/event/:uid", // Pages will be generated under this pattern (optional)
+              filter: data => data.node._meta.type === 'online_event',
+              path: "/event", // Placeholder page for unpublished documents
+              component: require.resolve("./src/templates/event.js"),
+            },
           {
             type: "Page", // TypeName from prismic
             match: "/:uid", // Pages will be generated under this pattern (optional)
