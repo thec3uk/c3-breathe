@@ -126,6 +126,9 @@ const PrivateContent = ({ attendeeNo, sessionId, setCheckedIn }) => {
 }
 
 const PrivatePage = ({ data }) => {
+    if (data.prismic === null || data.prismic.online_event === null) {
+      return null
+    }
   const page = data.prismic.online_event
 
   const [checkedIn, setCheckedIn] = useState(false)
