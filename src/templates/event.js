@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { graphql } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 import $ from "jquery"
@@ -71,7 +71,6 @@ const CheckInComponent = ({
   }
 
   const checkIn = () => {
-    console.log(email, attendeeNo, name)
     setCheckInState("loading")
     if (email !== "" && attendeeNo === "") {
       const attendeeInfo = getAttendeeInfo(sessionId, email)
@@ -105,7 +104,7 @@ const CheckInComponent = ({
         </div>
         {checkInState === "waiting" && (
           <div className="gap-4 grid grid-rows-2 grid-cols-4">
-            <label htmlFor="email" className="px-4 py-2 text-lg text-right">
+            <label htmlFor="email" className="px-4 py-2 text-lg text-right font-serif font-normal my-0">
               Email
             </label>
             <input
@@ -117,11 +116,9 @@ const CheckInComponent = ({
               onChange={e => setEmail(e.target.value)}
             />
             <button
-              className="col-span-2 col-start-2 border shadow bg-salmon-3 text-white hover:bg-salmon-2"
+              className="col-span-2 col-start-2 border shadow bg-salmon-3 text-white hover:bg-salmon-2 font-sans uppercase"
               type="button"
-              onClick={() => checkIn({
-                AttendeeNumber: attendeeNo
-              })}
+              onClick={() => checkIn()}
             >
               Check in
             </button>
@@ -189,7 +186,7 @@ const PrivateContent = ({
 
 const PrivatePage = ({ data }) => {
   const localEventState = loadState()
-  var Urlcheckout = false
+  const [urlCheckout, setUrlCheckout] = useState(false);
 
   // small hack to prevent type error with brushfire_session_id
   const page = get(data, "prismic.online_event", {
@@ -210,14 +207,14 @@ const PrivatePage = ({ data }) => {
     get(localEventState, `${attendeePath}.name`, "")
   )
 
-  if (page.prismic === null) {
-    return null
-  }
 
-  if (typeof window !== "undefined") {
+
+  useEffect(() => {
+  // if (typeof window !== "undefined") {
+
     const params = new URLSearchParams(window.location.search)
-    Urlcheckout = params.get(checkOutParamName) === "1"
-    if (Urlcheckout) {
+    if (params.get(checkOutParamName) === "1") {
+      setUrlCheckout(true)
       $("#zmmtg-root").css("display", "none")
       const checkInData = checkAttendeeOut(
         page.brushfire_session_id,
@@ -236,9 +233,13 @@ const PrivatePage = ({ data }) => {
             name: name,
           },
         })
-        // saveSessionData(page.brushfire_session_id, )
       })
     }
+  }
+  )
+
+  if (page.prismic === null) {
+    return null
   }
 
   return (
@@ -256,10 +257,10 @@ const PrivatePage = ({ data }) => {
       </nav>
       <div className="p-8 m-8 bg-salmon-2 flex flex-col text-center">
         <h1 className="font-accent text-black mb-10">
-          {Urlcheckout ? `Thanks for attending` : `Welcome to`}{" "}
+          {urlCheckout ? `Thanks for attending` : `Welcome to`}{" "}
           {page.event_title}
         </h1>
-        {!Urlcheckout && page.lead_paragraph && (<div className="text-xl font-serif mb-12 mx-auto px-20">{RichText.render(page.lead_paragraph)}</div>)}
+        {!urlCheckout && page.lead_paragraph && (<div className="text-xl font-serif mb-12 mx-auto px-20">{RichText.render(page.lead_paragraph)}</div>)}
         {checkedIn ? (
           <PrivateContent
             attendeeNo={attendeeNo}
@@ -271,7 +272,7 @@ const PrivatePage = ({ data }) => {
             email={email}
             name={name}
           />
-        ) : Urlcheckout ? (
+        ) : urlCheckout ? (
           <div>{RichText.render(page.upsell_text)}</div>
         ) : (
           <CheckInComponent
@@ -293,8 +294,6 @@ const PrivatePage = ({ data }) => {
              c.parentNode.insertBefore(n,c);
           }();`}
       </script>
-
-
     </BackgroundImage>
   )
 }

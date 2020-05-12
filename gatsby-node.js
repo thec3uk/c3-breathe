@@ -106,4 +106,19 @@ exports.onPreBootstrap = () => {
     if (!fs.existsSync(dir)){
         fs.mkdirSync(dir);
     }
- }
+}
+
+
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  if (stage === "build-html") {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /@zoomus\/websdk/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    })
+  }

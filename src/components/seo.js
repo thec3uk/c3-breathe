@@ -69,8 +69,6 @@ function SEO({ description, lang, meta, title }) {
             ].concat(meta)}
           >
             <script async defer src={`//static.cdn.prismic.io/prismic.js?repo=${sitePlugin.pluginOptions.repositoryName}&new=true`}></script>
-                <link type="text/css" rel="stylesheet" href="/zoom/css/bootstrap.css" />
-                <link type="text/css" rel="stylesheet" href="/zoom/css/react-select.css" />
           </Helmet>
         )
       }}

@@ -2,6 +2,7 @@ import React from "react"
 import { ZoomMtg } from "@zoomus/websdk"
 import axios from "axios"
 import $ from "jquery"
+import Helmet from "react-helmet"
 
 import "./zoom.css"
 
@@ -52,11 +53,17 @@ const ZoomEmbed = ({ enabled, meetingNo, password, signatureUrl, email, name, le
 
     })
   return (
-    <div id="zoom-component-container">
-      Zoom Meeting should start here. <br/>
-      If you appear to be having issues with joining then please use this link:{` `}
-      <a className="underline text-breathe-blue-1" href={`https://zoom.us/j/${meetingNo}`}>{`https://zoom.us/j/${meetingNo}`}</a> (Password: {password})
-    </div>
+      <>
+      <Helmet>
+        <link type="text/css" rel="stylesheet" href="/zoom/css/bootstrap.css" />
+          <link type="text/css" rel="stylesheet" href="/zoom/css/react-select.css" />
+      </Helmet>
+        <div id="zoom-component-container">
+          Zoom Meeting should start here. <br/>
+          If you appear to be having issues with joining then please use this link:{` `}
+          <a className="underline text-breathe-blue-1" href={`https://zoom.us/j/${meetingNo}`}>{`https://zoom.us/j/${meetingNo}`}</a> (Password: {password})
+        </div>
+    </>
   )
 }
 
