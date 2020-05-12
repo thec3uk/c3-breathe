@@ -8,5 +8,14 @@
 
 const { registerLinkResolver } = require('gatsby-source-prismic-graphql');
 const { linkResolver } = require('./src/utils/linkResolver');
+const $ = require("jquery")
+
 
 registerLinkResolver(linkResolver);
+
+
+export const onInitialClientRender = () => {
+  $(document).ready(function () {
+    console.log("jQuery is loaded all ok")
+  });
+}
