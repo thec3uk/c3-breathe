@@ -583,4 +583,9 @@ module.exports = {
   },
   corePlugins: {},
   plugins: [],
+  purge: [
+   './src/**/*.html',
+   './src/**/*.css',
+   './src/**/*.js',
+ ],
 }
