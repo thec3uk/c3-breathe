@@ -7,10 +7,11 @@ import Helmet from "react-helmet"
 import "./zoom.css"
 
 
-
-ZoomMtg.setZoomJSLib("/zoom", "/av")
-ZoomMtg.preLoadWasm()
-ZoomMtg.prepareJssdk()
+if (typeof ZoomMtg !== "undefined") {
+    ZoomMtg.setZoomJSLib("/zoom", "/av")
+    ZoomMtg.preLoadWasm()
+    ZoomMtg.prepareJssdk()
+}
 
 
 const ZoomEmbed = ({ enabled, meetingNo, password, signatureUrl, email, name, leaveUrl }) => {

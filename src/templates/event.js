@@ -193,7 +193,7 @@ const PrivatePage = ({ data }) => {
     prismic: null,
     brushfire_session_id: "null",
   })
-  const attendeePath = `sessions.${page.brushfire_session_id}.attendee`
+  const attendeePath = `sessions.${page && page.brushfire_session_id}.attendee`
   const [checkedIn, setCheckedIn] = useState(
     get(localEventState, `${attendeePath}.checkedIn`, false)
   )
@@ -238,7 +238,7 @@ const PrivatePage = ({ data }) => {
   }
   )
 
-  if (page.prismic === null) {
+  if (page === null) {
     return null
   }
 
