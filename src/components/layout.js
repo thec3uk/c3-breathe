@@ -4,6 +4,7 @@ import { StaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import Footer from "./footer"
+import SEO from "./seo"
 import "./layout.css"
 
 const Layout = ({ children, page }) => {
@@ -33,6 +34,7 @@ const Layout = ({ children, page }) => {
             currentUid={page._meta.uid}
             bgColour={page.bg_colour.colour}
           />
+          <SEO title={`${page.header_title}: ${page.header_sub_title}`} />
           <div
             data-wio-id={page._meta.id}
             className="px-0 sm:px-12 md:px-24 lg:px-24"
