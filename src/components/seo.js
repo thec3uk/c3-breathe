@@ -68,12 +68,7 @@ function SEO({ description, lang, meta, title }) {
               },
             ].concat(meta)}
           >
-          <script>{`
-              window.prismic = {
-                endpoint: 'https://${sitePlugin.pluginOptions.repositoryName}.cdn.prismic.io/api/v2'
-              };
-          `}</script>
-          <script type="text/javascript" src="https://static.cdn.prismic.io/prismic.min.js?new=true"></script>
+            <script async defer src={`//static.cdn.prismic.io/prismic.js?repo=${sitePlugin.pluginOptions.repositoryName}&new=true`}></script>
           </Helmet>
         )
       }}
