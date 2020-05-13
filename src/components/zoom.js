@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { ZoomMtg } from "@zoomus/websdk"
 import axios from "axios"
 import $ from "jquery"
@@ -15,9 +15,15 @@ if (typeof ZoomMtg !== "undefined") {
 
 
 const ZoomEmbed = ({ enabled, meetingNo, password, signatureUrl, email, name, leaveUrl }) => {
-  if (enabled) {
-    $("#zmmtg-root").css('display', 'block');
-  }
+    useEffect(() => {
+      if (enabled) {
+        $("#zmmtg-root").css('display', 'block');
+      }
+      return function cleanup() {
+        $("#zmmtg-root").css("display", "none")
+      }
+    }, [enabled])
+
   console.log(name, email);
   axios
     .post(signatureUrl, {

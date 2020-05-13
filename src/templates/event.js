@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { graphql } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
-import $ from "jquery"
 import { get, isEmpty } from "lodash"
 import { RichText } from "prismic-reactjs"
 
@@ -58,8 +57,7 @@ const CheckInComponent = ({
 
   const selectAttendee = (attendee) => {
     setAttendeeNo(attendee["AttendeeNumber"])
-    // const name = `${attendee["FirstName"]} ${attendee["LastName"]}`
-    const name = attendee["FirstName"]
+    const name = `${attendee["FirstName"]} ${attendee["LastName"]}`
     setName(name)
     remoteCheckIn(
       sessionId,
@@ -176,13 +174,6 @@ const PrivateContent = ({
   )
 }
 
-// <iframe
-//   className="w-full h-104 border-0"
-//   src={`https://zoom.us/wc/join/${meetingNo}?prefer=0&un=${btoa(name)}&uel=${btoa(email)}&pwd=${password}`}
-//   sandbox="allow-forms allow-scripts allow-same-origin" allow="microphone; camera; fullscreen">
-// </iframe>
-
-
 
 const PrivatePage = ({ data }) => {
   const localEventState = loadState()
@@ -207,15 +198,10 @@ const PrivatePage = ({ data }) => {
     get(localEventState, `${attendeePath}.name`, "")
   )
 
-
-
   useEffect(() => {
-  // if (typeof window !== "undefined") {
-
     const params = new URLSearchParams(window.location.search)
     if (params.get(checkOutParamName) === "1") {
       setUrlCheckout(true)
-      $("#zmmtg-root").css("display", "none")
       const checkInData = checkAttendeeOut(
         page.brushfire_session_id,
         attendeeNo
@@ -235,8 +221,7 @@ const PrivatePage = ({ data }) => {
         })
       })
     }
-  }
-  )
+  }, [page, attendeeNo, email, name])
 
   if (page === null) {
     return null
@@ -287,13 +272,7 @@ const PrivatePage = ({ data }) => {
           />
         )}
       </div>
-      <script type="text/javascript">
-          {`window._chatlio = window._chatlio||[];
-          !function(){ var t=document.getElementById("chatlio-widget-embed");if(t&&window.ChatlioReact&&_chatlio.init)return void _chatlio.init(t,ChatlioReact);for(var e=function(t){return function(){_chatlio.push([t].concat(arguments)) }},i=["configure","identify","track","show","hide","isShown","isOnline", "page", "open", "showOrHide"],a=0;a<i.length;a++)_chatlio[i[a]]||(_chatlio[i[a]]=e(i[a]));var n=document.createElement("script"),c=document.getElementsByTagName("script")[0];n.id="chatlio-widget-embed",n.src="https://w.chatlio.com/w.chatlio-widget.js",n.async=!0,n.setAttribute("data-embed-version","2.3");
-             n.setAttribute('data-widget-id','4264b4c8-c57d-4ac6-7c68-b7baed5dd091');
-             c.parentNode.insertBefore(n,c);
-          }();`}
-      </script>
+
     </BackgroundImage>
   )
 }
