@@ -88,10 +88,10 @@ const CheckInComponent = ({
   }
   return (
     <div className="flex flex-col text-left items-center">
-      <div className="flex flex-col items-between bg-breathe-blue-1 py-8 px-8 shadow">
+      <div className="flex flex-col items-between bg-breathe-blue-1 py-8 px-8 shadow mb-16 md:mb-0">
         <div>
           <h3 className="font-serif text-2xl">Check in</h3>
-          <p className="mt-2 font-serif text-lg">
+          <p className="mt-2 font-serif text-lg mb-4 md:mb-8">
             {checkInState === "loading" &&
               "Checking you in... Get ready for the event to start!"}
             {checkInState === "choosing" &&
@@ -101,20 +101,20 @@ const CheckInComponent = ({
           </p>
         </div>
         {checkInState === "waiting" && (
-          <div className="gap-4 grid grid-rows-2 grid-cols-4">
-            <label htmlFor="email" className="px-4 py-2 text-lg text-right font-serif font-normal my-0">
+          <div className="gap-2 md:gap-4 grid grid-rows-3 md:grid-rows-2 grid-cols-1 md:grid-cols-4">
+            <label htmlFor="email" className="md:px-4 md:pr-0 md:py-2 text-lg md:text-right font-serif font-normal mt-auto md:my-0">
               Email
             </label>
             <input
               id="email"
-              className="col-span-3 px-2 py-1 bg-white focus:outline-none focus:shadow-outline border border-gray-300 appearance-none leading-normal"
+              className="row-start-2 md:row-start-1 md:col-start-2 md:col-span-3 px-2 py-1 bg-white focus:outline-none focus:shadow-outline border border-gray-300 appearance-none leading-normal"
               type=""
               name="email"
               placeholder="katie@breathe.thec3.uk"
               onChange={e => setEmail(e.target.value)}
             />
             <button
-              className="col-span-2 col-start-2 border shadow bg-salmon-3 text-white hover:bg-salmon-2 font-sans uppercase"
+              className="row-start-3 md:row-start-2 md:col-span-2 md:col-start-2 border shadow bg-salmon-3 text-white hover:bg-salmon-2 font-sans uppercase"
               type="button"
               onClick={() => checkIn()}
             >
@@ -230,22 +230,29 @@ const PrivatePage = ({ data }) => {
   return (
     <BackgroundImage
       Tag="div"
-      className="min-h-screen flex flex-col text-black bg-top bg-cover justify-center w-screen h-screen bg-grey-1"
+      className="min-h-screen flex flex-col text-black bg-top bg-cover justify-center w-screen md:h-screen bg-grey-1"
       fluid={page.background_imageSharp.childImageSharp.fluid}
       backgroundColor={page.bg_colour.colour}
     >
       <SEO title={`Breathe ${page.event_title}: Check in`} />
-      <nav className="py-6 px-8 fixed top-0 animated flex flex-row justify-start min-w-full items-center">
+      <nav className="py-6 px-8 md:fixed top-0 animated flex flex-row justify-start min-w-full items-center">
         <div className="uppercase text-lg font-sans text-white">
           <Link to="/">Breathe</Link>
         </div>
       </nav>
-      <div className="p-8 m-8 bg-salmon-2 flex flex-col text-center">
+      <style>
+        {`html, body {
+          min-height: initial;
+          min-width: initial;
+          overflow:auto;
+        }`}
+      </style>
+      <div className="p-8 m-2 md:m-8 bg-salmon-2 flex flex-col text-center">
         <h1 className="font-accent text-black mb-10">
           {urlCheckout ? `Thanks for attending` : `Welcome to`}{" "}
           {page.event_title}
         </h1>
-        {!urlCheckout && page.lead_paragraph && (<div className="text-xl font-serif mb-12 mx-auto px-20">{RichText.render(page.lead_paragraph)}</div>)}
+        {!urlCheckout && page.lead_paragraph && (<div className="text-xl font-serif mb-12 mx-auto md:px-20">{RichText.render(page.lead_paragraph)}</div>)}
         {checkedIn ? (
           <PrivateContent
             attendeeNo={attendeeNo}

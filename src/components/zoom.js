@@ -23,8 +23,6 @@ const ZoomEmbed = ({ enabled, meetingNo, password, signatureUrl, email, name, le
         $("#zmmtg-root").css("display", "none")
       }
     }, [enabled])
-
-  console.log(name, email);
   axios
     .post(signatureUrl, {
       meetingNumber: meetingNo,
