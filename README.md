@@ -19,12 +19,12 @@ conference/event plugin
 
 ## Todo
 * Break point at 1600px - xxl
-* page title
 * redirects - use netlify not browser!
 * previews
 * edit button
 * Document the site!
 
+* tests!
 * SEO meta stuff, social etc
 * Events page - later once we get everything else together
 * improve the duplicate function & queries in gatsby-node
