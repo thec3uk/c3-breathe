@@ -147,7 +147,7 @@ const PrivateContent = ({
   name,
 }) => {
   const leaveUrl =
-    typeof window !== "undefined" && `${window.location.href}checkout`
+    typeof window !== "undefined" && window.location.href.endsWith('/') ? `${window.location.href}checkout` : `${window.location.href}/checkout`
   return (
     <div className="p-8 flex justify-center">
       <ZoomEmbed
