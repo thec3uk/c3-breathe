@@ -52,6 +52,13 @@ module.exports = {
               path: "/event", // Placeholder page for unpublished documents
               component: require.resolve("./src/templates/event.js"),
             },
+            {
+              type: "Online_event", // TypeName from prismic
+              match: "/event/:uid/checkout", // Pages will be generated under this pattern (optional)
+              filter: data => data.node._meta.type === 'online_event',
+              path: "/event/checkout", // Placeholder page for unpublished documents
+              component: require.resolve("./src/templates/event-checkout.js"),
+            },
           {
             type: "Page", // TypeName from prismic
             match: "/:uid", // Pages will be generated under this pattern (optional)

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { graphql } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 import { get, isEmpty } from "lodash"
@@ -9,18 +9,9 @@ import Link from "../components/link"
 import ZoomEmbed from "../components/zoom"
 import "../components/layout.css"
 
-import {
-  getAttendeeInfo,
-  checkAttendeeIn,
-  checkAttendeeOut,
-} from "../utils/brushfire"
+import { getAttendeeInfo, checkAttendeeIn } from "../utils/brushfire"
 
-import {
-  loadState,
-  saveSessionData,
-} from "../utils/event_state.js"
-
-const checkOutParamName = "checkOut"
+import { loadState, saveSessionData } from "../utils/event_state.js"
 
 const handleCheckin = (setCheckin, result) => {
   setCheckin(result.attendee.checkedIn)
@@ -55,7 +46,7 @@ const CheckInComponent = ({
   const [checkInState, setCheckInState] = useState("waiting")
   const [attendeeList, setAttendeeList] = useState([])
 
-  const selectAttendee = (attendee) => {
+  const selectAttendee = attendee => {
     setAttendeeNo(attendee["AttendeeNumber"])
     const name = `${attendee["FirstName"]} ${attendee["LastName"]}`
     setName(name)
@@ -96,13 +87,15 @@ const CheckInComponent = ({
               "Checking you in... Get ready for the event to start!"}
             {checkInState === "choosing" &&
               `Please select who is checking in from the email address ${email}.`}
-            {checkInState === "waiting" &&
-              "Enter your email to get started."}
+            {checkInState === "waiting" && "Enter your email to get started."}
           </p>
         </div>
         {checkInState === "waiting" && (
           <div className="gap-2 md:gap-4 grid grid-rows-3 md:grid-rows-2 grid-cols-1 md:grid-cols-4">
-            <label htmlFor="email" className="md:px-4 md:pr-0 md:py-2 text-lg md:text-right font-serif font-normal mt-auto md:my-0">
+            <label
+              htmlFor="email"
+              className="md:px-4 md:pr-0 md:py-2 text-lg md:text-right font-serif font-normal mt-auto md:my-0"
+            >
               Email
             </label>
             <input
@@ -123,18 +116,19 @@ const CheckInComponent = ({
           </div>
         )}
         {checkInState === "choosing" && !isEmpty(attendeeList) && (
-          <div className={`gap-4 grid grid-rows-${attendeeList.length} grid-cols-1 w-1/2 mx-auto`}>
-          {attendeeList.map(attendee => (
-            <button
-              className="col-span-1 border shadow bg-salmon-3 text-white hover:bg-salmon-2"
-              type="button"
-              key={attendee.AttendeeNumber}
-              onClick={() => selectAttendee(attendee)}
-            >
-              {attendee.FirstName} {attendee.LastName}
-            </button>
-          ))}
-
+          <div
+            className={`gap-4 grid grid-rows-${attendeeList.length} grid-cols-1 w-1/2 mx-auto`}
+          >
+            {attendeeList.map(attendee => (
+              <button
+                className="col-span-1 border shadow bg-salmon-3 text-white hover:bg-salmon-2"
+                type="button"
+                key={attendee.AttendeeNumber}
+                onClick={() => selectAttendee(attendee)}
+              >
+                {attendee.FirstName} {attendee.LastName}
+              </button>
+            ))}
           </div>
         )}
       </div>
@@ -153,31 +147,24 @@ const PrivateContent = ({
   name,
 }) => {
   const leaveUrl =
-    typeof window !== "undefined" &&
-    window.location.href.includes(checkOutParamName)
-      ? window.location.href
-      : `${window.location.href}?${checkOutParamName}=1`
-
+    typeof window !== "undefined" && `${window.location.href}checkout`
   return (
-      <div className="p-8 flex justify-center">
-
-        <ZoomEmbed
-          enabled={checkedIn}
-          meetingNo={meetingNo}
-          password={password}
-          signatureUrl={"/.netlify/functions/zoomGenerateSignature"}
-          email={email}
-          name={name}
-          leaveUrl={leaveUrl}
-        />
-      </div>
+    <div className="p-8 flex justify-center">
+      <ZoomEmbed
+        enabled={checkedIn}
+        meetingNo={meetingNo}
+        password={password}
+        signatureUrl={"/.netlify/functions/zoomGenerateSignature"}
+        email={email}
+        name={name}
+        leaveUrl={leaveUrl}
+      />
+    </div>
   )
 }
 
-
 const PrivatePage = ({ data }) => {
   const localEventState = loadState()
-  const [urlCheckout, setUrlCheckout] = useState(false);
 
   // small hack to prevent type error with brushfire_session_id
   const page = get(data, "prismic.online_event", {
@@ -197,31 +184,6 @@ const PrivatePage = ({ data }) => {
   const [name, setName] = useState(
     get(localEventState, `${attendeePath}.name`, "")
   )
-
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search)
-    if (params.get(checkOutParamName) === "1") {
-      setUrlCheckout(true)
-      const checkInData = checkAttendeeOut(
-        page.brushfire_session_id,
-        attendeeNo
-      )
-      checkInData.then(response => {
-        if (!response.data[0]["Success"]) {
-          console.warn(response.data[0]["Message"])
-        }
-        handleCheckin(setCheckedIn, {
-          sessionId: page.brushfire_session_id,
-          attendee: {
-            checkedIn: false,
-            attendeeNo: attendeeNo,
-            email: email,
-            name: name,
-          },
-        })
-      })
-    }
-  }, [page, attendeeNo, email, name])
 
   if (page === null) {
     return null
@@ -249,10 +211,13 @@ const PrivatePage = ({ data }) => {
       </style>
       <div className="p-8 m-2 md:m-8 bg-salmon-2 flex flex-col text-center">
         <h1 className="font-accent text-black mb-10">
-          {urlCheckout ? `Thanks for attending` : `Welcome to`}{" "}
-          {page.event_title}
+          Welcome to {page.event_title}
         </h1>
-        {!urlCheckout && page.lead_paragraph && (<div className="text-xl font-serif mb-12 mx-auto md:px-20">{RichText.render(page.lead_paragraph)}</div>)}
+        {page.lead_paragraph && (
+          <div className="text-xl font-serif mb-12 mx-auto md:px-20">
+            {RichText.render(page.lead_paragraph)}
+          </div>
+        )}
         {checkedIn ? (
           <PrivateContent
             attendeeNo={attendeeNo}
@@ -264,8 +229,6 @@ const PrivatePage = ({ data }) => {
             email={email}
             name={name}
           />
-        ) : urlCheckout ? (
-          <div>{RichText.render(page.upsell_text)}</div>
         ) : (
           <CheckInComponent
             setCheckedIn={setCheckedIn}
@@ -279,7 +242,6 @@ const PrivatePage = ({ data }) => {
           />
         )}
       </div>
-
     </BackgroundImage>
   )
 }
@@ -301,7 +263,6 @@ export const query = graphql`
         video_id
         video_password
         lead_paragraph
-        upsell_text
         background_image
         background_imageSharp {
           childImageSharp {
