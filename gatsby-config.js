@@ -73,14 +73,14 @@ module.exports = {
             filter: data => data.node._meta.type === 'page' && data.node._meta.uid.includes('homepage'),
             path: "/page", // Placeholder page for unpublished documents
             component: require.resolve("./src/templates/page.js"),
-          },
-          {
-            type: "Redirect", // TypeName from prismic
-            match: "/:uid", // Pages will be generated under this pattern (optional)
-            // filter: data => {console.log(data); return true},
-            path: "/redirect", // Placeholder page for unpublished documents
-            component: require.resolve("./src/templates/redirect.js"),
           }
+          // {
+          //   type: "Redirect", // TypeName from prismic
+          //   match: "/:uid", // Pages will be generated under this pattern (optional)
+          //   // filter: data => {console.log(data); return true},
+          //   path: "/redirect", // Placeholder page for unpublished documents
+          //   component: require.resolve("./src/templates/redirect.js"),
+          // }
         ],
         sharpKeys: [
           /image|photo|picture/, // (default)
