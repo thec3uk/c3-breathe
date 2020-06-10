@@ -9,8 +9,6 @@ Event Detail
     Details
 
 
-
-
 ## Potential features
 
 CRM
@@ -20,6 +18,17 @@ conference/event plugin
 ## Todo
 * edit button
 * previews
+
+
+### online conference functionality
+
+* bug on event check in if `event_state` does not yet exist
+* Investigate the ability to hand off to the zoom native client as well as/instead of the embedded web client
+* Investigating how to support multiple devices.
+* Improve the error handling when joining a call
+* Brushfire email options - emails going to spam.
+* Multiple sessions for an event - checkin/checkout
+
 
 
 * Document the site!

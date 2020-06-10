@@ -1,4 +1,3 @@
-
 require("dotenv").config()
 
 module.exports = {
@@ -8,25 +7,25 @@ module.exports = {
     author: `@breatheuk`,
   },
   plugins: [
-      {
-          resolve: `gatsby-source-instagram`,
-          options: {
-            username: `thec3_breathe`,
-          },
-        },
-      {
-        resolve: `gatsby-plugin-netlify`,
-        options: {
-          headers: {}, // option to add more headers. `Link` headers are transformed by the below criteria
-          allPageHeaders: [], // option to add headers for all pages. `Link` headers are transformed by the below criteria
-          mergeSecurityHeaders: true, // boolean to turn off the default security headers
-          mergeLinkHeaders: true, // boolean to turn off the default gatsby js headers
-          mergeCachingHeaders: true, // boolean to turn off the default caching headers
-          transformHeaders: (headers, path) => headers, // optional transform for manipulating headers under each path (e.g.sorting), etc.
-          // transformHeaders: (headers, path) => { if (path !== '/pineapple') {return headers} return null}, // optional transform for manipulating headers under each path (e.g.sorting), etc.
-          generateMatchPathRewrites: false, // boolean to turn off automatic creation of redirect rules for client only paths
-        },
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `4474519383`,
       },
+    },
+    {
+      resolve: `gatsby-plugin-netlify`,
+      options: {
+        headers: {}, // option to add more headers. `Link` headers are transformed by the below criteria
+        allPageHeaders: [], // option to add headers for all pages. `Link` headers are transformed by the below criteria
+        mergeSecurityHeaders: true, // boolean to turn off the default security headers
+        mergeLinkHeaders: true, // boolean to turn off the default gatsby js headers
+        mergeCachingHeaders: true, // boolean to turn off the default caching headers
+        transformHeaders: (headers, path) => headers, // optional transform for manipulating headers under each path (e.g.sorting), etc.
+        // transformHeaders: (headers, path) => { if (path !== '/pineapple') {return headers} return null}, // optional transform for manipulating headers under each path (e.g.sorting), etc.
+        generateMatchPathRewrites: false, // boolean to turn off automatic creation of redirect rules for client only paths
+      },
+    },
     {
       resolve: "gatsby-plugin-mailchimp",
       options: {
@@ -45,40 +44,44 @@ module.exports = {
         path: "/preview", // (optional, default: /preview)
         previews: true, // (optional, default: false)
         pages: [
-            {
-              type: "Online_event", // TypeName from prismic
-              match: "/event/:uid", // Pages will be generated under this pattern (optional)
-              filter: data => data.node._meta.type === 'online_event',
-              path: "/event", // Placeholder page for unpublished documents
-              component: require.resolve("./src/templates/event.js"),
-            },
-            {
-              type: "Online_event", // TypeName from prismic
-              match: "/event/:uid/checkout", // Pages will be generated under this pattern (optional)
-              filter: data => data.node._meta.type === 'online_event',
-              path: "/event/checkout", // Placeholder page for unpublished documents
-              component: require.resolve("./src/templates/event-checkout.js"),
-            },
+          {
+            type: "Online_event", // TypeName from prismic
+            match: "/event/:uid", // Pages will be generated under this pattern (optional)
+            filter: data => data.node._meta.type === "online_event",
+            path: "/event", // Placeholder page for unpublished documents
+            component: require.resolve("./src/templates/event.js"),
+          },
+          {
+            type: "Online_event", // TypeName from prismic
+            match: "/event/:uid/checkout", // Pages will be generated under this pattern (optional)
+            filter: data => data.node._meta.type === "online_event",
+            path: "/event/checkout", // Placeholder page for unpublished documents
+            component: require.resolve("./src/templates/event-checkout.js"),
+          },
           {
             type: "Page", // TypeName from prismic
             match: "/:uid", // Pages will be generated under this pattern (optional)
             // filter: data => data.node._meta.uid !== 'homepage',
-            filter: data => data.node._meta.type === 'page' && !data.node._meta.uid.includes('homepage'),
+            filter: data =>
+              data.node._meta.type === "page" &&
+              !data.node._meta.uid.includes("homepage"),
             path: "/page", // Placeholder page for unpublished documents
             component: require.resolve("./src/templates/page.js"),
           },
           {
             type: "Page", // TypeName from prismic
             match: "/", // Pages will be generated under this pattern (optional)
-            filter: data => data.node._meta.type === 'page' && data.node._meta.uid.includes('homepage'),
+            filter: data =>
+              data.node._meta.type === "page" &&
+              data.node._meta.uid.includes("homepage"),
             path: "/page", // Placeholder page for unpublished documents
             component: require.resolve("./src/templates/page.js"),
-          } 
+          },
         ],
         sharpKeys: [
           /image|photo|picture/, // (default)
-          'portrait',
-          'logo',
+          "portrait",
+          "logo",
         ],
       },
     },
