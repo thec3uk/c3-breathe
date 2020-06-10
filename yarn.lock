@@ -6317,10 +6317,9 @@ gatsby-source-graphql@^2.0.8, gatsby-source-graphql@^2.1.32:
     node-fetch "^1.7.3"
     uuid "^3.4.0"
 
-gatsby-source-instagram@0.8.0-beta.0:
+"gatsby-source-instagram@git://github.com/oorestisime/gatsby-source-instagram.git#67af68c294dfe61ee5cd5394bcf930120b72254c":
   version "0.8.0-beta.0"
-  resolved "https://registry.yarnpkg.com/gatsby-source-instagram/-/gatsby-source-instagram-0.8.0-beta.0.tgz#bb671e858c0a15f36aa0829617ec621e979e6f9c"
-  integrity sha512-61NL56QU+tP9V1lDquvHyZJ1D/yv4Db35eNeCLQXhdFQeyivyUDqtXbSc1eZO8ZRkR/uC87/Mqxp37LtjG2DLA==
+  resolved "git://github.com/oorestisime/gatsby-source-instagram.git#67af68c294dfe61ee5cd5394bcf930120b72254c"
   dependencies:
     axios "^0.19.0"
 
