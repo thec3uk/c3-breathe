@@ -15,7 +15,6 @@ conference/event plugin
 
 ## Todo
 
-- edit button
 - previews
 
 ### online conference functionality

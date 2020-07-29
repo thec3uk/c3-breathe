@@ -8,17 +8,17 @@ const TextSlice = ({ data }) => {
     <section
       className={`px-8 lg:px-16 ${!data.primary.reduce_top_padding &&
         "pt-20"} ${!data.primary.reduce_bottom_padding &&
-        "pb-20"} text-black ${data.primary.full_width && "-mx-24"}`}
+        "pb-20"} text-black ${data.primary.full_width && "md:-mx-24"}`}
       style={{ backgroundColor: data.primary.background_colour.colour }}
     >
       {data.primary.textTitle && (
-        <div className="text-5xl text-left md:text-center py-8 pb-16 font-serifAlt text-5xl">
+        <div className="text-5xl text-left md:text-center py-8 pb-16 font-serifAlt">
           {RichText.render(data.primary.textTitle)}
         </div>
       )}
       <div
         className={`${data.primary.full_width &&
-          "mx-24"} text-justify md:text-left`}
+          "mx-2 md:mx-24"} text-justify md:text-left`}
       >
         {data.label && data.label === "raw_html" ? (
           <div
