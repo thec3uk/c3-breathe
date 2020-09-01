@@ -25,6 +25,7 @@
     "gatsby-plugin-sharp": "^2.4.5",
     "gatsby-source-filesystem": "^2.1.39",
     "gatsby-source-instagram": "^0.8",
+    "gatsby-source-mailchimp": "^0.7.0",
     "gatsby-source-prismic-graphql": "^3.6.2",
     "gatsby-transformer-sharp": "^2.3.6",
     "jquery": "^3.5.1",

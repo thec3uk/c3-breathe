@@ -4,7 +4,7 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-// You can delete this file if you're not using it
+const path = require("path")
 
 const linkResolver = doc => {
   const toTypeString = typeof doc === "string"
@@ -25,9 +25,8 @@ const linkResolver = doc => {
   return doc
 }
 
-
 exports.createPages = ({ graphql, actions }) => {
-  const { createRedirect } = actions
+  const { createRedirect, createPage } = actions
   return new Promise((resolve, reject) => {
     graphql(`
       query Redirects {
@@ -95,19 +94,57 @@ exports.createPages = ({ graphql, actions }) => {
         resolve()
       }
     })
+    graphql(`
+      {
+        allMailchimpCampaign(
+          filter: {
+            status: { eq: "sent" }
+            recipients: { list_id: { eq: "9b6ed04842" } }
+          }
+        ) {
+          edges {
+            previous {
+              campaignId
+            }
+            node {
+              campaignId
+            }
+            next {
+              campaignId
+            }
+          }
+        }
+      }
+    `).then(result => {
+      result.data &&
+        result.data.allMailchimpCampaign.edges.forEach(
+          ({ previous, node, next }) => {
+            const slug = `/newsletter/${node.campaignId}`
+            createPage({
+              path: slug,
+              component: path.resolve(`src/templates/newsletter.js`),
+              context: {
+                slug: slug,
+                campaignId: node.campaignId,
+                nextCampaign: next && next.campaignId,
+                previousCampaign: previous && previous.campaignId,
+              },
+            })
+          }
+        )
+    })
   })
 }
 
 // temporary work around for the build on netlify
-var fs = require('fs');
+var fs = require("fs")
 var dir = "./.cache/caches/gatsby-source-prismic-graphql"
 
 exports.onPreBootstrap = () => {
-    if (!fs.existsSync(dir)){
-        fs.mkdirSync(dir);
-    }
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir)
+  }
 }
-
 
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   if (stage === "build-html") {
