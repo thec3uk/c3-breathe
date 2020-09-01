@@ -11,7 +11,6 @@
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
     "@fortawesome/react-fontawesome": "^0.1.8",
     "@react-google-maps/api": "^1.8.3",
-    "@zoomus/websdk": "^1.7.7",
     "axios": "^0.19.2",
     "gatsby": "^2.18.4",
     "gatsby-background-image": "^0.10.2",

@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { graphql } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 import { get, isEmpty } from "lodash"
@@ -6,7 +6,7 @@ import { RichText } from "prismic-reactjs"
 
 import SEO from "../components/seo"
 import Link from "../components/link"
-import ZoomEmbed from "../components/zoom"
+
 import "../components/layout.css"
 
 import { getAttendeeInfo, checkAttendeeIn } from "../utils/brushfire"
@@ -21,10 +21,13 @@ const handleCheckin = (setCheckin, result) => {
 const remoteCheckIn = (sessionId, attendeeNo, email, name, setCheckedIn) => {
   const checkInData = checkAttendeeIn(sessionId, attendeeNo)
   checkInData.then(response => {
+    const checkedIn =
+      response.data[0]["Success"] ||
+      response.data[0]["Message"] === "Already checked in"
     handleCheckin(setCheckedIn, {
       sessionId: sessionId,
       attendee: {
-        checkedIn: response.data[0]["Success"],
+        checkedIn: checkedIn,
         attendeeNo: attendeeNo,
         email: email,
         name: name,
@@ -42,9 +45,22 @@ const CheckInComponent = ({
   setEmail,
   name,
   setName,
+  meetingURL,
 }) => {
   const [checkInState, setCheckInState] = useState("waiting")
   const [attendeeList, setAttendeeList] = useState([])
+  const [delayed, setDelayed] = useState(false)
+
+  useEffect(() => {
+    const timer =
+      checkInState === "loading" &&
+      !delayed &&
+      setTimeout(() => {
+        setDelayed(true)
+      }, 2000)
+    console.log(timer)
+    return () => clearTimeout(timer)
+  }, [checkInState, delayed])
 
   const selectAttendee = attendee => {
     setAttendeeNo(attendee["AttendeeNumber"])
@@ -68,6 +84,8 @@ const CheckInComponent = ({
         if (tempList.length > 1) {
           setCheckInState("choosing")
           setAttendeeList(tempList)
+        } else if (tempList.length === 1) {
+          selectAttendee(tempList[0])
         } else {
           selectAttendee(response.data[0])
         }
@@ -131,34 +149,33 @@ const CheckInComponent = ({
             ))}
           </div>
         )}
+        {checkInState === "loading" && delayed && (
+          <div className={`gap-4 grid grid-rows-2 grid-cols-1 w-3/4 mx-auto`}>
+            <p className="col-span-1 mt-2 font-serif text-lg mb-4 md:mb-8">
+              Stuck? Click the button below to jump into the event
+            </p>
+            <a
+              href={meetingURL}
+              className="p-4 my-auto border shadow bg-salmon-3 text-white hover:bg-salmon-2 font-sans uppercase text-center"
+            >
+              Join the Event
+            </a>
+          </div>
+        )}
       </div>
     </div>
   )
 }
 
-const PrivateContent = ({
-  attendeeNo,
-  sessionId,
-  setCheckedIn,
-  checkedIn,
-  meetingNo,
-  password,
-  email,
-  name,
-}) => {
-  const leaveUrl =
-    typeof window !== "undefined" && window.location.href.endsWith('/') ? `${window.location.href}checkout` : `${window.location.href}/checkout`
+const PrivateContent = ({ meetingURL }) => {
   return (
     <div className="p-8 flex justify-center">
-      <ZoomEmbed
-        enabled={checkedIn}
-        meetingNo={meetingNo}
-        password={password}
-        signatureUrl={"/.netlify/functions/zoomGenerateSignature"}
-        email={email}
-        name={name}
-        leaveUrl={leaveUrl}
-      />
+      <a
+        href={meetingURL}
+        className="p-4 my-auto border shadow bg-breathe-blue-1 text-black hover:bg-breathe-blue-3 hover:text-white font-sans uppercase text-center"
+      >
+        Join the Event
+      </a>
     </div>
   )
 }
@@ -188,7 +205,6 @@ const PrivatePage = ({ data }) => {
   if (page === null) {
     return null
   }
-
   return (
     <BackgroundImage
       Tag="div"
@@ -202,33 +218,17 @@ const PrivatePage = ({ data }) => {
           <Link to="/">Breathe</Link>
         </div>
       </nav>
-      <style>
-        {`html, body {
-          min-height: initial;
-          min-width: initial;
-          overflow:auto;
-        }`}
-      </style>
       <div className="p-8 m-2 md:m-8 bg-salmon-2 flex flex-col text-center">
         <h1 className="font-accent text-black mb-10">
           Welcome to {page.event_title}
         </h1>
         {page.lead_paragraph && (
-          <div className="text-xl font-serif mb-12 mx-auto md:px-20">
+          <div className="text-xl font-serif mx-auto md:px-20">
             {RichText.render(page.lead_paragraph)}
           </div>
         )}
         {checkedIn ? (
-          <PrivateContent
-            attendeeNo={attendeeNo}
-            setCheckedIn={setCheckedIn}
-            checkedIn={checkedIn}
-            sessionId={page.brushfire_session_id}
-            meetingNo={page.video_id}
-            password={page.video_password}
-            email={email}
-            name={name}
-          />
+          <PrivateContent meetingURL={page.video_url.url} />
         ) : (
           <CheckInComponent
             setCheckedIn={setCheckedIn}
@@ -239,6 +239,7 @@ const PrivatePage = ({ data }) => {
             name={name}
             setEmail={setEmail}
             setName={setName}
+            meetingURL={page.video_url.url}
           />
         )}
       </div>
@@ -262,6 +263,9 @@ export const query = graphql`
         event_title
         video_id
         video_password
+        video_url {
+          ...link
+        }
         lead_paragraph
         background_image
         background_imageSharp {

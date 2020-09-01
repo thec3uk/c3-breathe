@@ -36,7 +36,9 @@ const saveState = state => {
 
 const getSessionData = sessionId => {
   const state = loadState()
-  return state.sessions[sessionId] || {}
+  return "sessions" in state && state.sessions[sessionId] !== undefined
+    ? state.sessions[sessionId]
+    : {}
 }
 
 const saveSessionData = (sessionId, sessionData) => {
