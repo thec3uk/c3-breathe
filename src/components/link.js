@@ -1,6 +1,6 @@
 import React from "react"
 import { Link as GatsbyLink } from "gatsby"
-import { linkResolver } from '../utils/linkResolver'
+import { linkResolver } from "../utils/linkResolver"
 
 const Link = ({ children, to, activeClassName, partiallyActive, ...other }) => {
   const internal = /^\/(?!\/)/.test(to)
