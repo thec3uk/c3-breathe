@@ -58,7 +58,6 @@ const CheckInComponent = ({
       setTimeout(() => {
         setDelayed(true)
       }, 2000)
-    console.log(timer)
     return () => clearTimeout(timer)
   }, [checkInState, delayed])
 

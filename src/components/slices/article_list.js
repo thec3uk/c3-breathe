@@ -58,14 +58,12 @@ const MailChimpList = ({ fields, background_colour }) => {
     <StaticQuery
       query={`${staticQuery}`}
       render={data => {
-        console.log("MC: ", data, fields)
         const mcFields = data.allMailchimpCampaign.edges.map(({ node }) => {
           return {
             title: node.send_time,
             articles_to_link: `/newsletter/${node.campaignId}`,
           }
         })
-        console.log(mcFields)
         return (
           <>
             {fields.map(({ imageSharp }, idx) => {
@@ -105,7 +103,6 @@ const InternalList = ({ fields, background_colour }) => {
 }
 
 const ListOfArticlesSlice = ({ data }) => {
-  console.log(data)
   return (
     <section
       className="px-16 md:px-40 py-20 flex flex-col -mx-0 sm:-mx-8 md:-mx-24"

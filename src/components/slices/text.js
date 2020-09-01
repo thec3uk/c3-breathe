@@ -3,7 +3,6 @@ import { graphql } from "gatsby"
 import { RichText } from "prismic-reactjs"
 
 const TextSlice = ({ data }) => {
-  console.log(data)
   return (
     <section
       className={`px-8 lg:px-16 ${!data.primary.reduce_top_padding &&

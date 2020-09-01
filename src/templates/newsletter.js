@@ -5,7 +5,6 @@ import Helmet from "react-helmet"
 import "../components/layout.css"
 
 const Newsletter = ({ data, pageContext }) => {
-  console.log(pageContext)
   if (data.mailchimpCampaign === null) {
     return null
   }
