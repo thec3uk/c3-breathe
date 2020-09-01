@@ -8,24 +8,6 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: "gatsby-source-mailchimp",
-      options: {
-        key: process.env.MAILCHIMP_API_KEY,
-        rootURL: "https://us19.api.mailchimp.com/3.0",
-        count: 0,
-        campaignFields: [
-          "campaigns.type",
-          "campaigns.status",
-          "campaigns.send_time",
-          "campaigns.settings.subject_line",
-          "campaigns.settings.preview_text",
-          "campaigns.settings.title",
-          "campaigns.recipients.list_id",
-          "campaigns.recipients.list_name",
-        ],
-      },
-    },
-    {
       resolve: `gatsby-source-instagram`,
       options: {
         username: `4474519383`,
