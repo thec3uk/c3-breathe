@@ -10,6 +10,9 @@ const React = require("react")
 
 export const onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>,
+    <script
+      key="jquery"
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+    ></script>,
   ])
 }

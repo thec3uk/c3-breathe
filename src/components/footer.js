@@ -1,9 +1,9 @@
 import React, { Fragment } from "react"
-import { graphql } from 'gatsby'
+import { graphql } from "gatsby"
 
-import ContactLargeSlice from './contact/large'
-import ContactSmallSlice from './contact/small'
-import NewsletterSlice from './newsletter'
+import ContactLargeSlice from "./contact/large"
+import ContactSmallSlice from "./contact/small"
+import NewsletterSlice from "./newsletter"
 
 const Footer = ({
   siteTitle,
@@ -15,12 +15,12 @@ const Footer = ({
     <Fragment>
       {has_contact_slice && contact_slice_size === "large" ? (
         <ContactLargeSlice />
-      ) : contact_slice_size === "small" ? (
+      ) : has_contact_slice && contact_slice_size === "small" ? (
         <ContactSmallSlice />
       ) : (
         <div></div>
       )}
-      {has_newsletter_slice && <NewsletterSlice/>}
+      {has_newsletter_slice && <NewsletterSlice />}
       <footer className="py-8 px-8 md:-mx-24 lg:px-16 font-serif text-black">
         Copyright © {siteTitle} {new Date().getFullYear()}
       </footer>
@@ -31,9 +31,9 @@ const Footer = ({
 export default Footer
 
 export const query = graphql`
-    fragment footer on PRISMIC_Page {
-      has_contact_slice
-      has_newsletter_slice
-      contact_slice_size
-    }
+  fragment footer on PRISMIC_Page {
+    has_contact_slice
+    has_newsletter_slice
+    contact_slice_size
+  }
 `

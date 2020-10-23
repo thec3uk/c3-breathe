@@ -2,48 +2,63 @@ import React from "react"
 import { graphql } from "gatsby"
 import { RichText } from "prismic-reactjs"
 // import Img from 'gatsby-image';
-import get from 'lodash/get';
+import get from "lodash/get"
 
-const LargeBioText = ({person}) => {
-  return (<div className={`lg:${person.reversed ? 'pr-12': 'pl-12'} flex justify-center flex-col`}>
-    <h3 className="text-2xl lg:text-5xl mt-8 lg:mt-0 font-serif uppercase">
-      {RichText.asText(person.first_and_lastname)}
-    </h3>
-    <div className="text-justify">
-      {RichText.render(person.position)}
+const LargeBioText = ({ person }) => {
+  return (
+    <div
+      className={`lg:${
+        person.reversed ? "pr-12" : "pl-12"
+      } flex justify-center flex-col`}
+    >
+      <h3 className="text-2xl lg:text-5xl mt-8 lg:mt-0 font-serif uppercase">
+        {RichText.asText(person.first_and_lastname)}
+      </h3>
+      <div className="text-justify">{RichText.render(person.position)}</div>
     </div>
-  </div>
   )
 }
 
 const LargeBio = ({ person }) => {
-    // const sharpImage = get(person, 'portraitSharp.childImageSharp.fixed');
-    return (
-      <div className={`flex ${person.reversed ? "flex-col-reverse" : "flex-col"} lg:flex-row mt-12`}>
-        {person.reversed && (<LargeBioText person={person} />)}
-        {person.show_image && (
-          // sharpImage ? (
-          //   <Img fixed={sharpImage} className="rounded-full max-w-xxs" />
-          // ) : (
-            <img src={get(person, 'portrait.url')} className="rounded-full max-w-xxs self-start" alt={RichText.asText(person.first_and_lastname)} />
-          // )
-        )}
-        {!person.reversed && (<LargeBioText person={person} />)}
-      </div>
-    )
+  // const sharpImage = get(person, 'portraitSharp.childImageSharp.fixed');
+  return (
+    <div
+      className={`flex ${
+        person.reversed ? "flex-col-reverse" : "flex-col"
+      } lg:flex-row mt-12`}
+    >
+      {person.reversed && <LargeBioText person={person} />}
+      {person.show_image && (
+        // sharpImage ? (
+        //   <Img fixed={sharpImage} className="rounded-full max-w-xxs" />
+        // ) : (
+        <img
+          src={get(person, "portrait.url")}
+          className="rounded-full max-w-xxs self-start"
+          alt={RichText.asText(person.first_and_lastname)}
+        />
+        // )
+      )}
+      {!person.reversed && <LargeBioText person={person} />}
+    </div>
+  )
 }
 
 const SmallBio = ({ person, idx }) => {
-    return (
-      <div className={`flex justify-start flex-col mt-16 col-start-1 col-end-3 lg:col-start-${idx % 2 === 0 ? "1" : "2"} lg:col-end-${idx % 2 === 0 ? "2" : "3"}`}>
-        <h3 className="text-4xl font-serif uppercase">
-          {RichText.asText(person.first_and_lastname)}
-        </h3>
-        <div className="text-justify mt-6">
-          {RichText.render(person.position)}
-        </div>
+  return (
+    <div
+      className={`flex justify-start flex-col mt-16 col-start-1 col-end-3 ${
+        idx % 2 === 0 ? "lg:col-start-1" : "lg:col-start-2"
+      } ${idx % 2 === 0 ? "lg:col-end-2" : "lg:col-end-3"}`}
+    >
+      <h3 className="text-4xl font-serif uppercase">
+        {RichText.asText(person.first_and_lastname)}
+      </h3>
+      <div className="text-justify mt-6">
+        {RichText.render(person.position)}
       </div>
-    )
+    </div>
+  )
 }
 
 const TeamSlice = ({ data }) => {
@@ -52,13 +67,17 @@ const TeamSlice = ({ data }) => {
       <h2 className="text-4xl lg:text-6xl font-serifAlt">
         {RichText.asText(data.primary.team_section)}
       </h2>
-      {data.fields.filter((person) => person.show_image).map((person, idx) => {
-        return <LargeBio key={idx} person={person} />
-      })}
+      {data.fields
+        .filter(person => person.show_image)
+        .map((person, idx) => {
+          return <LargeBio key={idx} person={person} />
+        })}
       <div className="grid grid-cols-2 lg:col-span-1 col-gap-32 mt-10">
-      {data.fields.filter((person) => !person.show_image).map((person, idx) => {
-        return <SmallBio key={idx} person={person} idx={idx} />
-      })}
+        {data.fields
+          .filter(person => !person.show_image)
+          .map((person, idx) => {
+            return <SmallBio key={idx} person={person} idx={idx} />
+          })}
       </div>
     </section>
   )
