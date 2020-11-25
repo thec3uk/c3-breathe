@@ -7,8 +7,8 @@ import get from "lodash/get"
 const LargeBioText = ({ person }) => {
   return (
     <div
-      className={`lg:${
-        person.reversed ? "pr-12" : "pl-12"
+      className={`${
+        person.reversed ? "lg:pr-12" : "lg:pl-12"
       } flex justify-center flex-col`}
     >
       <h3 className="text-2xl lg:text-5xl mt-8 lg:mt-0 font-serif uppercase">
