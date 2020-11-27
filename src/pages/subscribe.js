@@ -4,7 +4,6 @@ import { graphql } from "gatsby"
 import SEO from "../components/seo"
 import Link from "../components/link"
 import "../components/layout.css"
-import NewsletterSlice from "../components/newsletter"
 import Footer from "../components/footer"
 
 const SubscribePage = ({ data }) => {
@@ -21,7 +20,6 @@ const SubscribePage = ({ data }) => {
       </nav>
 
       <div className="px-0 sm:px-12 md:px-24 lg:px-24 flex flex-col space-y-4">
-        {/* <NewsletterSlice /> */}
         <Footer
           siteTitle={data.site.siteMetadata.title}
           has_newsletter_slice={true}

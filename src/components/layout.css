@@ -1,28 +1,27 @@
 @font-face {
-  font-family: 'didot';
-  src:  url('/fonts/didot/Didot.ttc') format('opentype');
+  font-family: "didot";
+  src: url("/fonts/didot/Didot.ttc") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'ZefaniStencil';
-  src:  url('/fonts/ZefaniStencil(uppercase)-Regular.otf') format('opentype');
+  font-family: "ZefaniStencil";
+  src: url("/fonts/ZefaniStencil(uppercase)-Regular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'SilverSouth';
-  src:  url('/fonts/Silver South Script Alt.ttf') format('truetype');
+  font-family: "SilverSouth";
+  src: url("/fonts/Silver South Script Alt.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300&display=swap");
 
 @tailwind base;
-
 
 /* .mobilenav-enter {
   @apply opacity-0;
@@ -37,7 +36,8 @@
   @apply transition-opacity opacity-0 duration-100 ease-in;
 } */
 
-.mobilenav, .mobilenav-enter {
+.mobilenav,
+.mobilenav-enter {
   opacity: 0;
 }
 .mobilenav-enter-active {
@@ -83,12 +83,20 @@ p {
   @apply mb-8;
 }
 
+p a {
+  @apply text-salmon-3 underline p-2;
+}
+
+p a:hover {
+  @apply text-white bg-salmon-3 p-2;
+}
+
 #map p {
   @apply mb-0;
 }
 
 section li {
-    @apply list-inside list-disc;
+  @apply list-inside list-disc;
 }
 
 @tailwind components;
