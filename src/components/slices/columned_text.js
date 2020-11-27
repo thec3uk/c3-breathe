@@ -20,7 +20,7 @@ const ColumnTextSlice = ({ data }) => {
       >
         {data.fields.map(({ column }, idx) => (
           <div
-            className={`col-start-1 md:col-start-${idx + 1} md:w-100`}
+            className={`col-start-1 md:col-start-${idx + 1} md:w-full`}
             key={idx}
           >
             {column && RichText.render(column)}
