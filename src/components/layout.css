@@ -1,104 +1,104 @@
-@font-face {
-  font-family: "didot";
-  src: url("/fonts/didot/Didot.ttc") format("opentype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "ZefaniStencil";
-  src: url("/fonts/ZefaniStencil(uppercase)-Regular.otf") format("opentype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "SilverSouth";
-  src: url("/fonts/Silver South Script Alt.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@import url("https://fonts.googleapis.com/css?family=Montserrat:300&display=swap");
-
 @tailwind base;
-
-/* .mobilenav-enter {
-  @apply opacity-0;
-}
-.mobilenav-enter-active {
-  @apply transition-opacity opacity-100 duration-150 ease-out;
-}
-.mobilenav-exit {
-  @apply opacity-100;
-}
-.mobilenav-exit-active {
-  @apply transition-opacity opacity-0 duration-100 ease-in;
-} */
-
-.mobilenav,
-.mobilenav-enter {
-  opacity: 0;
-}
-.mobilenav-enter-active {
-  opacity: 1;
-
-  transition: opacity 300ms;
-}
-.mobilenav-exit {
-  opacity: 1;
-}
-.mobilenav-exit-active {
-  opacity: 0;
-  transition: opacity 300ms;
-}
-
-h1 {
-  @apply text-7xl;
-}
-h2 {
-  @apply text-6xl;
-}
-h2 .font-accent {
-  @apply text-7xl;
-}
-
-h3 {
-  @apply text-5xl;
-}
-
-h4 {
-  @apply text-3xl;
-}
-
-h5 {
-  @apply text-2xl;
-}
-
-h6 {
-  @apply text-xl;
-}
-
-main p {
-  @apply mb-8;
-}
-
-main p a {
-  @apply text-salmon-3 underline p-2;
-}
-
-main p a:hover {
-  @apply text-white bg-salmon-3 p-2;
-}
-
-#map p {
-  @apply mb-0;
-}
-
-section li {
-  @apply list-inside list-disc;
-}
-
 @tailwind components;
-
 @tailwind utilities;
+
+@layer base {
+  @import url("https://fonts.googleapis.com/css?family=Montserrat:300&display=swap");
+  @font-face {
+    font-family: "didot";
+    src: url("/fonts/didot/Didot.ttc") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "ZefaniStencil";
+    src: url("/fonts/ZefaniStencil(uppercase)-Regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "SilverSouth";
+    src: url("/fonts/Silver South Script Alt.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  h1 {
+    @apply text-7xl;
+  }
+  h2 {
+    @apply text-6xl;
+  }
+  h2 .font-accent {
+    @apply text-7xl;
+  }
+
+  h3 {
+    @apply text-5xl;
+  }
+
+  h4 {
+    @apply text-3xl;
+  }
+
+  h5 {
+    @apply text-2xl;
+  }
+
+  h6 {
+    @apply text-xl;
+  }
+
+  main p {
+    @apply mb-8;
+  }
+
+  main p a {
+    @apply text-salmon-3 underline p-2;
+  }
+
+  main p a:hover {
+    @apply text-white bg-salmon-3 p-2;
+  }
+
+  #map p {
+    @apply mb-0;
+  }
+
+  section li {
+    @apply list-inside list-disc;
+  }
+}
+
+@layer components {
+  /* .mobilenav-enter {
+    @apply opacity-0;
+  }
+  .mobilenav-enter-active {
+    @apply transition-opacity opacity-100 duration-150 ease-out;
+  }
+  .mobilenav-exit {
+    @apply opacity-100;
+  }
+  .mobilenav-exit-active {
+    @apply transition-opacity opacity-0 duration-100 ease-in;
+  } */
+
+  .mobilenav,
+  .mobilenav-enter {
+    opacity: 0;
+  }
+  .mobilenav-enter-active {
+    opacity: 1;
+
+    transition: opacity 300ms;
+  }
+  .mobilenav-exit {
+    opacity: 1;
+  }
+  .mobilenav-exit-active {
+    opacity: 0;
+    transition: opacity 300ms;
+  }
+}

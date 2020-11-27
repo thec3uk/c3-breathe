@@ -16,13 +16,10 @@ const ColumnTextSlice = ({ data }) => {
         </h2>
       )}
       <div
-        className={`grid gap-8 lg:gap-32 grid-cols-1 md:grid-cols-${columnCount}`}
+        className={`grid gap-8 lg:gap-32 grid-cols-1 auto-cols-fr md:grid-cols-${columnCount}`}
       >
         {data.fields.map(({ column }, idx) => (
-          <div
-            className={`col-start-1 md:col-start-${idx + 1} md:w-full`}
-            key={idx}
-          >
+          <div className={`col-start-1 md:col-start-${idx + 1}`} key={idx}>
             {column && RichText.render(column)}
           </div>
         ))}
