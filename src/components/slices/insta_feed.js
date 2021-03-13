@@ -9,7 +9,7 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons"
 const InstaPhoto = ({ photo }) => {
   const [hover, setHover] = useState(false)
   const [thumb, setThumb] = useState(
-    photo.thumbnails.filter(p => p.config_width === 320)[0]
+    photo.localFile.childImageSharp.fixed.filter(p => p.width === 320)[0]
   )
   useEffect(() => {
     // 0,640 ,768 ,1024,1280
@@ -25,9 +25,11 @@ const InstaPhoto = ({ photo }) => {
       )
     )
     setThumb(
-      photo.thumbnails.filter(p => p.config_width === thumbSizes[thumbSize])[0]
+      photo.localFile.childImageSharp.fixed.filter(
+        p => p.width === thumbSizes[thumbSize]
+      )[0]
     )
-  }, [thumb, photo.thumbnails])
+  }, [thumb, photo.localFile.childImageSharp.fixed])
   const seed = Math.round(Math.random() * 40)
   const colour = [
     "breathe-blue-1",
@@ -47,11 +49,13 @@ const InstaPhoto = ({ photo }) => {
     >
       <img
         src={thumb.src}
-        className={`${border[seed % 3]} border-${colour[seed % 5]} object-cover`}
+        className={`${border[seed % 3]} border-${
+          colour[seed % 5]
+        } object-cover`}
         style={{
           padding: pad[seed % 3],
-          height: thumb.config_width,
-          width: thumb.config_width,
+          height: thumb.width,
+          width: thumb.width,
         }}
         alt=""
       />
@@ -60,9 +64,9 @@ const InstaPhoto = ({ photo }) => {
           <div
             className="flex flex-col justify-center text-center p-8 relative z-20 text-white bg-black-trans object-cover"
             style={{
-              marginTop: -thumb.config_width,
-              height: thumb.config_width,
-              width: thumb.config_width,
+              marginTop: -thumb.width,
+              height: thumb.width,
+              width: thumb.width,
             }}
           >
             <div className="flex flex-row justify-center items-center">
@@ -75,9 +79,11 @@ const InstaPhoto = ({ photo }) => {
               <div className="inline-block pl-4 text-sm">{photo.likes}</div>
             </div>
             <p className="text-xs">
-              {photo.caption ? photo.caption.length > 200
-                ? `${photo.caption.slice(0, 180)}...`
-                : photo.caption : ''}
+              {photo.caption
+                ? photo.caption.length > 200
+                  ? `${photo.caption.slice(0, 180)}...`
+                  : photo.caption
+                : ""}
             </p>
           </div>
         </Link>
@@ -116,10 +122,14 @@ const InstaFeedSlice = ({ data }) => {
         caption
         likes
         id
-        thumbnails {
-          config_height
-          config_width
-          src
+        localFile {
+          childImageSharp {
+            fixed {
+              src
+              width
+              height
+            }
+          }
         }
         timestamp
       }
@@ -129,7 +139,6 @@ const InstaFeedSlice = ({ data }) => {
     <StaticQuery
       query={`${staticQuery}`}
       render={withPreview(data => {
-
         return (
           <section className="sm:-mx-24 pt-20 -mb-16 sm:-mb-24 overflow-x-hidden">
             <div className="flex flex-row lg:flex-col">
