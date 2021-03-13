@@ -45,3 +45,16 @@ We look forward to welcoming you!
 - Time: 10:30am - 12pm
 - Frequency: Fortnightly, dates below
 - Where: C3 CENTRE, Coldhams Lane, Cambridge
+
+# 2021
+
+- Shop items
+- Online experience - Brushfire
+- 2022
+
+  - title
+  - dates
+  - some media?
+  - Brushfire event
+
+- Ensure content gets uploaded and sloted into brushfire

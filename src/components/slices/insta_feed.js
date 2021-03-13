@@ -8,9 +8,7 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons"
 
 const InstaPhoto = ({ photo }) => {
   const [hover, setHover] = useState(false)
-  const [thumb, setThumb] = useState(
-    photo.localFile.childImageSharp.fixed.filter(p => p.width === 320)[0]
-  )
+  const [thumb, setThumb] = useState(photo.localFile.childImageSharp.fixed)
   useEffect(() => {
     // 0,640 ,768 ,1024,1280
     const thumbSizes = {
@@ -24,11 +22,8 @@ const InstaPhoto = ({ photo }) => {
         item => item <= window.screen.availWidth
       )
     )
-    setThumb(
-      photo.localFile.childImageSharp.fixed.filter(
-        p => p.width === thumbSizes[thumbSize]
-      )[0]
-    )
+    console.log(thumbSize)
+    setThumb(photo.localFile.childImageSharp.fixed)
   }, [thumb, photo.localFile.childImageSharp.fixed])
   const seed = Math.round(Math.random() * 40)
   const colour = [
