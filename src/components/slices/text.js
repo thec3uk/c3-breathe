@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { RichText } from "prismic-reactjs"
+import { RTlinkResolver } from "../../utils/linkResolver"
 
 const TextSlice = ({ data }) => {
   return (
@@ -24,7 +25,10 @@ const TextSlice = ({ data }) => {
             dangerouslySetInnerHTML={{ __html: data.primary.content[0].text }}
           ></div>
         ) : (
-          RichText.render(data.primary.content)
+          <RichText
+            render={data.primary.content}
+            linkResolver={RTlinkResolver}
+          />
         )}
       </div>
     </section>
