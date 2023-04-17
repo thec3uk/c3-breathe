@@ -35,28 +35,15 @@ conference/event plugin
 - Nice error messages:
   - GeometicCTA must have a image
 
-## Breathe Women
-
-Breathe Women is at the heart of what we do at Breathe. An opportunity for women to come together, study God’s word and encourage each other, in the midst of what is often a hectic life. Creating a community to support and empower us to live our best life! Child care is provided.
-
-We look forward to welcoming you!
-
-- When: Thursday mornings
-- Time: 10:30am - 12pm
-- Frequency: Fortnightly, dates below
-- Where: C3 CENTRE, Coldhams Lane, Cambridge
-
-# 2021
-
-- Shop items
-
-  - Blurb
-  - Image
-
 # 2023
+
+- deal with Mailchimp
+- deal with instagram feed
+- analytics
 
 - StaticQuery -> useStaticQuery
 - remove colour content type
 - migrate to main prismic repo
-- deal with Mailchimp
-- deal with instagram feed
+  - drop the schemas in favour of the API
+  - create the pages that need creating
+  - merge the content types with the existing ones and add new options

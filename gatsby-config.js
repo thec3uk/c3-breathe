@@ -13,6 +13,16 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-umami`,
+      options: {
+        websiteId: "9b356e74-b50b-4e4c-ab05-6f00fdaaef94",
+        srcUrl: "https://analytics.thec3.uk/umami.js",
+        includeInDevelopment: false,
+        autoTrack: true,
+        respectDoNotTrack: true,
+      },
+    },
+    {
       resolve: "gatsby-source-mailchimp",
       options: {
         key: process.env.MAILCHIMP_API_KEY,
