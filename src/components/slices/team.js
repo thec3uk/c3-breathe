@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { RichText } from "prismic-reactjs"
-// import Img from 'gatsby-image';
+import { PrismicText, PrismicRichText } from "@prismicio/react"
+import Img from "gatsby-image"
 import get from "lodash/get"
 
 const LargeBioText = ({ person }) => {
@@ -11,16 +11,18 @@ const LargeBioText = ({ person }) => {
         person.reversed ? "lg:pr-12" : "lg:pl-12"
       } flex justify-center flex-col`}
     >
-      <h3 className="text-2xl lg:text-5xl mt-8 lg:mt-0 font-serif uppercase">
-        {RichText.asText(person.first_and_lastname)}
+      <h3 className="mt-8 font-serif text-2xl uppercase lg:text-5xl lg:mt-0">
+        <PrismicText field={person.first_and_lastname.richText} />
       </h3>
-      <div className="text-justify">{RichText.render(person.position)}</div>
+      <div className="text-justify">
+        <PrismicRichText field={person.position.richText} />
+      </div>
     </div>
   )
 }
 
 const LargeBio = ({ person }) => {
-  // const sharpImage = get(person, 'portraitSharp.childImageSharp.fixed');
+  const sharpImage = get(person, "portrait.fixed")
   return (
     <div
       className={`flex ${
@@ -28,17 +30,22 @@ const LargeBio = ({ person }) => {
       } lg:flex-row mt-12`}
     >
       {person.reversed && <LargeBioText person={person} />}
-      {person.show_image && (
-        // sharpImage ? (
-        //   <Img fixed={sharpImage} className="rounded-full max-w-xxs" />
-        // ) : (
-        <img
-          src={get(person, "portrait.url")}
-          className="rounded-full max-w-xxs self-start"
-          alt={RichText.asText(person.first_and_lastname)}
-        />
-        // )
-      )}
+      {
+        person.show_image && (
+          // (sharpImage ? (
+          //   <Img
+          //     fixed={sharpImage}
+          //     className="self-start rounded-full"
+          //   />
+          // ) : (
+          <img
+            src={get(person, "portrait.url")}
+            className="self-start rounded-full max-w-xs"
+            alt={<PrismicText field={person.first_and_lastname.text} />}
+          />
+        )
+        // ))
+      }
       {!person.reversed && <LargeBioText person={person} />}
     </div>
   )
@@ -51,11 +58,11 @@ const SmallBio = ({ person, idx }) => {
         idx % 2 === 0 ? "lg:col-start-1" : "lg:col-start-2"
       } ${idx % 2 === 0 ? "lg:col-end-2" : "lg:col-end-3"}`}
     >
-      <h3 className="text-4xl font-serif uppercase">
-        {RichText.asText(person.first_and_lastname)}
+      <h3 className="font-serif text-4xl uppercase">
+        <PrismicText field={person.first_and_lastname} />
       </h3>
-      <div className="text-justify mt-6">
-        {RichText.render(person.position)}
+      <div className="mt-6 text-justify">
+        <PrismicText field={person.position} />
       </div>
     </div>
   )
@@ -63,18 +70,18 @@ const SmallBio = ({ person, idx }) => {
 
 const TeamSlice = ({ data }) => {
   return (
-    <section className="px-8 lg:px-16 text-black">
+    <section className="px-8 text-black lg:px-16">
       <h2 className="text-4xl lg:text-6xl font-serifAlt">
-        {RichText.asText(data.primary.team_section)}
+        <PrismicText field={data.primary.team_section} />
       </h2>
-      {data.fields
-        .filter(person => person.show_image)
+      {data.items
+        .filter((person) => person.show_image)
         .map((person, idx) => {
           return <LargeBio key={idx} person={person} />
         })}
-      <div className="grid grid-cols-2 lg:col-span-1 col-gap-32 mt-10">
-        {data.fields
-          .filter(person => !person.show_image)
+      <div className="grid grid-cols-2 col-gap-32 mt-10 lg:col-span-1">
+        {data.items
+          .filter((person) => !person.show_image)
           .map((person, idx) => {
             return <SmallBio key={idx} person={person} idx={idx} />
           })}
@@ -84,24 +91,32 @@ const TeamSlice = ({ data }) => {
 }
 
 export const query = graphql`
-  fragment teamSlice on PRISMIC_PageBodyTeam {
-    type
-    fields {
-      position
-      portrait
-      portraitSharp {
-        childImageSharp {
-          fixed(width: 200, height: 200, quality: 90) {
-            ...GatsbyImageSharpFixed
-          }
+  fragment teamSlice on PrismicPageDataBodyTeam {
+    slice_type
+    items {
+      position {
+        html
+        richText
+        text
+      }
+      portrait {
+        fixed(width: 200, height: 200, quality: 90) {
+          ...GatsbyPrismicImageFixed
         }
+        url
       }
       show_image
-      first_and_lastname
+      first_and_lastname {
+        text
+        richText
+        html
+      }
       reversed
     }
     primary {
-      team_section
+      team_section {
+        text
+      }
     }
   }
 `

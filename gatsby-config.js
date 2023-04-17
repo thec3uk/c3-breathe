@@ -1,10 +1,15 @@
 require("dotenv").config()
 
+const prismicRepositoryName = "breathe"
+
+const linkResolver = require("./src/utils/linkResolver").linkResolver
+
 module.exports = {
   siteMetadata: {
     title: `Breathe`,
     description: `The Breathe Collective`,
     author: `@breatheuk`,
+    domain: "breathe.thec3.uk",
   },
   plugins: [
     {
@@ -42,7 +47,6 @@ module.exports = {
         headers: {}, // option to add more headers. `Link` headers are transformed by the below criteria
         allPageHeaders: [], // option to add headers for all pages. `Link` headers are transformed by the below criteria
         mergeSecurityHeaders: true, // boolean to turn off the default security headers
-        mergeLinkHeaders: true, // boolean to turn off the default gatsby js headers
         mergeCachingHeaders: true, // boolean to turn off the default caching headers
         transformHeaders: (headers, path) => headers, // optional transform for manipulating headers under each path (e.g.sorting), etc.
         // transformHeaders: (headers, path) => { if (path !== '/pineapple') {return headers} return null}, // optional transform for manipulating headers under each path (e.g.sorting), etc.
@@ -60,57 +64,36 @@ module.exports = {
     },
     `gatsby-plugin-postcss`,
     {
-      resolve: "gatsby-source-prismic-graphql",
+      resolve: `gatsby-source-prismic`,
       options: {
-        repositoryName: "breathe", // (required)
+        repositoryName: prismicRepositoryName,
         accessToken: process.env.PRISMIC_ACCESS_TOKEN,
-        path: "/preview", // (optional, default: /preview)
-        previews: true, // (optional, default: false)
-        pages: [
-          {
-            type: "Online_event", // TypeName from prismic
-            match: "/event/:uid", // Pages will be generated under this pattern (optional)
-            filter: data => data.node._meta.type === "online_event",
-            path: "/event", // Placeholder page for unpublished documents
-            component: require.resolve("./src/templates/event.js"),
-          },
-          {
-            type: "Online_event", // TypeName from prismic
-            match: "/event/:uid/checkout", // Pages will be generated under this pattern (optional)
-            filter: data => data.node._meta.type === "online_event",
-            path: "/event/checkout", // Placeholder page for unpublished documents
-            component: require.resolve("./src/templates/event-checkout.js"),
-          },
-          {
-            type: "Page", // TypeName from prismic
-            match: "/:uid", // Pages will be generated under this pattern (optional)
-            // filter: data => data.node._meta.uid !== 'homepage',
-            filter: data =>
-              data.node._meta.type === "page" &&
-              !data.node._meta.uid.includes("homepage"),
-            path: "/page", // Placeholder page for unpublished documents
-            component: require.resolve("./src/templates/page.js"),
-          },
-          {
-            type: "Page", // TypeName from prismic
-            match: "/", // Pages will be generated under this pattern (optional)
-            filter: data =>
-              data.node._meta.type === "page" &&
-              data.node._meta.uid.includes("homepage"),
-            path: "/page", // Placeholder page for unpublished documents
-            component: require.resolve("./src/templates/page.js"),
-          },
-        ],
-        sharpKeys: [
-          /image|photo|picture/, // (default)
-          "portrait",
-          "logo",
-        ],
+        linkResolver: linkResolver,
+        schemas: {
+          academy_page: require(`./src/schemas/academy_page.json`),
+          content_page: require(`./src/schemas/content_page.json`),
+          homepage: require(`./src/schemas/homepage.json`),
+          landing_page: require(`./src/schemas/landing_page.json`),
+          notification_banner: require(`./src/schemas/notification_banner.json`),
+          redirect: require(`./src/schemas/redirect.json`),
+          site_config: require(`./src/schemas/site_config.json`),
+          text_page: require(`./src/schemas/text_page.json`),
+          colour: require(`./src/schemas/colour.json`),
+          page: require(`./src/schemas/page.json`),
+          online_event: require(`./src/schemas/online_event.json`),
+          contact_information: require(`./src/schemas/contact_information.json`),
+          channel: require("./src/schemas/channel.json"),
+          message: require("./src/schemas/message.json"),
+          resource: require("./src/schemas/resources.json"),
+          series: require("./src/schemas/series.json"),
+          speaker: require("./src/schemas/speaker.json"),
+        },
       },
     },
+    `gatsby-plugin-image`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

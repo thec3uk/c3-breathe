@@ -29,9 +29,13 @@ const Slices = ({ slices }) => {
         text_with_background_image: TextWithBackgroundImage,
         latest_instagram_photos: InstaFeedSlice,
       }
-      const Component = componentListObj[contentSlice.type]
+      const Component = componentListObj[contentSlice.slice_type]
       if (Component === undefined) {
-        console.warn("Warning: default case, content is unhandled")
+        console.warn(
+          `Warning: default case, content is unhandled for ${JSON.stringify(
+            contentSlice
+          )}`
+        )
         return <div key={idx}></div>
       }
       return (

@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import Footer from "./footer"
-import SEO from "./seo"
+import Seo from "./seo"
 import "./layout.css"
 
 const Layout = ({ children, page }) => {
@@ -21,20 +21,20 @@ const Layout = ({ children, page }) => {
   return (
     <StaticQuery
       query={`${query}`}
-      render={data => (
+      render={(data) => (
         <>
           <Header
             siteTitle={data.site.siteMetadata.title}
-            image={page.header_imageSharp.childImageSharp.fluid}
+            image={page.header_image.fluid}
             pageTitle={page.header_title}
             pageSubtitle={page.header_sub_title}
             headerCtaTitle={page.header_cta}
             headerCtaUrl={page.header_cta_link}
-            headerFontColour={page.header_font_colour.colour}
-            currentUid={page._meta.uid}
-            bgColour={page.bg_colour.colour}
+            headerFontColour={page.header_font_colour.document.data.colour}
+            currentUid={page.uid}
+            bgColour={page.bg_colour.document.data.colour}
           />
-          <SEO
+          <Seo
             title={
               page.header_sub_title !== null
                 ? `${page.header_title}: ${page.header_sub_title}`
@@ -42,10 +42,10 @@ const Layout = ({ children, page }) => {
             }
           />
           <div
-            data-wio-id={page._meta.id}
+            data-wio-id={page.id}
             className="px-0 sm:px-12 md:px-24 lg:px-24"
             style={{
-              backgroundColor: page.bg_colour.colour,
+              backgroundColor: page.bg_colour.document.data.colour,
             }}
           >
             <main>{children}</main>

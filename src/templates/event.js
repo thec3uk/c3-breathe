@@ -20,7 +20,7 @@ const handleCheckin = (setCheckin, result) => {
 
 const remoteCheckIn = (sessionId, attendeeNo, email, name, setCheckedIn) => {
   const checkInData = checkAttendeeIn(sessionId, attendeeNo)
-  checkInData.then(response => {
+  checkInData.then((response) => {
     const checkedIn =
       response.data[0]["Success"] ||
       response.data[0]["Message"] === "Already checked in"
@@ -61,7 +61,7 @@ const CheckInComponent = ({
     return () => clearTimeout(timer)
   }, [checkInState, delayed])
 
-  const selectAttendee = attendee => {
+  const selectAttendee = (attendee) => {
     setAttendeeNo(attendee["AttendeeNumber"])
     const name = `${attendee["FirstName"]} ${attendee["LastName"]}`
     setName(name)
@@ -78,8 +78,8 @@ const CheckInComponent = ({
     setCheckInState("loading")
     if (email !== "" && attendeeNo === "") {
       const attendeeInfo = getAttendeeInfo(sessionId, email)
-      attendeeInfo.then(response => {
-        const tempList = response.data.filter(item => !item.CheckedIn)
+      attendeeInfo.then((response) => {
+        const tempList = response.data.filter((item) => !item.CheckedIn)
         if (tempList.length > 1) {
           setCheckInState("choosing")
           setAttendeeList(tempList)
@@ -95,11 +95,11 @@ const CheckInComponent = ({
     }
   }
   return (
-    <div className="flex flex-col text-left items-center">
-      <div className="flex flex-col items-between bg-breathe-blue-1 py-8 px-8 shadow mb-16 md:mb-0">
+    <div className="flex flex-col items-center text-left">
+      <div className="flex flex-col px-8 py-8 mb-16 shadow items-between bg-breathe-blue-1 md:mb-0">
         <div>
           <h3 className="font-serif text-2xl">Check in</h3>
-          <p className="mt-2 font-serif text-lg mb-4 md:mb-8">
+          <p className="mt-2 mb-4 font-serif text-lg md:mb-8">
             {checkInState === "loading" &&
               "Checking you in... Get ready for the event to start!"}
             {checkInState === "choosing" &&
@@ -108,23 +108,23 @@ const CheckInComponent = ({
           </p>
         </div>
         {checkInState === "waiting" && (
-          <div className="gap-2 md:gap-4 grid grid-rows-3 md:grid-rows-2 grid-cols-1 md:grid-cols-4">
+          <div className="grid grid-cols-1 grid-rows-3 gap-2 md:gap-4 md:grid-rows-2 md:grid-cols-4">
             <label
               htmlFor="email"
-              className="md:px-4 md:pr-0 md:py-2 text-lg md:text-right font-serif font-normal mt-auto md:my-0"
+              className="mt-auto font-serif text-lg font-normal md:px-4 md:pr-0 md:py-2 md:text-right md:my-0"
             >
               Email
             </label>
             <input
               id="email"
-              className="row-start-2 md:row-start-1 md:col-start-2 md:col-span-3 px-2 py-1 bg-white focus:outline-none focus:shadow-outline border border-gray-300 appearance-none leading-normal"
+              className="row-start-2 px-2 py-1 leading-normal bg-white border border-gray-300 appearance-none md:row-start-1 md:col-start-2 md:col-span-3 focus:outline-none focus:shadow-outline"
               type=""
               name="email"
               placeholder="katie@breathe.thec3.uk"
-              onChange={e => setEmail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <button
-              className="row-start-3 md:row-start-2 md:col-span-2 md:col-start-2 border shadow bg-salmon-3 text-white hover:bg-salmon-2 font-sans uppercase"
+              className="row-start-3 font-sans text-white uppercase border shadow md:row-start-2 md:col-span-2 md:col-start-2 bg-salmon-3 hover:bg-salmon-2"
               type="button"
               onClick={() => checkIn()}
             >
@@ -136,9 +136,9 @@ const CheckInComponent = ({
           <div
             className={`gap-4 grid grid-rows-${attendeeList.length} grid-cols-1 w-1/2 mx-auto`}
           >
-            {attendeeList.map(attendee => (
+            {attendeeList.map((attendee) => (
               <button
-                className="col-span-1 border shadow bg-salmon-3 text-white hover:bg-salmon-2"
+                className="col-span-1 text-white border shadow bg-salmon-3 hover:bg-salmon-2"
                 type="button"
                 key={attendee.AttendeeNumber}
                 onClick={() => selectAttendee(attendee)}
@@ -150,12 +150,12 @@ const CheckInComponent = ({
         )}
         {checkInState === "loading" && delayed && (
           <div className={`gap-4 grid grid-rows-2 grid-cols-1 w-3/4 mx-auto`}>
-            <p className="col-span-1 mt-2 font-serif text-lg mb-4 md:mb-8">
+            <p className="col-span-1 mt-2 mb-4 font-serif text-lg md:mb-8">
               Stuck? Click the button below to jump into the event
             </p>
             <a
               href={meetingURL}
-              className="p-4 my-auto border shadow bg-salmon-3 text-white hover:bg-salmon-2 font-sans uppercase text-center"
+              className="p-4 my-auto font-sans text-center text-white uppercase border shadow bg-salmon-3 hover:bg-salmon-2"
             >
               Join the Event
             </a>
@@ -168,10 +168,10 @@ const CheckInComponent = ({
 
 const PrivateContent = ({ meetingURL }) => {
   return (
-    <div className="p-8 flex justify-center">
+    <div className="flex justify-center p-8">
       <a
         href={meetingURL}
-        className="p-4 my-auto border shadow bg-breathe-blue-1 text-black hover:bg-breathe-blue-3 hover:text-white font-sans uppercase text-center"
+        className="p-4 my-auto font-sans text-center text-black uppercase border shadow bg-breathe-blue-1 hover:bg-breathe-blue-3 hover:text-white"
       >
         Join the Event
       </a>
@@ -207,22 +207,22 @@ const PrivatePage = ({ data }) => {
   return (
     <BackgroundImage
       Tag="div"
-      className="min-h-screen flex flex-col text-black bg-top bg-cover justify-center w-screen md:h-screen bg-grey-1"
-      fluid={page.background_imageSharp.childImageSharp.fluid}
-      backgroundColor={page.bg_colour.colour}
+      className="flex flex-col justify-center w-screen min-h-screen text-black bg-top bg-cover md:h-screen bg-grey-1"
+      fluid={page.background_image.fluid}
+      backgroundColor={page.bg_colour.document.data.document.data.colour}
     >
       <SEO title={`Breathe ${page.event_title}: Check in`} />
-      <nav className="py-6 px-8 md:fixed top-0 animated flex flex-row justify-start min-w-full items-center">
-        <div className="uppercase text-lg font-sans text-white">
+      <nav className="top-0 flex flex-row items-center justify-start min-w-full px-8 py-6 md:fixed animated">
+        <div className="font-sans text-lg text-white uppercase">
           <Link to="/">Breathe</Link>
         </div>
       </nav>
-      <div className="p-8 m-2 md:m-8 bg-salmon-2 flex flex-col text-center">
-        <h1 className="font-accent text-black mb-10">
+      <div className="flex flex-col p-8 m-2 text-center md:m-8 bg-salmon-2">
+        <h1 className="mb-10 text-black font-accent">
           Welcome to {page.event_title}
         </h1>
         {page.lead_paragraph && (
-          <div className="text-xl font-serif mx-auto md:px-20">
+          <div className="mx-auto font-serif text-xl md:px-20">
             {RichText.render(page.lead_paragraph)}
           </div>
         )}
@@ -250,28 +250,27 @@ export default PrivatePage
 
 export const query = graphql`
   query Event($uid: String!) {
-    prismic {
-      online_event(lang: "en-gb", uid: $uid) {
-        _meta {
-          id
-          uid
-        }
+    prismicOnlineEvent(uid: { eq: $uid }) {
+      id
+      uid
+
+      data {
         bg_colour {
           ...colour
         }
         event_title
         video_id
         video_password
-        video_url {
-          ...link
+        # video_url {
+        #   ...link
+        # }
+        lead_paragraph {
+          richText
+          html
         }
-        lead_paragraph
-        background_image
-        background_imageSharp {
-          childImageSharp {
-            fluid(quality: 90, maxWidth: 1920) {
-              ...GatsbyImageSharpFluid
-            }
+        background_image {
+          fluid(maxWidth: 1920) {
+            ...GatsbyPrismicImageFluid
           }
         }
         brushfire_session_id

@@ -8,14 +8,9 @@ import SEO from "../components/seo"
 import Link from "../components/link"
 import "../components/layout.css"
 
-import {
-  checkAttendeeOut,
-} from "../utils/brushfire"
+import { checkAttendeeOut } from "../utils/brushfire"
 
-import {
-  loadState,
-  saveSessionData,
-} from "../utils/event_state.js"
+import { loadState, saveSessionData } from "../utils/event_state.js"
 
 const handleCheckin = (setCheckin, result) => {
   setCheckin(result.attendee.checkedIn)
@@ -38,18 +33,15 @@ const PrivatePage = ({ data }) => {
   const attendeeNo = get(localEventState, `${attendeePath}.attendeeNo`, "")
 
   useEffect(() => {
-    const checkInData = checkAttendeeOut(
-      page.brushfire_session_id,
-      attendeeNo
-    )
-    checkInData.then(response => {
+    const checkInData = checkAttendeeOut(page.brushfire_session_id, attendeeNo)
+    checkInData.then((response) => {
       if (!response.data[0]["Success"]) {
         console.warn(response.data[0]["Message"])
       }
       handleCheckin(setCheckedIn, {
         sessionId: page.brushfire_session_id,
         attendee: {
-          checkedIn: false
+          checkedIn: false,
         },
       })
     })
@@ -63,8 +55,8 @@ const PrivatePage = ({ data }) => {
     <BackgroundImage
       Tag="div"
       className="min-h-screen flex flex-col text-black bg-top bg-cover justify-center w-screen md:h-screen bg-grey-1"
-      fluid={page.background_imageSharp.childImageSharp.fluid}
-      backgroundColor={page.bg_colour.colour}
+      fluid={page.background_image.fluid}
+      backgroundColor={page.bg_colour.document.data.colour}
     >
       <SEO title={`Breathe ${page.event_title}: Check in`} />
       <nav className="py-6 px-8 md:fixed top-0 animated flex flex-row justify-start min-w-full items-center">
@@ -85,7 +77,6 @@ const PrivatePage = ({ data }) => {
         </h1>
         <div>{RichText.render(page.upsell_text)}</div>
       </div>
-
     </BackgroundImage>
   )
 }
@@ -94,25 +85,24 @@ export default PrivatePage
 
 export const query = graphql`
   query EventCheckout($uid: String!) {
-    prismic {
-      online_event(lang: "en-gb", uid: $uid) {
-        _meta {
-          id
-          uid
-        }
+    prismicOnlineEvent(uid: { eq: $uid }) {
+      id
+      uid
+      data {
         bg_colour {
           ...colour
         }
         event_title
-        upsell_text
-        background_image
-        background_imageSharp {
-          childImageSharp {
-            fluid(quality: 90, maxWidth: 1920) {
-              ...GatsbyImageSharpFluid
-            }
+        upsell_text {
+          richText
+          html
+        }
+        background_image {
+          fluid(maxWidth: 1920) {
+            ...GatsbyPrismicImageFluid
           }
         }
+
         brushfire_session_id
       }
     }

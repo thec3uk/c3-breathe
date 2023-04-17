@@ -6,8 +6,8 @@ import {
   Marker,
   InfoWindow,
 } from "@react-google-maps/api"
-import { RichText } from "prismic-reactjs"
-import isEmpty from 'lodash/isEmpty'
+import { PrismicRichText } from "@prismicio/react"
+import isEmpty from "lodash/isEmpty"
 
 const mapStyles = [
   {
@@ -186,22 +186,22 @@ const mapStyles = [
   },
 ]
 
-const getLatLng = (prisicLoc) => (
-  {
-    lat: prisicLoc.latitude,
-    lng: prisicLoc.longitude
-  }
-)
+const getLatLng = (prisicLoc) => ({
+  lat: prisicLoc.latitude,
+  lng: prisicLoc.longitude,
+})
 
 function MapSlice({ data }) {
   const [markers, setMarkers] = useState({})
   // const [mapRef, setMapRef] = useState(null)
-  const [selectedPlace, setSelectedPlace] = useState(getLatLng(data.fields[0].location))
+  const [selectedPlace, setSelectedPlace] = useState(
+    getLatLng(data.fields[0].location)
+  )
   const [center, setCenter] = useState(getLatLng(data.fields[0].location))
-  const [zoom, setZoom] = useState(5);
+  const [zoom, setZoom] = useState(5)
   const [infoOpen, setInfoOpen] = useState(true)
 
-  const loadHandler = map => {
+  const loadHandler = (map) => {
     // Store a reference to the google map instance in state
     // setMapRef(map)
     // Fit map bounds to contain all markers
@@ -223,7 +223,7 @@ function MapSlice({ data }) {
   }
 
   // Iterate myPlaces to size, center, and zoom map to contain all markers
-  const fitBounds = map => {
+  const fitBounds = (map) => {
     const bounds = new window.google.maps.LatLngBounds()
     data.fields.map((place, idx) => {
       bounds.extend(getLatLng(place.location))
@@ -233,13 +233,13 @@ function MapSlice({ data }) {
   }
 
   const onMarkerLoad = (marker, idx) => {
-    return setMarkers(prevState => {
+    return setMarkers((prevState) => {
       return { ...prevState, [idx]: marker }
     })
   }
 
   useEffect(() => {
-      setZoom(window.screen.availWidth <= 1024 ? 13 : 15)
+    setZoom(window.screen.availWidth <= 1024 ? 13 : 15)
   }, [zoom])
   const mapOptions = {
     maxZoom: zoom,
@@ -256,63 +256,73 @@ function MapSlice({ data }) {
   }
 
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: process.env.GATSBY_GOOGLE_MAPS_KEY || "AIzaSyB-fjiF76Uh_s7gIZ7-KDfKWPQZWaMZNrk",
+    googleMapsApiKey:
+      process.env.GATSBY_GOOGLE_MAPS_KEY ||
+      "AIzaSyB-fjiF76Uh_s7gIZ7-KDfKWPQZWaMZNrk",
   })
 
   if (loadError) {
     console.error(loadError)
     return <div>Map cannot be loaded right now, sorry.</div>
   }
-  return isLoaded && (
-    <section className="px-16 -my-16 md:-my-24 lg:-my-24 text-black">
-      <GoogleMap
-        id="map"
-        onLoad={loadHandler}
-        mapContainerClassName="w-screen h-104 -mx-16 md:-mx-40 lg:-mx-40"
-        zoom={zoom}
-        center={center}
-        options={mapOptions}
-      >
-        {data.fields.map(({ location, pin_content }, idx) => {
-          const position = {
-            lat: location.latitude,
-            lng: location.longitude,
-          }
-          return (
-            <div key={idx}>
-              <Marker
-                position={position}
-                onLoad={m => onMarkerLoad(m, idx)}
-                onClick={event => markerClickHandler(event, location)}
-              >
-                {!isEmpty(markers) && infoOpen && selectedPlace && (
-                  <InfoWindow
-                    anchor={markers[idx]}
-                    onCloseClick={() => setInfoOpen(false)}
-                    options={{
-                      maxWidth: 300,
-                    }}
-                  >
-                    <div className="text-center">
-                      {RichText.render(pin_content)}
-                    </div>
-                  </InfoWindow>
-                )}
-              </Marker>
-            </div>
-          )
-        })}
-      </GoogleMap>
-    </section>
+  return (
+    isLoaded && (
+      <section className="px-16 -my-16 text-black md:-my-24 lg:-my-24">
+        <GoogleMap
+          id="map"
+          onLoad={loadHandler}
+          mapContainerClassName="w-screen h-104 -mx-16 md:-mx-40 lg:-mx-40"
+          zoom={zoom}
+          center={center}
+          options={mapOptions}
+        >
+          {data.fields.map(({ location, pin_content }, idx) => {
+            const position = {
+              lat: location.latitude,
+              lng: location.longitude,
+            }
+            return (
+              <div key={idx}>
+                <Marker
+                  position={position}
+                  onLoad={(m) => onMarkerLoad(m, idx)}
+                  onClick={(event) => markerClickHandler(event, location)}
+                >
+                  {!isEmpty(markers) && infoOpen && selectedPlace && (
+                    <InfoWindow
+                      anchor={markers[idx]}
+                      onCloseClick={() => setInfoOpen(false)}
+                      options={{
+                        maxWidth: 300,
+                      }}
+                    >
+                      <div className="text-center">
+                        <PrismicRichText field={pin_content.richText} />
+                      </div>
+                    </InfoWindow>
+                  )}
+                </Marker>
+              </div>
+            )
+          })}
+        </GoogleMap>
+      </section>
+    )
   )
 }
 
 export const query = graphql`
-  fragment mapSlice on PRISMIC_PageBodyMap {
-    type
-    fields {
-      location
-      pin_content
+  fragment mapSlice on PrismicPageDataBodyMap {
+    slice_type
+    items {
+      location {
+        latitude
+        longitude
+      }
+      pin_content {
+        html
+        richText
+      }
     }
   }
 `

@@ -1,0 +1,24 @@
+{
+    "Main": {
+        "title": {
+            "type": "Text",
+            "config": {
+                "label": "Title"
+            }
+        },
+        "description": {
+            "type": "Text",
+            "config": {
+                "label": "Description"
+            }
+        },
+        "link": {
+            "type": "Link",
+            "config": {
+                "allowTargetBlank": true,
+                "label": "Link",
+                "select": null
+            }
+        }
+    }
+}

@@ -1,26 +1,28 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { RichText } from "prismic-reactjs"
+import { PrismicRichText } from "@prismicio/react"
 import Link from "../link"
 
 const ColumnTextSlice = ({ data }) => {
-  const columnCount = data.fields.length
+  const columnCount = data.items.length
+  console.log(data)
   return (
     <section
-      className={`px-16 ${!data.primary.reduce_top_padding && "pt-20"} ${!data
-        .primary.reduce_bottom_padding && "pb-20"} text-black`}
+      className={`px-16 ${!data.primary.reduce_top_padding && "pt-20"} ${
+        !data.primary.reduce_bottom_padding && "pb-20"
+      } text-black`}
     >
       {data.primary.title && (
-        <h2 className="text-center py-8 pb-16 font-serifAlt text-5xl text-black">
+        <h2 className="py-8 pb-16 text-5xl text-center text-black font-serifAlt">
           {data.primary.title}
         </h2>
       )}
       <div
         className={`grid gap-8 lg:gap-32 grid-cols-1 auto-cols-fr md:grid-cols-${columnCount}`}
       >
-        {data.fields.map(({ column }, idx) => (
+        {data.items.map(({ column }, idx) => (
           <div className={`col-start-1 md:col-start-${idx + 1}`} key={idx}>
-            {column && RichText.render(column)}
+            {column && <PrismicRichText field={column.richText} />}
           </div>
         ))}
       </div>
@@ -28,10 +30,11 @@ const ColumnTextSlice = ({ data }) => {
         <div className="flex justify-center my-16">
           <Link
             to={data.primary.cta_link}
-            className="uppercase px-4 py-2 shadow"
+            className="px-4 py-2 uppercase shadow"
             style={{
-              color: data.primary.cta_font_colour.colour,
-              backgroundColor: data.primary.cta_button_colour.colour,
+              color: data.primary.cta_font_colour.document?.data.colour,
+              backgroundColor:
+                data.primary.cta_button_colour.document?.data.colour,
             }}
           >
             {data.primary.cta_text}
@@ -43,10 +46,13 @@ const ColumnTextSlice = ({ data }) => {
 }
 
 export const query = graphql`
-  fragment columnTextSlice on PRISMIC_PageBodyMulti_column_text {
-    type
-    fields {
-      column
+  fragment columnTextSlice on PrismicPageDataBodyMultiColumnText {
+    slice_type
+    items {
+      column {
+        html
+        richText
+      }
     }
     primary {
       title

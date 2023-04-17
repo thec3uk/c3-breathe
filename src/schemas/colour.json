@@ -1,0 +1,16 @@
+{
+    "Main": {
+        "name": {
+            "type": "Text",
+            "config": {
+                "label": "name"
+            }
+        },
+        "colour": {
+            "type": "Color",
+            "config": {
+                "label": "colour"
+            }
+        }
+    }
+}

@@ -1,0 +1,42 @@
+{
+    "Main": {
+        "email": {
+            "type": "Text",
+            "config": {
+                "label": "Email"
+            }
+        },
+        "telephone": {
+            "type": "Text",
+            "config": {
+                "label": "Telephone"
+            }
+        },
+        "instagram_profile": {
+            "type": "Text",
+            "config": {
+                "label": "Instagram Profile"
+            }
+        },
+        "facebook_profile": {
+            "type": "Text",
+            "config": {
+                "label": "Facebook Profile"
+            }
+        },
+        "newsletter_title": {
+            "type": "Text",
+            "config": {
+                "label": "Newsletter Title"
+            }
+        },
+        "newsletter_brief": {
+            "type": "StructuredText",
+            "config": {
+                "multi": "paragraph",
+                "allowTargetBlank": true,
+                "label": "newsletter brief"
+            }
+        }
+    }
+}

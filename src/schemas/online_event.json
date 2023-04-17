@@ -1,0 +1,84 @@
+{
+    "Main": {
+        "uid": {
+            "type": "UID",
+            "config": {
+                "label": "uid"
+            }
+        },
+        "event_title": {
+            "type": "Text",
+            "config": {
+                "label": "Event Title",
+                "useAsTitle": true
+            }
+        },
+        "video_id": {
+            "type": "Text",
+            "config": {
+                "label": "Video ID"
+            }
+        },
+        "video_password": {
+            "type": "Text",
+            "config": {
+                "label": "Video Password"
+            }
+        },
+        "brushfire_session_id": {
+            "type": "Text",
+            "config": {
+                "label": "Brushfire Session ID"
+            }
+        },
+        "background_image": {
+            "type": "Image",
+            "config": {
+                "constraint": {},
+                "thumbnails": [],
+                "label": "Background Image"
+            }
+        },
+        "bg_colour": {
+            "type": "Link",
+            "config": {
+                "select": "document",
+                "customtypes": [
+                    "colour"
+                ],
+                "label": "Background colour"
+            }
+        }
+    },
+    "Before Check in": {
+        "lead_paragraph": {
+            "type": "StructuredText",
+            "config": {
+                "single": "paragraph,heading3,heading4,heading5,heading6,strong,em,hyperlink,embed,list-item,o-list-item,o-list-item",
+                "allowTargetBlank": true,
+                "label": "Lead Paragraph",
+                "labels": [
+                    "font-serif",
+                    "font-serifAlt",
+                    "font-sans",
+                    "font-accent"
+                ]
+            }
+        }
+    },
+    "After Check Out": {
+        "upsell_text": {
+            "type": "StructuredText",
+            "config": {
+                "multi": "paragraph,preformatted,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,o-list-item",
+                "label": "upsell_text",
+                "labels": [
+                    "font-serif",
+                    "font-serifAlt",
+                    "font-sans",
+                    "font-accent"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,105 @@
+{
+    "Main": {
+        "title": {
+            "type": "StructuredText",
+            "config": {
+                "single": "heading2,heading3,heading4,heading5,heading6",
+                "label": "Title",
+                "placeholder": "Title for the message"
+            }
+        },
+        "thumbnail": {
+            "type": "Image",
+            "config": {
+                "constraint": {},
+                "thumbnails": [],
+                "label": "Thumbnail"
+            }
+        },
+        "series": {
+            "type": "Link",
+            "config": {
+                "select": "document",
+                "customtypes": [
+                    "series"
+                ],
+                "label": "Series",
+                "placeholder": "Link to series"
+            }
+        },
+        "video": {
+            "type": "Embed",
+            "config": {
+                "label": "Video",
+                "placeholder": "URL for YouTube video"
+            }
+        },
+        "podcast": {
+            "type": "Embed",
+            "config": {
+                "label": "Podcast",
+                "placeholder": "URL for podcast"
+            }
+        },
+        "date": {
+            "type": "Date",
+            "config": {
+                "label": "Date",
+                "placeholder": "Date of message"
+            }
+        },
+        "speakers": {
+            "type": "Group",
+            "config": {
+                "fields": {
+                    "speaker": {
+                        "type": "Link",
+                        "config": {
+                            "select": "document",
+                            "customtypes": [
+                                "speaker"
+                            ],
+                            "label": "Speaker",
+                            "placeholder": "Add speaker or speakers"
+                        }
+                    }
+                },
+                "label": "Speakers"
+            }
+        },
+        "linked_resources": {
+            "type": "Group",
+            "config": {
+                "fields": {
+                    "resources": {
+                        "type": "Link",
+                        "config": {
+                            "select": "document",
+                            "customtypes": [
+                                "resource"
+                            ],
+                            "tags": [
+                                "domain:teaching.thec3.uk"
+                            ],
+                            "label": "Resources"
+                        }
+                    }
+                },
+                "label": "Linked Resources"
+            }
+        },
+        "channel": {
+            "type": "Link",
+            "config": {
+                "select": "document",
+                "customtypes": [
+                    "channel"
+                ],
+                "tags": [
+                    "domain:teaching.thec3.uk"
+                ],
+                "label": "Channel"
+            }
+        }
+    }
+}

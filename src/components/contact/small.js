@@ -6,10 +6,10 @@ import { faFacebookF, faInstagram } from "@fortawesome/free-brands-svg-icons"
 const ContactSmallSlice = ({ inverse }) => {
   const query = graphql`
     query SocialInfo {
-      prismic {
-        allContact_informations {
-          edges {
-            node {
+      allPrismicContactInformation {
+        edges {
+          node {
+            data {
               facebook_profile
               instagram_profile
             }
@@ -27,10 +27,10 @@ const ContactSmallSlice = ({ inverse }) => {
   return (
     <StaticQuery
       query={`${query}`}
-      render={data => {
-        const contactData = data.prismic.allContact_informations.edges[0].node
+      render={(data) => {
+        const contactData = data.allPrismicContactInformation.edges[0].node.data
         return (
-          <div className="text-center my-8">
+          <div className="my-8 text-center">
             <a
               href={`https://www.facebook.com/${contactData.facebook_profile}`}
               className={classname}
@@ -39,7 +39,7 @@ const ContactSmallSlice = ({ inverse }) => {
                 icon={faFacebookF}
                 fixedWidth
                 size="2x"
-                className="h-8 mr-12 inline-block"
+                className="inline-block h-8 mr-12"
               />
             </a>
             <a
@@ -50,7 +50,7 @@ const ContactSmallSlice = ({ inverse }) => {
                 icon={faInstagram}
                 fixedWidth
                 size="2x"
-                className="h-8 inline-block"
+                className="inline-block h-8"
               />
             </a>
           </div>

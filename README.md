@@ -49,12 +49,14 @@ We look forward to welcoming you!
 # 2021
 
 - Shop items
-- Online experience - Brushfire
-- 2022
 
-  - title
-  - dates
-  - some media?
-  - Brushfire event
+  - Blurb
+  - Image
 
-- Ensure content gets uploaded and sloted into brushfire
+# 2023
+
+- StaticQuery -> useStaticQuery
+- remove colour content type
+- migrate to main prismic repo
+- deal with Mailchimp
+- deal with instagram feed

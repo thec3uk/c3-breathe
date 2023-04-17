@@ -21,7 +21,7 @@ const Footer = ({
         <div></div>
       )}
       {has_newsletter_slice && <NewsletterSlice />}
-      <footer className="py-8 px-8 md:-mx-24 lg:px-16 font-serif text-black">
+      <footer className="px-8 py-8 font-serif text-black md:-mx-24 lg:px-16">
         Copyright © {siteTitle} {new Date().getFullYear()}
       </footer>
     </Fragment>
@@ -31,7 +31,7 @@ const Footer = ({
 export default Footer
 
 export const query = graphql`
-  fragment footer on PRISMIC_Page {
+  fragment footer on PrismicPageDataType {
     has_contact_slice
     has_newsletter_slice
     contact_slice_size
