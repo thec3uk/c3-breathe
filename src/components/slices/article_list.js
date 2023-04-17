@@ -54,10 +54,6 @@ const ListItem = ({ link, image, title, background_colour }) => {
 //       }
 //     }
 //  const data = useStaticQuery(staticQuery)
-//   return (
-//     <StaticQuery
-//       query={`${staticQuery}`}
-//       render={(data) => {
 //         const mcFields = data.allMailchimpCampaign.edges.map(({ node }) => {
 //           return {
 //             title: node.send_time,
@@ -78,9 +74,6 @@ const ListItem = ({ link, image, title, background_colour }) => {
 //               )
 //             })}
 //           </>
-//         )
-//       }}
-//     />
 //   )
 // }
 

@@ -1,5 +1,5 @@
 // import React, { useState, useEffect } from "react"
-// import { graphql, StaticQuery } from "gatsby"
+// import { graphql, useStaticQuery } from "gatsby"
 // import Link from "../link"
 
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -120,10 +120,7 @@
 //       }
 //     }
 //   `
-//   return (
-//     <StaticQuery
-//       query={`${staticQuery}`}
-//       render={(data) => {
+//  const data = useStaticQuery(staticQuery)
 //         return (
 //           <section className="pt-20 -mb-16 overflow-x-hidden sm:-mx-24 sm:-mb-24">
 //             <div className="flex flex-row lg:flex-col">
@@ -145,9 +142,6 @@
 //             </div>
 //           </section>
 //         )
-//       }}
-//     />
-//   )
 // }
 
 // export const query = graphql`

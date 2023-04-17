@@ -39,11 +39,8 @@ conference/event plugin
 
 - deal with Mailchimp
 - deal with instagram feed
-- analytics
-
-- StaticQuery -> useStaticQuery
 - remove colour content type
 - migrate to main prismic repo
+  - merge the content types with the existing ones and add new options
   - drop the schemas in favour of the API
   - create the pages that need creating
-  - merge the content types with the existing ones and add new options
