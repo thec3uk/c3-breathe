@@ -36,7 +36,7 @@ export const query = graphql`
           ...columnTextSlice
           ...mapSlice
           ...textBackgroundImage
-          # ...InstaFeedSlice
+          ...InstaFeedSlice
         }
         ...header
         ...footer
