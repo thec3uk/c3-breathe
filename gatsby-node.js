@@ -1,5 +1,5 @@
 const path = require("path")
-const linkResolver = require("./src/utils/linkResolver")
+const linkResolver = require("./src/utils/linkResolver").linkResolver
 
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage, createRedirect } = actions
@@ -34,8 +34,6 @@ exports.createPages = async ({ actions, graphql }) => {
   )
   // Create pages for each Page in Prismic using the selected template.
   pages.data?.allPrismicPage.nodes.forEach((node) => {
-    console.log(node)
-
     createPage({
       path: node.uid === "homepage" ? "/" : `/${node.uid}`,
       component: path.resolve(__dirname, "src/templates/page.js"),
@@ -54,9 +52,8 @@ exports.createPages = async ({ actions, graphql }) => {
             uid
             type
             data {
-              page_title
-              permanent
-              destination {
+              title
+              url {
                 link_type
                 url
                 type
@@ -71,7 +68,7 @@ exports.createPages = async ({ actions, graphql }) => {
   )
 
   redirects.data?.allPrismicRedirect.nodes.forEach((node) => {
-    const url = linkResolver(node.data.destination)
+    const url = linkResolver(node.data.url)
 
     createRedirect({
       fromPath: `/${node.uid}`,

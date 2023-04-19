@@ -7,6 +7,7 @@ exports.linkResolver = (doc) => {
       Web: (doc) => doc.url,
       // File and Image to be added when we get to them
       page: (doc) => `/${doc.uid}`,
+      redirect: (doc) => doc.url,
     }
     const key = doc.link_type !== undefined ? doc.link_type : doc.type
     to = linkTypes[key]

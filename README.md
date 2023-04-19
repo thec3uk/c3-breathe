@@ -37,10 +37,9 @@ conference/event plugin
 
 # 2023
 
+- deal with instagram feed - access token for API
 - deal with Mailchimp
-- deal with instagram feed
 - remove colour content type
 - migrate to main prismic repo
   - merge the content types with the existing ones and add new options
-  - drop the schemas in favour of the API
   - create the pages that need creating
