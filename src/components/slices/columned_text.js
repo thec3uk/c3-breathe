@@ -5,7 +5,14 @@ import Link from "../link"
 
 const ColumnTextSlice = ({ data }) => {
   const columnCount = data.items.length
-  console.log(data)
+  const colClasses = {
+    1: "md:col-start-1",
+    2: "md:col-start-2",
+    3: "md:col-start-3",
+    4: "md:col-start-4",
+    5: "md:col-start-5",
+    6: "md:col-start-6",
+  }
   return (
     <section
       className={`px-16 ${!data.primary.reduce_top_padding && "pt-20"} ${
@@ -21,7 +28,7 @@ const ColumnTextSlice = ({ data }) => {
         className={`grid gap-8 lg:gap-32 grid-cols-1 auto-cols-fr md:grid-cols-${columnCount}`}
       >
         {data.items.map(({ column }, idx) => (
-          <div className={`col-start-1 md:col-start-${idx + 1}`} key={idx}>
+          <div className={`col-start-1 ${colClasses[idx + 1]}`} key={idx}>
             {column && <PrismicRichText field={column.richText} />}
           </div>
         ))}
