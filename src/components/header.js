@@ -175,13 +175,13 @@ const Header = ({
         </CSSTransition>
       </nav>
       <div
-        className="flex flex-col justify-center flex-grow h-screen text-center"
+        className="flex flex-col justify-center flex-grow h-screen text-center bg-slate-300/40"
         style={{ color: headerFontColour }}
       >
         <h1 className="text-5xl font-serifAlt lg:text-6xl">{pageTitle}</h1>
         <h2 className="text-5xl font-accent lg:text-6xl">{pageSubtitle}</h2>
         {headerCtaUrl && headerCtaTitle && (
-          <div className="mt-8">
+          <div className="py-8">
             <Link
               to={headerCtaUrl}
               className="px-6 py-3 uppercase border border-white hover:border-black hover:text-black"
