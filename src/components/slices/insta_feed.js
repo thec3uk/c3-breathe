@@ -28,8 +28,8 @@
 //   const colour = [
 //     "breathe-blue-1",
 //     "breathe-blue-2",
-//     "salmon-1",
-//     "salmon-3",
+//     "accent-1",
+//     "accent-3",
 //     "grey-1",
 //   ]
 //   const pad = ["8px", "0", "0px"]

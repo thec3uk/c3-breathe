@@ -13,7 +13,7 @@ const NotFoundPage = () => {
           <Link to="/">Breathe</Link>
         </div>
       </nav>
-      <div className="p-8 m-8 bg-salmon-2">
+      <div className="p-8 m-8 bg-accent-2">
         <h1 className="text-black font-serifAlt">Page not found</h1>
         <p>
           Looks like you hit a page that doesn't exist. Return to our{" "}

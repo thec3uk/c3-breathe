@@ -22,7 +22,7 @@ const GeometricCTASlice = ({ data }) => {
           }`}
         ></div>
         <div
-          className={`w-56 lg:w-72 h-56 lg:h-72 bg-salmon-1 mx-auto z-20 col-start-3 row-start-2 -mt-24 -ml-16 md:-ml-8 lg:ml-0`}
+          className={`w-56 lg:w-72 h-56 lg:h-72 bg-accent-1 mx-auto z-20 col-start-3 row-start-2 -mt-24 -ml-16 md:-ml-8 lg:ml-0`}
         ></div>
         <div className="z-40 flex flex-col justify-end col-start-1 col-end-6 row-start-1 text-center lg:col-start-2 lg:col-end-5">
           <h2 className="text-4xl whitespace-no-wrap font-serifAlt lg:text-6xl">

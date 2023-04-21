@@ -63,7 +63,7 @@ const NewsletterSlice = () => {
   const newsletter = data.allPrismicContactInformation.edges[0].node.data
 
   return (
-    <section className="flex flex-row justify-end px-0 py-12 text-black md:py-0 md:px-16 md:-mx-24 bg-salmon-1">
+    <section className="flex flex-row justify-end px-0 py-12 text-black md:py-0 md:px-16 md:-mx-24 bg-accent-1">
       <div className="absolute left-0 z-10 w-full h-auto px-8 py-12 mt-16 bg-white shadow-md lg:w-8/12 lg:-mx-16 md:mt-48 lg:mt-24 lg:mb-48 lg:px-48">
         <h3 className="mb-6 uppercase font-serifAlt">
           {newsletter.newsletter_title}
@@ -91,7 +91,7 @@ const NewsletterSlice = () => {
                   onChange={(e) => setEmail(e.target.value)}
                 />
                 <button
-                  className="px-6 py-2 mt-4 font-serif uppercase border border-black shadow lg:mt-0 lg:ml-4 hover:bg-salmon-3 hover:text-white"
+                  className="px-6 py-2 mt-4 font-serif uppercase border border-black shadow lg:mt-0 lg:ml-4 hover:bg-accent-3 hover:text-white"
                   onClick={(e) =>
                     _handleSubmit(e, email, setStatus, setMessage)
                   }

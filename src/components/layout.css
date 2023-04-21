@@ -55,11 +55,11 @@
   }
 
   main p a {
-    @apply text-salmon-3 underline p-2;
+    @apply text-accent-3 underline p-2;
   }
 
   main p a:hover {
-    @apply text-white bg-salmon-3 p-2;
+    @apply text-white bg-accent-3 p-2;
   }
 
   #map p {

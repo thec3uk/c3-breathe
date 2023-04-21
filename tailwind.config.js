@@ -24,10 +24,10 @@ module.exports = {
           2: "#699AAA",
           3: "#4A7C8B",
         },
-        salmon: {
-          1: "#FF8882",
-          2: "#E3706B",
-          3: "#C0514F",
+        accent: {
+          1: "#E5D4C0",
+          2: "#CCAB84",
+          3: "#B5834A",
         },
       },
       fontFamily: {

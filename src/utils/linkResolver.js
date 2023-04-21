@@ -9,6 +9,7 @@ exports.linkResolver = (doc) => {
       page: (doc) => `/${doc.uid}`,
       redirect: (doc) => doc.url,
     }
+    console.log(doc)
     const key = doc.link_type !== undefined ? doc.link_type : doc.type
     to = linkTypes[key]
     if (to === undefined) {
