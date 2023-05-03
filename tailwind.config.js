@@ -129,7 +129,7 @@ module.exports = {
       tl: "top left",
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
   content: [
     "./src/pages/**/*.{js,jsx,ts,tsx}",
     "./src/components/**/*.{js,jsx,ts,tsx}",

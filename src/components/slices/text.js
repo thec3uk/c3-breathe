@@ -22,10 +22,11 @@ const TextSlice = ({ data }) => {
       <div
         className={`${
           data.primary.full_width && "mx-2 md:mx-24"
-        } text-justify md:text-left`}
+        } text-justify md:text-left prose prose-stone max-w-4xl prose-strong:font-semibold`}
       >
         {data.slice_label && data.slice_label === "raw_html" ? (
           <div
+            className="not-prose"
             dangerouslySetInnerHTML={{ __html: data.primary.content.text }}
           ></div>
         ) : (

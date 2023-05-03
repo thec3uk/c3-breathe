@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-  @import url("https://fonts.googleapis.com/css?family=Montserrat:300&display=swap");
+  @import url("https://fonts.googleapis.com/css?family=Montserrat:300,600,700&display=swap");
   @font-face {
     font-family: "didot";
     src: url("/fonts/didot/Didot-01.ttf") format("opentype");
@@ -54,12 +54,14 @@
     @apply mb-8;
   }
 
-  main p a {
-    @apply text-accent-3 underline p-2;
+  main p a,
+  main li a {
+    @apply text-accent-3 underline p-1;
   }
 
-  main p a:hover {
-    @apply text-white bg-accent-3 p-2;
+  main p a:hover,
+  main li a:hover {
+    @apply text-white bg-accent-3 p-1;
   }
 
   #map p {
